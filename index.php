@@ -1,20 +1,8 @@
 ﻿<?php
  require_once("config.php");
- echo "<html>
- <head>
-  <title>$info[title]</title>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
-  <link rel='stylesheet' href='https://bootswatch.com/4/cyborg/bootstrap.min.css'>
-  <link rel='stylesheet' href='mod.css'>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'
- </head>
- <body>
-  <div class='page-header'>
-    <a href='$root'><center><h1>$info[title]</h1></center></a>
-  </div>
-  ";
+ require_once("head.php");
+ require_once("beginning.php");
+ $noposts = false;
  foreach ($server->query("SELECT COUNT(*) FROM " . $credentials['ptable']) as $rows)
  {
  $amount = $rows[0];
@@ -44,6 +32,7 @@
   }
   else
   {
+   $noposts = true;
    echo "
    <div class='alert alert-primary mx-auto' style='width: 90%'>Hey! Seems like no one posted here yet. Would you like to <a href='?request=create'>be the first one?</a>
    ";
@@ -115,7 +104,8 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
  ";
- if (( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create'))
+ echo $nopost;
+ if ((( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create')) && ( ! $noposts))
  {
   echo "
   <div class='container-fluid fixed-bottom mb-3'>

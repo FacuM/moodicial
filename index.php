@@ -17,8 +17,8 @@
  if ( ! isset($_GET['request']))
  {
   foreach($server->query("SELECT * FROM " . $credentials["ptable"]) as $rows) {
-   echo "<div class='card text-white bg-dark mb-2 mx-auto' style='max-width: 95%' >
-   <div class='card-header'>$rows[date]</div>
+   echo "<form method=get action=''><input name='report' id='report' type=hidden value='$rows[pid]'><div class='card text-white bg-dark mb-2 mx-auto' style='max-width: 95%' >
+   <div class='card-header'>$rows[date]<button class='btn btn-danger float-right btn-sm'>Report</button></form></div>
    <div class='card-body'>$rows[cont]</div>
    <div class='card-footer'>Posted by ";
 
@@ -29,8 +29,24 @@
    {
 	echo "$rows[nick]";
    }
-   echo "</div>
-  </div>";
+   echo "
+   </div>
+  </div></form>";
+  }
+  if (isset($_GET['report']))
+  {
+   foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = '" . $_GET['report'] . "'") as $rows)
+   {
+	if ($rows['rep'] > ($maxrep - 1))
+	{
+	 $server->query("DELETE FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $_GET['report']);
+	}
+	else
+	{
+     $server->query("UPDATE `" . $credentials['ptable'] . "` SET `rep`=rep+1 WHERE `pid` = '" . $_GET['report'] . "'"); 
+    }
+   }
+   header("location: index.php");
   }
  }
  else
@@ -83,7 +99,7 @@
  if (( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create'))
  {
   echo "
-  <div class='container-fluid sticky-bottom'>
+  <div class='container-fluid fixed-bottom mb-3'>
    <form method=get action='' >
     <input name='request' id='request' type=hidden value='create'>
     <button class='btn float-right'>Create post</button>

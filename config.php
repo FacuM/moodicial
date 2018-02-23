@@ -13,6 +13,8 @@
   'ptable' 	        => 'moodicial_posts',
  );
  
+ $maxrep = 5;
+ 
  // From now on, don't edit anything as you could break the whole website.
  
  $server = new PDO('mysql:host=' . $credentials['hostname'] . ':' . $credentials['port'] . ';dbname=' . $credentials['db'] . ';charset=utf8', $credentials['username'], $credentials['password']);

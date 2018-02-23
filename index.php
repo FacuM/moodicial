@@ -12,28 +12,42 @@
  </head>
  <body>
   <div class='page-header'>
-    <center><h1>$info[title]</h1></center>
+    <a href='$root'><center><h1>$info[title]</h1></center></a>
   </div>
   ";
+ foreach ($server->query("SELECT COUNT(*) FROM " . $credentials['ptable']) as $rows)
+ {
+ $amount = $rows[0];
+ }
  if ( ! isset($_GET['request']))
  {
+  if ( $amount > 0 )
+  {
   foreach($server->query("SELECT * FROM " . $credentials["ptable"]) as $rows) {
    echo "<form method=get action=''><input name='report' id='report' type=hidden value='$rows[pid]'><div class='card text-white bg-dark mb-2 mx-auto' style='max-width: 95%' >
    <div class='card-header'>$rows[date]<button class='btn btn-danger float-right btn-sm'>Report</button></form></div>
    <div class='card-body'>$rows[cont]</div>
    <div class='card-footer'>Posted by ";
 
-   if ((isset($rows['nick'])) && (empty($rows['nick']))) {
+   if ((isset($rows['nick'])) && (empty($rows['nick'])))
+   {
     echo "<i>Anonymous</i>";
    }
    else
    {
-	echo "$rows[nick]";
+  	echo "$rows[nick]";
    }
    echo "
    </div>
   </div></form>";
   }
+  }
+  else
+  {
+   echo "
+   <div class='alert alert-primary mx-auto' style='width: 90%'>Hey! Seems like no one posted here yet. Would you like to <a href='?request=create'>be the first one?</a>
+   ";
+   }
   if (isset($_GET['report']))
   {
    foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = '" . $_GET['report'] . "'") as $rows)
@@ -47,7 +61,7 @@
      $server->query("UPDATE `" . $credentials['ptable'] . "` SET `rep`=rep+1 WHERE `pid` = '" . $_GET['report'] . "'"); 
     }
    }
-   header("location: index.php");
+//   header("location: index.php");
   }
  }
  else
@@ -69,8 +83,12 @@
      }
     }
 	$now = getdate();
-	$server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`) VALUES (" . $server->quote($_POST['nick']) . ", '" . $now['year'] . "-" . $now['mon'] . "-" . $now['mday'] . "', '" . $rndn . "', " . $server->quote($_POST['content']) . ", 0)");
-	header("location: index.php");
+	$content = str_replace('<', '&lt;', $_POST['content']);
+	$content = str_replace('>', '&gt;', $content);
+	$server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`) VALUES (" . $server->quote($_POST['nick']) . ", '" . $now['year'] . "-" . $now['mon'] . "-" . $now['mday'] . "', '" . $rndn . "', " . $server->quote($content) . ", 0)");
+	echo "<script type='text/javascript'>
+     window.location = '$root';
+    </script>";
    }
    else
    {

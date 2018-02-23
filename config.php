@@ -14,8 +14,10 @@
  );
  
  $maxrep = 5;
+ $path= '/moodicial';
  
  // From now on, don't edit anything as you could break the whole website.
  
  $server = new PDO('mysql:host=' . $credentials['hostname'] . ':' . $credentials['port'] . ';dbname=' . $credentials['db'] . ';charset=utf8', $credentials['username'], $credentials['password']);
+ $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . "://" . $_SERVER['HTTP_HOST'] . $path;
 ?>

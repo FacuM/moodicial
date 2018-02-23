@@ -20,16 +20,16 @@
    echo "<div class='card text-white bg-dark mb-2 mx-auto' style='max-width: 95%' >
    <div class='card-header'>$rows[date]</div>
    <div class='card-body'>$rows[cont]</div>
-   <div class='card-footer'>Posted by <i>";
-   
-   if ((isset($rows['nick'])) || (empty($rows['nick']))) {
-    echo "Anonymous";
+   <div class='card-footer'>Posted by ";
+
+   if ((isset($rows['nick'])) && (empty($rows['nick']))) {
+    echo "<i>Anonymous</i>";
    }
    else
    {
 	echo "$rows[nick]";
    }
-   echo "</i></div>
+   echo "</div>
   </div>";
   }
  }
@@ -52,9 +52,7 @@
      }
     }
 	$now = getdate();
-	$query = "INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`) VALUES (" . $server->quote($_POST['nick']) . ", '" . $now['year'] . "-" . $now['mon'] . "-" . $now['mday'] . "', '" . $rndn . "', " . $server->quote($_POST['content']) . ", 0)";
-	echo $query;
-	$server->query($query);
+	$server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`) VALUES (" . $server->quote($_POST['nick']) . ", '" . $now['year'] . "-" . $now['mon'] . "-" . $now['mday'] . "', '" . $rndn . "', " . $server->quote($_POST['content']) . ", 0)");
 	header("location: index.php");
    }
    else
@@ -82,7 +80,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
  ";
- if (( ! isset($_GET['request'])) || ($_GET['request'] == 'create'))
+ if (( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create'))
  {
   echo "
   <div class='container-fluid sticky-bottom'>

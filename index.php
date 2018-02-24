@@ -110,7 +110,6 @@
   }
  }
  loadscripts();
- echo $nopost;
  if ((( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create')) && ( ! $noposts))
  {
   echo "

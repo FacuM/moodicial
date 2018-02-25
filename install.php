@@ -3,7 +3,7 @@
  require_once("head.php");
  require_once("beginning.php");
  loadscripts();
- echo "<div class='alert alert-primary mx-auto'>Connecting with the database...</div>";
+ echo "<div class='alert alert-primary mx-auto'>Connecting to the database...</div>";
  try
  {
   $server = new PDO('mysql:host=' . $credentials['hostname'] . ':' . $credentials['port'] . ';dbname=' . $credentials['db'] . ';charset=utf8', $credentials['username'], $credentials['password']);
@@ -16,7 +16,7 @@
  {
   echo "<div class='alert alert-success mx-auto'>Done. Connection successful!</div>";
  }
- echo "<div class='alert alert-primary mx-auto'>Creating the database.</div>";
+ echo "<div class='alert alert-primary mx-auto'>Creating the database...</div>";
  $server->query("CREATE DATABASE " . $credentials['db']);
  echo "<div class='alert alert-success mx-auto'>Done. Database <b>" . $credentials['db'] . "</b> successfully created.</div>";
  echo "<div class='alert alert-primary mx-auto'>Creating the comments table.</div>";

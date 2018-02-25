@@ -11,24 +11,35 @@
  {
   if ( $amount > 0 )
   {
-  foreach($server->query("SELECT * FROM " . $credentials["ptable"]) as $rows) {
-   echo "<form method=get action=''><input name='report' id='report' type=hidden value='$rows[pid]'><div class='card text-white bg-dark mb-2 mx-auto' style='max-width: 95%' >
-   <div class='card-header'>$rows[date]<button class='btn btn-danger float-right btn-sm'>Report</button></form></div>
-   <div class='card-body'>$rows[cont]</div>
-   <div class='card-footer'>Posted by ";
-
-   if ((isset($rows['nick'])) && (empty($rows['nick'])))
+   if (isset($_GET['p']))
    {
-    echo "<i>Anonymous</i>";
+    $p = $_GET[p];
    }
    else
    {
-  	echo "$rows[nick]";
+    $p = 0;
    }
-   echo "
-   </div>
-  </div></form>";
-  }
+   foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . $p . ", 1") as $rows) {
+    echo "<div class='posts'>
+     <form method=get action=''><input name='report' id='report' type=hidden value='$rows[pid]'><div class='card text-white bg-dark mb-2 mx-auto' style='max-width: 95%' >
+     <div class='card-header'>$rows[date]<button class='btn btn-danger float-right btn-sm'>Report</button></form></div>
+     <div class='card-body'>$rows[cont]</div>
+     <div class='card-footer'>Posted by ";
+
+    if ((isset($rows['nick'])) && (empty($rows['nick'])))
+    {
+     echo "<i>Anonymous</i>";
+    }
+    else
+    {
+   	echo "$rows[nick]";
+    }
+    echo "
+      </div>
+     </div>
+    </div>
+   </form>";
+   }
   }
   else
   {
@@ -83,7 +94,7 @@
 	$now = getdate();
 	$content = str_replace('<', '&lt;', $_POST['content']);
 	$content = str_replace('>', '&gt;', $content);
-	$server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`) VALUES (" . $server->quote($_POST['nick']) . ", '" . $now['year'] . "-" . $now['mon'] . "-" . $now['mday'] . "', '" . $rndn . "', " . $server->quote($content) . ", 0)");
+	$server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`) VALUES (" . $server->quote($_POST['nick']) . ", now(), '" . $rndn . "', " . $server->quote($content) . ", 0)");
 	echo "<script type='text/javascript'>
      window.location = '$root';
     </script>";
@@ -110,10 +121,19 @@
   }
  }
  loadscripts();
+ echo "<script type='text/javascript'>
+ $('.posts').infiniteScroll({
+  // options
+  path: '/?p={{#}}',
+  append: '.posts',
+  prefill: true,
+  history: false,
+ });
+ </script>";
  if ((( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create')) && ( ! $noposts))
  {
   echo "
-  <div class='container-fluid fixed-bottom mb-3'>
+  <div class='container-fluid fixed-bottom mb-5' style='max-width: 95%' >
    <form method=get action='' >
     <input name='request' id='request' type=hidden value='create'>
     <button type='submit' class='btn float-right'>
@@ -124,8 +144,8 @@
   ";
  }
  echo "
- <footer class='page-footer mb-2 fixed-bottom' >
-  <hr style='background-color: grey'>
+ <footer class='page-footer fixed-bottom' style='background-color: black'>
+  <hr style='background-color: grey; margin-top: 0px'>
   <div class='footer-copyright'>
    <div class='container-fluid'>
     Powered by Moodicial, written by Facundo Montero using Bootstrap. Check the <a href='" . $root . "/showastext.php?file=";

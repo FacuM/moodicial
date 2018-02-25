@@ -17,7 +17,7 @@
  // Max amount of reports
  $maxrep = 5;
  // Server document root. Set this to the path to your website files, omitting the root dir. If you put them in '/var/www/moodicial' write just '/moodicial'.
- $path= '/moodicial';
+ $path= '';
  
  // From now on, don't edit anything as you could break the whole website.
  

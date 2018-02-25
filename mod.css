@@ -38,4 +38,9 @@ hr {
 .imgcontainer {
 	width: 40%;
 	height: auto;
-}*/
+}
+
+.badge {
+	margin-top: 0.5em;
+	margin-right: 1em;
+}

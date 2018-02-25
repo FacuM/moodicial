@@ -26,19 +26,22 @@
    foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . $p . ", 1") as $rows) {
     echo "<div class='posts'>
      " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
-	 if ($rows['rep'] == 0)
+     if ($reports)
 	 {
-	  $status = 'badge-success';
-	 }
-	 else
-	 {
-	  if ($rows['rep'] <= ($maxrep / 2))
+	  if ($rows['rep'] == 0)
 	  {
-	   $status = 'badge-warning';
+	   $status = 'badge-success';
 	  }
 	  else
 	  {
-	   $status = 'badge-danger';
+	   if ($rows['rep'] <= ($maxrep / 2))
+	   {
+	    $status = 'badge-warning';
+	   }
+	   else
+	   {
+	    $status = 'badge-danger';
+	   }
 	  }
 	 }
      echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm'>Report</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>

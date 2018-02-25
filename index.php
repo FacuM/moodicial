@@ -23,6 +23,7 @@
     echo "<div class='posts'>
      <form method=get action=''><input name='report' type=hidden value='$rows[pid]'><div class='card text-white bg-dark mb-2 mx-auto' >
      <div class='card-header'>$rows[date]<button class='btn btn-danger float-right btn-sm'>Report</button></div>
+     </form>
      <div class='card-body'>$rows[cont]</div>
      <div class='card-footer'>Posted by ";
 
@@ -34,10 +35,18 @@
     {
    	echo "$rows[nick]";
     }
-    echo "
+    echo "<a href='comment.php?pid=$rows[pid]' class='float-right'><span class='octicon octicon-comment-discussion'> Comment</span></a>
       </div>
+	   ";
+	   foreach($server->query("SELECT * FROM " . $credentials["ctable"] . " WHERE pid = " . $rows['pid']) as $rowscom)
+	   {
+	   echo "<div class='card bg-gradient-dark text-white' id='comments'>
+	   <div class='card-header' id='cheader'><i>Anonymous</i> said...</div>
+	   <div class='card-body'>" . $rowscom['data'] . "</div>
+	  </div>";
+	   }
+	 echo "
 	 </div>
-	</form>
    </div>";
    }
   }
@@ -61,7 +70,6 @@
      $server->query("UPDATE `" . $credentials['ptable'] . "` SET `rep`=rep+1 WHERE `pid` = '" . $_GET['report'] . "'"); 
     }
    }
-//   header("location: index.php");
   }
  }
  else
@@ -124,7 +132,7 @@
  if ((( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create')) && ( ! $noposts))
  {
   echo "
-  <div class='container-fluid fixed-bottom mb-5' style='max-width: 95%' >
+  <div class='container-fluid fixed-bottom' style='max-width: 95%; padding-bottom: 5em' >
    <form method=get action='' >
     <input name='request' id='request' type=hidden value='create'>
     <button type='submit' class='btn float-right'>
@@ -134,25 +142,5 @@
   </div>
   ";
  }
- echo "
- <footer class='page-footer fixed-bottom' style='background-color: black'>
-  <hr style='background-color: grey; margin-top: 0px'>
-  <div class='footer-copyright'>
-   <div class='container-fluid'>
-    Powered by Moodicial, written by Facundo Montero using Bootstrap. Check the <a href='" . $root . "/showastext.php?file=";
-    if (empty($_SERVER['DOCUMENT_URI']))
-    {
-     echo 'index.php';
-    }
-    else
-    {
-     echo $_SERVER['DOCUMENT_URI'];
-    }
-    echo "'>source.</a>
-   </div>
-  </div>
- </footer>
- </body>
-</html>
-";
+ require_once("footer.php");
 ?>

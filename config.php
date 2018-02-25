@@ -7,11 +7,12 @@
  // This array saves the website credentials.
  $credentials = array (
   'hostname'		=> '127.0.0.1',
-  'port'				   => '3306',
+  'port'			=> '3306',
   'username'		=> 'root',
   'password'		=> '',
-  'db'					  => 'moodicial',
-  'ptable' 	          => 'moodicial_posts',
+  'db'				=> 'moodicial',
+  'ptable' 	        => 'moodicial_posts',
+  'ctable'			=> 'moodicial_comments'
  );
  
  // Max amount of reports

@@ -28,7 +28,16 @@
      " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >
      <div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm'>Report</button>" : "") . "</div>
      " . ($reports ? "</form>" : "") . "
-     <div class='card-body'>$rows[cont]</div>
+     <div class='card-body'>$rows[cont]";
+	 if ( ! empty($rows['img'])) 
+	 {
+      echo "
+	  <div class='imgcontainer mx-auto'>
+	   <img class='img-thumbnail' src='" . $rows['img'] . "'>
+	  </div>";
+	 }
+	 echo "
+	 </div>
      <div class='card-footer'>Posted by ";
 
     if ((isset($rows['nick'])) && (empty($rows['nick'])))
@@ -106,10 +115,12 @@
 	$now = getdate();
 	$content = str_replace('<', '&lt;', $_POST['content']);
 	$content = str_replace('>', '&gt;', $content);
-	$server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`) VALUES (" . $server->quote($_POST['nick']) . ", now(), '" . $rndn . "', " . $server->quote($content) . ", 0)");
+	echo "INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`, `img`) VALUES (" . $server->quote($_POST['nick']) . ", now(), '" . $rndn . "', " . $server->quote($content) . ", 0, " . $server->quote($_POST['image']) . ")";
+	$server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`, `img`) VALUES (" . $server->quote($_POST['nick']) . ", now(), '" . $rndn . "', " . $server->quote($content) . ", 0, " . $server->quote($_POST['image']) . ")");
 	echo "<script type='text/javascript'>
      window.location = '$root';
-    </script>";
+    </script>"
+	;
     }
    }
    else
@@ -118,11 +129,15 @@
    <form method=post action='' >
     <div class='form-group mx-auto'>
 	 <label for='post'>Post content</label>
-	 <input type='text' class='form-control' id='content' name='content'>
+	 <input type='text' class='form-control' name='content'>
 	</div>
 	<div class='form-group mx-auto'>
-	 <label class='nick' for='nick'>Nick</label>
-	 <input class='nick form-control' type='text' id='nick' name='nick' maxlength=16>
+	 <label class='nick' for='nick'>Nick (optional)</label>
+	 <input class='nick form-control' type='text' name='nick' maxlength=16 placeholder='Anonymous'>
+    </div>
+	<div class='form-group mx-auto'>
+	 <label class='image' for='image'>Image URL (optional)</label>
+	 <input class='image form-control' type='text' name='image'>
     </div>
     <div class='form-group container-fluid sticky-bottom'>
      <button type='submit' class='btn float-right bg-success'>Submit</button>

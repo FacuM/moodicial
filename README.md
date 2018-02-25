@@ -16,10 +16,11 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - HTML parsing block (protects against user from running HTML code on their posts)
 - Comments
 - Installer
+- Reduced code size and overall final HTML size
+- Support for secure source code displaying of PHP files (complying with AGPL)
 
 #### Upcoming features
 
-- Reduced code size and overall final HTML size
 - Corrected coding performance problems
 
 ## Third party content

@@ -63,15 +63,15 @@
    }
   if ((isset($_GET['report'])) && $reports)
   {
-   foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = '" . $_GET['report'] . "'") as $rows)
+   foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_GET['report'])) as $rows)
    {
 	if ($rows['rep'] > ($maxrep - 1))
 	{
-	 $server->query("DELETE FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $_GET['report']);
+	 $server->query("DELETE FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_GET['report']));
 	}
 	else
 	{
-     $server->query("UPDATE `" . $credentials['ptable'] . "` SET `rep`=rep+1 WHERE `pid` = '" . $_GET['report'] . "'"); 
+     $server->query("UPDATE `" . $credentials['ptable'] . "` SET `rep`=rep+1 WHERE `pid` = " . $server->quote($_GET['report'])); 
     }
    }
   }

@@ -14,10 +14,11 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Infinite scrolling
 - Responsive design
 - HTML parsing block (protects against user from running HTML code on their posts)
+- Comments
+- Installer
 
 #### Upcoming features
 
-- Comments
 - Reduced code size and overall final HTML size
 - Corrected coding performance problems
 

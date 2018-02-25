@@ -6,13 +6,13 @@
 
  // This array saves the website credentials.
  $credentials = array (
-  'hostname'		=> '127.0.0.1',
-  'port'			=> '3306',
-  'username'		=> 'root',
-  'password'		=> '',
-  'db'				=> 'moodicial',
-  'ptable' 	        => 'moodicial_posts',
-  'ctable'			=> 'moodicial_comments'
+  'hostname'     => '127.0.0.1',
+  'port'         => '3306',
+  'username'     => 'root',
+  'password'     => '',
+  'db'           => 'moodicial',
+  'ptable'       => 'moodicial_posts',
+  'ctable'       => 'moodicial_comments'
  );
 
  // Should people be able to report?

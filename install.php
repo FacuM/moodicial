@@ -23,7 +23,7 @@
  $server->query("CREATE TABLE `" . $credentials['ctable'] . "` (`pid` text NOT NULL,`data` text NOT NULL)");
  echo "<div class='alert alert-success mx-auto'>Created table <b>" . $credentials['ctable'] . "</b> for <b>comments</b>.</div>";
  echo "<div class='alert alert-primary mx-auto'>Creating the posts table.</div>";
- $server->query("CREATE TABLE `" . $credentials['ptable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` varchar(2500) NOT NULL, `rep` int(1) NOT NULL)");
+ $server->query("CREATE TABLE `" . $credentials['ptable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` varchar(2500) NOT NULL, `rep` int(1) NOT NULL, `img` text NOT NULL)");
  echo "<div class='alert alert-success mx-auto'>Created table <b>" . $credentials['ptable'] . "</b> for <b>posts</b>.</div>";
  echo "
  <br>

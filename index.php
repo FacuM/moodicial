@@ -13,7 +13,7 @@
   {
    if (isset($_GET['p']))
    {
-    $p = $_GET[p];
+    $p = $_GET['p'];
    }
    else
    {
@@ -21,8 +21,8 @@
    }
    foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . $p . ", 1") as $rows) {
     echo "<div class='posts'>
-     <form method=get action=''><input name='report' id='report' type=hidden value='$rows[pid]'><div class='card text-white bg-dark mb-2 mx-auto' style='max-width: 95%' >
-     <div class='card-header'>$rows[date]<button class='btn btn-danger float-right btn-sm'>Report</button></form></div>
+     <form method=get action=''><input name='report' type=hidden value='$rows[pid]'><div class='card text-white bg-dark mb-2 mx-auto' >
+     <div class='card-header'>$rows[date]<button class='btn btn-danger float-right btn-sm'>Report</button></div>
      <div class='card-body'>$rows[cont]</div>
      <div class='card-footer'>Posted by ";
 
@@ -36,16 +36,16 @@
     }
     echo "
       </div>
-     </div>
-    </div>
-   </form>";
+	 </div>
+	</form>
+   </div>";
    }
   }
   else
   {
    $noposts = true;
    echo "
-   <div class='alert alert-primary mx-auto' style='width: 90%'>Hey! Seems like no one posted here yet. Would you like to <a href='?request=create'>be the first one?</a></div>
+   <div class='alert alert-primary mx-auto'>Hey! Seems like no one posted here yet. Would you like to <a href='?request=create'>be the first one?</a></div>
    ";
    }
   if (isset($_GET['report']))
@@ -104,15 +104,15 @@
    {
    echo "
    <form method=post action='' >
-    <div class='form-group mx-auto' style='max-width: 80%'>
+    <div class='form-group mx-auto'>
 	 <label for='post'>Post content</label>
 	 <input type='text' class='form-control' id='content' name='content'>
 	</div>
-	<div class='form-group mx-auto' style='max-width: 80%'>
-	 <label for='nick' style='max-width: 15%'>Nick</label>
-	 <input type='text' class='form-control' id='nick' name='nick' style='max-width: 15%' maxlength=16>
+	<div class='form-group mx-auto'>
+	 <label class='nick' for='nick'>Nick</label>
+	 <input class='nick form-control' type='text' id='nick' name='nick' maxlength=16>
     </div>
-    <div class='container-fluid sticky-bottom' style='max-width: 80%'>
+    <div class='form-group container-fluid sticky-bottom'>
      <button type='submit' class='btn float-right bg-success'>Submit</button>
     </div>
    </form>
@@ -121,15 +121,6 @@
   }
  }
  loadscripts();
- echo "<script type='text/javascript'>
- $('.posts').infiniteScroll({
-  // options
-  path: '/?p={{#}}',
-  append: '.posts',
-  prefill: true,
-  history: false,
- });
- </script>";
  if ((( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create')) && ( ! $noposts))
  {
   echo "

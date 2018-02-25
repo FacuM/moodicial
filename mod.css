@@ -1,3 +1,21 @@
+/* This file includes all the customizations done to the Bootstrap 4 theme 'Cyborg' in order to make it look better and in context with the website content. */
+
 .card-footer {
 	background-color: #444444
+}
+
+.card {
+	max-width: 95%
+}
+
+.alert {
+	max-width: 90%
+}
+
+.form-group {
+	max-width: 80%
+}
+
+.nick {
+	max-width: 15%
 }

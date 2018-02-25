@@ -3,6 +3,10 @@
  require_once("head.php");
  require_once("beginning.php");
  $noposts = false;
+ if ((isset($_GET['report'])) && $reports == false)
+ {
+  echo "<div class='alert alert-danger mx-auto'>Reporting has been disabled by the site owner.</div>";
+ }
  foreach ($server->query("SELECT COUNT(*) FROM " . $credentials['ptable']) as $rows)
  {
  $amount = $rows[0];
@@ -21,9 +25,9 @@
    }
    foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . $p . ", 1") as $rows) {
     echo "<div class='posts'>
-     <form method=get action=''><input name='report' type=hidden value='$rows[pid]'><div class='card text-white bg-dark mb-2 mx-auto' >
-     <div class='card-header'>$rows[date]<button class='btn btn-danger float-right btn-sm'>Report</button></div>
-     </form>
+     " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >
+     <div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm'>Report</button>" : "") . "</div>
+     " . ($reports ? "</form>" : "") . "
      <div class='card-body'>$rows[cont]</div>
      <div class='card-footer'>Posted by ";
 
@@ -57,7 +61,7 @@
    <div class='alert alert-primary mx-auto'>Hey! Seems like no one posted here yet. Would you like to <a href='?request=create'>be the first one?</a></div>
    ";
    }
-  if (isset($_GET['report']))
+  if ((isset($_GET['report'])) && $reports)
   {
    foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = '" . $_GET['report'] . "'") as $rows)
    {

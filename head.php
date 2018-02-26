@@ -9,6 +9,7 @@
   <link rel='icon' type='image/png' sizes='16x16' href='/resources/favicons/favicon-16x16.png'>
   <link rel='manifest' href='/resources/favicons/site.webmanifest'>
   <link rel='mask-icon' href='/resources/favicons/safari-pinned-tab.svg' color='#5bbad5'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
   <meta name='msapplication-TileColor' content='#da532c'>
   <meta name='theme-color' content='#ffffff'>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>

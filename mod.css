@@ -1,8 +1,5 @@
 /* This file includes all the customizations done to the Bootstrap 4 theme 'Cyborg' in order to make it look better and in context with the website content. */
 
-
-// By class
-
 .card-footer {
 	background-color: #444444;
 }
@@ -31,17 +28,11 @@
 	max-width: 15%;
 }
 
-.imgcontainer {
-	width: 40%;
-	height: auto;
+hr {
+	background-color: grey;
+	margin-top: 0px;
+	margin-bottom: 1em;
 }
-
-.badge {
-	margin-top: 0.5em;
-	margin-right: 1em;
-}
-
-// By ID
 
 #comments {
 	background-color: #333333;
@@ -52,21 +43,16 @@
 	background-color: #303030;
 }
 
-#createpost {
-	max-width: 95%;
-	padding-bottom: 6em;
+.imgcontainer {
+	width: 40%;
+	height: auto;
 }
 
-// By selector
+.badge {
+	margin-top: 0.5em;
+	margin-right: 1em;
+}
 
 a:hover {
 	text-decoration: none;
-}
-
-// By tag
-
-hr {
-	background-color: grey;
-	margin-top: 0px;
-	margin-bottom: 1em;
 }

@@ -108,6 +108,13 @@
     }
    }
   }
+ // Load the Infinite Scroll status indicator
+ echo "
+  <div class='page-load-status'>
+   <div class='infinite-scroll-request alert alert-primary mx-auto'>Loading...</div>
+   <div class='infinite-scroll-last alert alert-light mx-auto'>No more content to display. Would you like to <a href='" . $root . "'>reload?</a></div>
+   <div class='infinite-scroll-error alert alert-danger'>Unable to load data, please contact the server administrator!</div>
+  </div>";
  loadscripts();
  if ( ! $noposts)
  {
@@ -121,5 +128,5 @@
   </div>
   ";
  }
- require_once("footer.php");
+ require_once('footer.php');
 ?>

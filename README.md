@@ -32,6 +32,12 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 
 Here comes the good part. For **download**, **configuration** and **installaton**, please [take a look at the wiki](https://github.com/FacuM/moodicial/wiki).
 
+## Wanna try it?
+
+Take a look at the live demo [here]( http://moodicial.ezyro.com/), feel free to **hack it!**
+
+If you find any security flaw, report it! :wink:
+
 ## Third party content
 
 - [Bootstrap 4](https://github.com/twbs/bootstrap) with [Cyborg theme](https://bootswatch.com/cyborg/)

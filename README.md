@@ -30,3 +30,4 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - [Octicons](https://octicons.github.com/)
 - [jQuery](https://github.com/jquery/jquery)
 - [Infinite Scroll](https://github.com/metafizzy/infinite-scroll)
+- [Ubuntu Font](https://design.ubuntu.com/font/)

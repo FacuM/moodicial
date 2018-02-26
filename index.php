@@ -11,8 +11,6 @@
  {
  $amount = $rows[0];
  }
- if ( ! isset($_GET['request']))
- {
   if ( $amount > 0 )
   {
    if (isset($_GET['p']))
@@ -85,7 +83,7 @@
   {
    $noposts = true;
    echo "
-   <div class='alert alert-primary mx-auto'>Hey! Seems like no one posted here yet. Would you like to <a href='?request=create'>be the first one?</a></div>
+   <div class='alert alert-primary mx-auto'>Hey! Seems like no one posted here yet. Would you like to <a href='/create.php'>be the first one?</a></div>
    ";
    }
   if ((isset($_GET['report'])) && $reports)
@@ -102,79 +100,15 @@
     }
    }
   }
- }
- else
- {
-  if ($_GET['request'] == 'create')
-  {
-   if (isset($_POST['content']))
-   {
-    if (empty($_POST['content']))
-    {
-     echo "
-     <script type='text/javascript'>
-      window.location = '$root';
-     </script>";
-    }
-    else
-    {
-	$rndn = rand();
-    $block = $server->query("SELECT * FROM `" . $credentials["ptable"] . "` WHERE `pid` = '" . $rndn . "'");
-    $count = $block->rowCount();
-    if ($count > 0)
-	{
-     while ($count > 0)
-	 {
-      $rndn = rand();
-      $block = $server->query("SELECT * FROM `" . $credentials["ptable"] . "` WHERE `pid` = '" . $rndn . "'");
-      $count = $block->rowCount();
-     }
-    }
-	$now = getdate();
-	$content = str_replace('<', '&lt;', $_POST['content']);
-	$content = str_replace('>', '&gt;', $content);
-	echo "INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`, `img`) VALUES (" . $server->quote($_POST['nick']) . ", now(), '" . $rndn . "', " . $server->quote($content) . ", 0, " . $server->quote($_POST['image']) . ")";
-	$server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`, `img`) VALUES (" . $server->quote($_POST['nick']) . ", now(), '" . $rndn . "', " . $server->quote($content) . ", 0, " . $server->quote($_POST['image']) . ")");
-	echo "<script type='text/javascript'>
-     window.location = '$root';
-    </script>"
-	;
-    }
-   }
-   else
-   {
-   echo "
-   <form method=post action='' >
-    <div class='form-group mx-auto'>
-	 <label for='post'>Post content</label>
-	 <input type='text' class='form-control' name='content'>
-	</div>
-	<div class='form-group mx-auto'>
-	 <label class='nick' for='nick'>Nick (optional)</label>
-	 <input class='nick form-control' type='text' name='nick' maxlength=16 placeholder='Anonymous'>
-    </div>
-	<div class='form-group mx-auto'>
-	 <label class='image' for='image'>Image URL (optional)</label>
-	 <input class='image form-control' type='text' name='image'>
-    </div>
-    <div class='form-group container-fluid sticky-bottom'>
-     <button type='submit' class='btn float-right bg-success'>Submit</button>
-    </div>
-   </form>
-   ";
-   }
-  }
- }
  loadscripts();
- if ((( ! isset($_GET['request'])) || ( ! $_GET['request'] == 'create')) && ( ! $noposts))
+ if ( ! $noposts)
  {
   echo "
   <div class='container-fluid fixed-bottom' style='max-width: 95%; padding-bottom: 5em' >
-   <form method=get action='' >
-    <input name='request' id='request' type=hidden value='create'>
+   <form action='" . $root . "/create.php'>
     <button type='submit' class='btn float-right'>
-	 <span class='octicon octicon-plus' aria-hidden='true'></span>
-	</button>
+	   <span class='octicon octicon-plus' aria-hidden='true'></span>
+    </button>
    </form>
   </div>
   ";

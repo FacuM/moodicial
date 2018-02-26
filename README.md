@@ -11,7 +11,7 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Posting
 - Reporting
 - Nicknames
-- Infinite scrolling
+- Infinite scrolling (with status displaying)
 - Responsive design
 - HTML parsing block (protects against user from running HTML code on their posts)
 - Full comments support
@@ -21,7 +21,8 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 
 #### Upcoming features
 
-- There are some planned features that I can't document yet.
+- Translation support
+- There are some other planned features that I can't document yet.
 
 ## Known bugs
 

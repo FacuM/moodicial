@@ -2,9 +2,12 @@
  require_once("config.php");
  require_once("head.php");
  require_once("beginning.php");
+ // Handle post creation if POST data has been sent to the server
  if (isset($_POST['content']))
  {
   if (empty($_POST['content']))
+  /* Even while there is data present, the post will be rejected if no content has been sent and the
+  user will be redirected to the home. */
   {
    echo "
     <script type='text/javascript'>
@@ -39,6 +42,8 @@
  }
  else
  {
+ /* If not, show a form where to write create one. The form will send the data using POST, then,
+ the next time the file is processed, the previous condition will be true.*/
  echo "
   <form method=post action='' >
     <div class='form-group mx-auto'>

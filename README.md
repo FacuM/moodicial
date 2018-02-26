@@ -14,14 +14,18 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Infinite scrolling
 - Responsive design
 - HTML parsing block (protects against user from running HTML code on their posts)
-- Comments
+- Full comments support
 - Installer
 - Reduced code size and overall final HTML size
 - Support for secure source code displaying of PHP files (complying with AGPL)
 
 #### Upcoming features
 
-- Corrected coding performance problems
+- There are some planned features that I can't document yet.
+
+## Known bugs
+
+- Infinite Scroll will very likely crash.
 
 ## Third party content
 

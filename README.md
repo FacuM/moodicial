@@ -26,7 +26,11 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 
 ## Known bugs
 
-- Infinite Scroll will very likely crash.
+- None at the moment.
+
+## Installation
+
+Here comes the good part. For **download**, **configuration** and **installaton**, please [take a look at the wiki](https://github.com/FacuM/moodicial/wiki).
 
 ## Third party content
 
@@ -37,7 +41,3 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - [Infinite Scroll](https://github.com/metafizzy/infinite-scroll)
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 - [Favicon Generator](https://realfavicongenerator.net/)
-
-## Installation
-
-Here comes the good part. For **download**, **configuration** and **installaton**, please [take a look at the wiki](wiki).

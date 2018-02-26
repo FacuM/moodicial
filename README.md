@@ -30,7 +30,7 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 
 ## Installation
 
-Here comes the good part. For **download**, **configuration** and **installaton**, please [take a look at the wiki](https://github.com/FacuM/moodicial/wiki).
+Here comes the good part. For **download**, **configuration** and **installation**, please [take a look at the wiki](https://github.com/FacuM/moodicial/wiki).
 
 ## Wanna try it?
 

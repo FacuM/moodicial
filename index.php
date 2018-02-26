@@ -69,13 +69,21 @@
 	   ";
 	   foreach($server->query("SELECT * FROM " . $credentials["ctable"] . " WHERE pid = " . $rows['pid']) as $rowscom)
 	   {
-	   echo "<div class='card bg-gradient-dark text-white' id='comments'>
-	   <div class='card-header' id='cheader'><i>Anonymous</i> said...</div>
-	   <div class='card-body'>" . $rowscom['data'] . "</div>
-	  </div>";
+	   echo "
+     <div class='card bg-gradient-dark text-white' id='comments'>
+	    <div class='card-header' id='cheader'>" . (empty($rowscom['nick']) ? "<i>Anonymous</i>":$rowscom['nick']) . " said...</div>
+	    <div class='card-body'>" . $rowscom['cont'] . "</div>";
+      if ( ! empty($rowscom['img']))
+      {
+       echo "
+        <div class='imgcontainer mx-auto'>
+         <img class='img-thumbnail' src='" . $rowscom['img'] . "'>
+        </div>
+   	   </div>";
+      }
 	   }
 	 echo "
-	 </div>
+	  </div>
    </div>";
    }
   }

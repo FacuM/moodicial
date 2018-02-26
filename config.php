@@ -15,12 +15,14 @@
   'ctable'       => 'moodicial_comments'
  );
 
+ // Server document root. Set this to the path to your website files, omitting the root dir. If you put them in '/var/www/moodicial' write just '/moodicial'.
+ $path = '';
  // Should people be able to report?
  $reports = true;
  // Max amount of reports
  $maxrep = 5;
- // Server document root. Set this to the path to your website files, omitting the root dir. If you put them in '/var/www/moodicial' write just '/moodicial'.
- $path = '';
+ // Allow empty posts? (without text)
+ $allowempty = false;
 
  // From now on, don't edit anything as you could break the whole website.
 

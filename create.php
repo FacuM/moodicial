@@ -5,9 +5,9 @@
  // Handle post creation if POST data has been sent to the server
  if (isset($_POST['content']))
  {
-  if (empty($_POST['content']))
-  /* Even while there is data present, the post will be rejected if no content has been sent and the
-  user will be redirected to the home. */
+  if (empty($_POST['content']) && $allowempty == false)
+  /* If $allowempty is set to 'false' in 'config.php', even while there is POST data present, the operation will be rejected if no content has been sent and the
+  user will be redirected to the home. If true, the post will succeed. */
   {
    echo "
     <script type='text/javascript'>

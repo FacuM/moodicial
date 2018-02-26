@@ -56,3 +56,8 @@ hr {
 a:hover {
 	text-decoration: none;
 }
+
+#createpost {
+	max-width: 95%;
+	padding-bottom: 6em;
+}

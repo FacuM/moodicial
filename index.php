@@ -47,7 +47,7 @@
      echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm'>Report</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
      " . ($reports ? "</form>" : "") . "
      <div class='card-body'>$rows[cont]";
-	 if ( ! empty($rows['img'])) 
+	 if ( ! empty($rows['img']))
 	 {
       echo "
 	  <div class='imgcontainer mx-auto'>
@@ -66,7 +66,7 @@
     {
    	echo "$rows[nick]";
     }
-    echo "<a href='comment.php?pid=$rows[pid]' class='float-right'><span class='octicon octicon-comment-discussion'> Comment</span></a>
+    echo "<a href='comment.php?pid=$rows[pid]' class='float-right'><span class='octicon octicon-comment-discussion'></span> Comment</a>
       </div>
 	   ";
 	   foreach($server->query("SELECT * FROM " . $credentials["ctable"] . " WHERE pid = " . $rows['pid']) as $rowscom)
@@ -98,7 +98,7 @@
 	}
 	else
 	{
-     $server->query("UPDATE `" . $credentials['ptable'] . "` SET `rep`=rep+1 WHERE `pid` = " . $server->quote($_GET['report'])); 
+     $server->query("UPDATE `" . $credentials['ptable'] . "` SET `rep`=rep+1 WHERE `pid` = " . $server->quote($_GET['report']));
     }
    }
   }

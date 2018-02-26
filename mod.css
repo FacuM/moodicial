@@ -8,6 +8,14 @@
 	max-width: 95%;
 }
 
+.page-header {
+	font-family: 'Roboto';
+}
+
+.card-body,a,button,footer {
+	font-family: 'Open Sans';
+}
+
 .alert {
 	max-width: 90%;
 }

@@ -32,6 +32,7 @@
    append: '.posts',
    prefill: true,
    history: false,
+   scrollThreshold: 1000,
    status: '.page-load-status',
    });
   </script>

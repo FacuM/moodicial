@@ -77,7 +77,7 @@
       {
        echo "
         <div class='imgcontainer mx-auto'>
-         <img class='img-thumbnail' src='" . $rowscom['img'] . "'>
+         <img class='img-thumbnail' src='" . $rowscom['img'] . "' alt='Image' >
         </div>
    	   </div>";
       }

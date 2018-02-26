@@ -69,3 +69,7 @@ body {
 .page-load-status {
 	display: none;
 }
+
+.alert {
+	max-width: 95%;
+}

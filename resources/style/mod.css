@@ -25,7 +25,7 @@
 }
 
 .nick {
-	max-width: 15%;
+	max-width: 35%;
 }
 
 hr {
@@ -63,7 +63,7 @@ a:hover {
 }
 
 body {
-	padding-bottom: 5%;
+	padding-bottom: 5em;
 }
 
 .page-load-status {
@@ -72,10 +72,4 @@ body {
 
 .alert {
 	max-width: 95%;
-}
-
-#visits {
-	max-width: 100%;
-	text-align: right;
-	padding-right: 1em;
 }

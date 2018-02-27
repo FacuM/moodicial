@@ -1,6 +1,5 @@
 ﻿<?php
  require_once("config.php");
- require_once("head.php");
  require_once("beginning.php");
  loadscripts();
  if (isset($_GET['nodb']) && $_GET['nodb'])

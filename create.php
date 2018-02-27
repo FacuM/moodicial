@@ -1,6 +1,5 @@
 <?php
  require_once("config.php");
- require_once("head.php");
  require_once("beginning.php");
  // Handle post creation if POST data has been sent to the server
  if (isset($_POST['content']))

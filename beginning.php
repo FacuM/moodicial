@@ -1,4 +1,5 @@
 <?php
+ require_once("head.php");
  require_once("metrics.php");
  echo "
  <body class='mb-5'>

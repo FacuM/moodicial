@@ -1,6 +1,5 @@
 <?php
  require_once("config.php");
- require_once("head.php");
  require_once("beginning.php");
  $test = $server->query("SELECT * FROM " . $credentials['ctable'] . " WHERE pid = " . $_GET['pid']);
  if (isset($_POST['content']))

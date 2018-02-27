@@ -43,18 +43,19 @@
 
  // Set the URL that would point to the root of the server and hold the index.
  $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . "://" . $_SERVER['HTTP_HOST'] . $path;
+
  // Create the PDO object for the MySQL server connection.
   try {
-   $server = new PDO('mysql:host=' . $credentials['hostname'] . ':' . $credentials['port'] . ';dbname=' . $credentials['db'] . ';charset=utf8', $credentials['username'], $credentials['password']);
+   $server = new PDO('mysql:host=' . $credentials['hostname'] . ';port=' . $credentials['port'] . ';dbname=' . $credentials['db'] . ';charset=utf8', $credentials['username'], $credentials['password']);
   } catch (\Exception $errcondb) {
    try {
-   $server = new PDO('mysql:host=' . $credentials['hostname'] . ':' . $credentials['port'] . ';charset=utf8', $credentials['username'], $credentials['password']);
+   $server = new PDO('mysql:host=' . $credentials['hostname'] . ';port=' . $credentials['port'] . ';charset=utf8', $credentials['username'], $credentials['password']);
   } catch (\Exception $errcon) {
     die("The connection to the SQL server is totally broken, please double check your settings in 'config.php'.");
    }
-   if (empty($errcon))
+  }/*
+ 	if ( ! $_SERVER['REQUEST_URI'] == $path . 'install.php?nodb=true')
    {
     header("location: " . $root . "/install.php?nodb=true");
-   }
-  }
+    }*/
 ?>

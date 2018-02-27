@@ -2,17 +2,16 @@
  require_once("config.php");
  require_once("beginning.php");
  loadscripts();
- if (isset($_GET['nodb']) && $_GET['nodb'])
+ if (!isset($_GET['nodb']) ||  $_GET['nodb'])
  {
   echo "<div class='alert alert-secondary mx-auto'>" . $LANG['installer_no_db'] . "</div>";
   $server->query("CREATE DATABASE " . $credentials['db']);
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_creation_ok'] . "<b>" . $credentials['db'] . "</b>.</div>";
  }
- else {
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_connecting'] . "</div>";
   try
   {
-   $server = new PDO('mysql:host=' . $credentials['hostname'] . ':' . $credentials['port'] . ';dbname=' . $credentials['db'] . ';charset=utf8', $credentials['username'], $credentials['password']);
+   $server = new PDO('mysql:host=' . $credentials['hostname'] . ';port=' . $credentials['port'] . ';dbname=' . $credentials['db'] . ';charset=utf8', $credentials['username'], $credentials['password']);
   }
   catch(PDOException $err)
   {
@@ -22,7 +21,6 @@
   {
    echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_connect_ok'] . "</div>";
   }
- }
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_creating'] . "</div>";
   $server->query("CREATE DATABASE " . $credentials['db']);
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_creation_ok'] . "</div>";

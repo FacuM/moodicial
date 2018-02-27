@@ -1,6 +1,13 @@
 <?php
  require_once("head.php");
- require_once("metrics.php");
+ if (!$_SERVER['REQUEST_URI'] == $path . 'install.php?nodb=true' || !$_SERVER['REQUEST_URI'] == $path . 'install.php')
+ {
+  require_once("metrics.php");
+ }
+ else
+ {
+  $visits = 0;
+  }
  echo "
  <body class='mb-5'>
   <div class='page-header'>";

@@ -28,7 +28,7 @@
   <script type='text/javascript'>
    $('.posts').infiniteScroll({
    // options
-   path: '/?p={{#}}',
+   path: '/?&p={{#}}',
    append: '.posts',
    prefill: true,
    history: false,

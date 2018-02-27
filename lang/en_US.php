@@ -7,7 +7,7 @@
   // Home
    // Empty website
    'no_data_a'                => 'Hey! Seems like no one posted here yet. Would you like to ',
-   'no_data_b'                => ' be the first one?',
+   'no_data_b'                => 'be the first one?',
    // Reporting
    'report_err_disabled'      => 'Reporting has been disabled by the site owner.',
    'report_button'            => 'Report',

@@ -35,7 +35,7 @@
    'nick_label'               => 'Nick (optional)',
    'image_url_label'          => 'Image URL (optional)',
    'forms_button_submit'      => 'Submit',
-  // footer
+  // Footer
   'footer_credits_a'          => 'Powered by Moodicial, written by Facundo Montero using Bootstrap. Check the ',
   'footer_credits_insource'   => 'source of this file',
   'footer_credits_b'          => ' or take a look at the ',
@@ -52,7 +52,7 @@
   'installer_db_c_mtable'     => 'Creating the metrics table...',
   'installer_db_c_table_ok'   => 'Created table ',
   'installer_metrics_visits'  => 'Creating the visits entry on ',
-  'installer_metrics_ok'      => 'Successfully initiated the metrics table.'
+  'installer_metrics_ok'      => 'Successfully initiated the metrics table.',
   'installer_success_a'       => 'Great job! It seems like everything works ;). Would you like to ',
   'installer_success_b'       => 'try your site now?',
   // All

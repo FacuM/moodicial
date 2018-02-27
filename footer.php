@@ -4,7 +4,7 @@
   <hr>
   <div class='footer-copyright'>
    <div class='container-fluid mb-2'>
-    Powered by Moodicial, written by Facundo Montero using Bootstrap. Check the <a href='" . $root . "/showastext.php?file=";
+    " . $LANG['footer_credits_a'] . "<a href='" . $root . "/showastext.php?file=";
     if (empty($_SERVER['DOCUMENT_URI']))
     {
      echo 'index.php';
@@ -13,7 +13,7 @@
     {
      echo $_SERVER['DOCUMENT_URI'];
     }
-    echo "'>source of this file</a> or take a look at the <a href='https://github.com/FacuM/moodicial'>full repo</a>.
+    echo "'>" . $LANG['footer_credits_insource'] . "</a>" . $LANG['footer_credits_b'] . "<a href='https://github.com/FacuM/moodicial'>" . $LANG['footer_credits_exsource'] . "</a>.
    </div>
   </div>
  </footer>

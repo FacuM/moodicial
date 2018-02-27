@@ -45,19 +45,19 @@
  echo "
   <form method=post action='' >
     <div class='form-group mx-auto'>
-    <label for='post'>Post content</label>
+    <label for='post'>" . $LANG['post_content_label'] . "</label>
     <input type='text' class='form-control' name='content'>
    </div>
    <div class='form-group mx-auto'>
-    <label class='nick' for='nick'>Nick (optional)</label>
-    <input class='nick form-control' type='text' name='nick' maxlength=16 placeholder='Anonymous'>
+    <label class='nick' for='nick'>" . $LANG['nick_label'] . "</label>
+    <input class='nick form-control' type='text' name='nick' maxlength=16 placeholder='" . $LANG['no_nick'] . "'>
    </div>
    <div class='form-group mx-auto'>
-    <label class='image' for='image'>Image URL (optional)</label>
+    <label class='image' for='image'>" . $LANG['image_url_label'] . "</label>
     <input class='image form-control' type='text' name='image'>
    </div>
    <div class='form-group container-fluid sticky-bottom'>
-    <button type='submit' class='btn float-right bg-success'>Submit</button>
+    <button type='submit' class='btn float-right bg-success'>" . $LANG['forms_button_submit'] . "</button>
    </div>
   </form>"
  ;

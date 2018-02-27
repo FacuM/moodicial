@@ -1,4 +1,5 @@
 <?php
+ require_once("lang/" . $language . ".php");
  echo "<html>
  <head>
   <title>$info[title]</title>

@@ -73,3 +73,9 @@ body {
 .alert {
 	max-width: 95%;
 }
+
+#visits {
+	max-width: 100%;
+	text-align: right;
+	padding-right: 1em;
+}

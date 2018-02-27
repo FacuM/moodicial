@@ -33,6 +33,12 @@
   echo "<div class='alert alert-primary mx-auto'>Creating the posts table.</div>";
   $server->query("CREATE TABLE `" . $credentials['ptable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` text NOT NULL, `rep` int(1) NOT NULL, `img` text NOT NULL)");
   echo "<div class='alert alert-success mx-auto'>Created table <b>" . $credentials['ptable'] . "</b> for <b>posts</b>.</div>";
+  echo "<div class='alert alert-primary mx-auto'>Creating the metrics table.</div>";
+  $server->query("CREATE TABLE `" . $credentials['mtable'] . "` (`id` int(1) NOT NULL, `amount` BIGINT NOT NULL)");
+  echo "<div class='alert alert-success mx-auto'>Created table <b>" . $credentials['mtable'] . "</b> for <b>metrics</b>.</div>";
+  echo "<div class='alert alert-primary mx-auto'>Creating the visits entry on <b>" . $credentials['mtable'] . "</b></div>";
+  $server->query("INSERT INTO `" . $credentials['mtable'] . "` (`id`, `amount`) VALUES ('0', '0')");
+  echo "<div class='alert alert-success mx-auto'>Created entry for visits.</div>";
   echo "
   <br>
   <br>

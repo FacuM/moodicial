@@ -12,7 +12,8 @@
   'password'     => '',
   'db'           => 'moodicial',
   'ptable'       => 'moodicial_posts',
-  'ctable'       => 'moodicial_comments'
+  'ctable'       => 'moodicial_comments',
+  'mtable'       => 'moodicial_metrics'
  );
 
  // Server document root. Set this to the path to your website files, omitting the root dir. If you put them in '/var/www/moodicial' write just '/moodicial'.

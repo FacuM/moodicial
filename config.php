@@ -25,6 +25,13 @@
  // Allow empty posts? (without text)
  $allowempty = false;
 
+ // Enable metrics?
+ $metrics = true;
+ // What should we track?
+ $metricsset = array (
+   'visits'      => 'yes'
+ );
+
  // From now on, don't edit anything as you could break the whole website.
 
 

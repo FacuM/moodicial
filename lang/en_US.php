@@ -43,10 +43,10 @@
   // Installer
   'installer_no_db'           => 'Hey, it looks like you totally missed creating the database before trying to install the website. But don\'t feel bad, I did it for you!',
   'installer_db_creation_ok'  => 'Successfully created database ',
-  'installer_db_connecting'   => 'Connecting to the database...',
+  'installer_db_connecting'   => 'Connecting to the databases server...',
   'installer_db_connect_ok'   => 'Done. Connection successful!',
   'installer_db_err'          => 'Something went wrong, please check your configuration in ',
-  'installer_db_creating'     => 'Done. Connection successful!',
+  'installer_db_creating'     => 'Creating the database...',
   'installer_db_c_ctable'     => 'Creating the comments table...',
   'installer_db_c_ptable'     => 'Creating the posts table...',
   'installer_db_c_mtable'     => 'Creating the metrics table...',

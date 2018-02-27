@@ -18,10 +18,10 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Installer
 - Reduced code size and overall final HTML size
 - Support for secure source code displaying of PHP files (complying with AGPL)
+ - Full translation support, included languages are Spanish (Latin America) and English (United States)
 
 #### Upcoming features
 
-- Translation support
 - There are some other planned features that I can't document yet.
 
 ## Known bugs

@@ -6,9 +6,9 @@
  {
   echo "<div class='alert alert-danger mx-auto'>" . $LANG['report_err_disabled'] . "</div>";
  }
- foreach ($server->query("SELECT COUNT(*) FROM " . $credentials['ptable']) as $rows)
+ foreach ($server->query("SELECT COUNT(*) AS total FROM " . $credentials['ptable']) as $rows)
  {
- $amount = $rows[0];
+ $amount = $rows['total'];
  }
   if ( $amount > 0 )
   {
@@ -115,7 +115,6 @@
    <div class='infinite-scroll-error alert alert-danger'>" . $LANG['is_err'] . "</div>
   </div>";
  loadscripts();
- loadis();
  if ( ! $noposts)
  {
   echo "

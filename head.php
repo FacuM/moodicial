@@ -37,21 +37,4 @@
   <script src='https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js'></script>
  ";
  }
- function loadis()
- {
-  echo "
-   <script type='text/javascript'>
-    $('.posts').infiniteScroll({
-    // options
-    path: '/?&p={{#}}',
-    append: '.posts',
-    prefill: true,
-    history: false,
-    scrollThreshold: 1000,
-    status: '.page-load-status',
-    checkLastPage: '.card',
-    });
-   </script>
-   ";
- }
 ?>

@@ -14,11 +14,12 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Infinite scrolling (with status displaying)
 - Responsive design
 - HTML parsing block (protects against user from running HTML code on their posts)
-- Full comments support
+- Comments
 - Installer
 - Reduced code size and overall final HTML size
 - Support for secure source code displaying of PHP files (complying with AGPL)
- - Full translation support, included languages are Spanish (Latin America) and English (United States)
+- Full translation support, included languages are Spanish (Latin America) and English (United States), Portuguese (Brazil)
+- Automatic language detection
 
 #### Upcoming features
 

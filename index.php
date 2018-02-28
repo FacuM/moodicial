@@ -20,7 +20,7 @@
    {
     $p = 1;
    }
-   foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . ($p - 1) . ", 1") as $rows) {
+   foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . ($p - 1) . $amountpage) as $rows) {
     echo "<div class='posts'>
      " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
      if ($reports)
@@ -115,6 +115,9 @@
    <div class='infinite-scroll-error alert alert-danger'>" . $LANG['is_err'] . "</div>
   </div>";
  loadscripts();
+ echo "
+  <script type='text/javascript' src='test.js'></script>
+ ";
  if ( ! $noposts)
  {
   echo "
@@ -127,5 +130,9 @@
   </div>
   ";
  }
+ echo "
+  <input type='hidden' id='row' value='0'>
+  <input type='hidden' id='all' value='" . $amount . "'>
+ ";
  require_once('footer.php');
 ?>

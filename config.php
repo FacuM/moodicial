@@ -35,6 +35,9 @@
    'visits'      => 'yes'
  );
 
+ // Amount of items to load when scrolling
+ $amountpage = 3;
+
  // From now on, don't edit anything as you could break the whole website.
 
 

@@ -50,12 +50,10 @@
   } catch (\Exception $errcondb) {
    try {
    $server = new PDO('mysql:host=' . $credentials['hostname'] . ';port=' . $credentials['port'] . ';charset=utf8', $credentials['username'], $credentials['password']);
-  } catch (\Exception $errcon) {
+   $server->query("CREATE DATABASE " . $credentials['db']);
+   header("location: " . $root . "/install.php?nodb=true");
+   } catch (\Exception $errcon) {
     die("The connection to the SQL server is totally broken, please double check your settings in 'config.php'.");
    }
-  }/*
- 	if ( ! $_SERVER['REQUEST_URI'] == $path . 'install.php?nodb=true')
-   {
-    header("location: " . $root . "/install.php?nodb=true");
-    }*/
+  }
 ?>

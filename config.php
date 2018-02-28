@@ -17,27 +17,12 @@
  );
 
  // Whether to enable or not automatic language switch.
- $autolanguage = false;
+ $autolanguage = true;
 
  if ($autolanguage)
  {
   // Automatic language detection code block
-
-  $langs = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
-  $langs = explode(';', $langs[2]);
-  $language = str_replace('-', '_', $langs[0]);
-
-  switch ($language) {
-    case 'es_AR':
-      $language = 'es_LA';
-      break;
-    case 'es_MX':
-      $language = 'es_LA';
-      break;
-    default:
-      $language = 'en_US';
-      break;
-  }
+  require_once("lang/detect.php");
  }
  else
  {
@@ -49,9 +34,6 @@
   $language = 'en_US';
 
  }
-
-
-
 
  // Server document root. Set this to the path to your website files, omitting the root dir. If you put them in '/var/www/moodicial' write just '/moodicial'.
  $path = '';

@@ -16,24 +16,8 @@
   'mtable'       => 'moodicial_metrics'
  );
 
- // Whether to enable or not automatic language switch.
- $autolanguage = true;
-
- if ($autolanguage)
- {
-  // Automatic language detection code block
-  require_once("lang/detect.php");
- }
- else
- {
-
-  /* Choose the website language
-
-  For more information and different options take a look at the 'lang' folder in the root of your installation.*/
-
-  $language = 'en_US';
-
- }
+ // Whether to enable or not automatic language switch. Type 'auto' for automatic or any language for manual (options are'es_LA', 'en_US' and everything in "lang").
+ $language = 'auto';
 
  // Server document root. Set this to the path to your website files, omitting the root dir. If you put them in '/var/www/moodicial' write just '/moodicial'.
  $path = '';

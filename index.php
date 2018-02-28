@@ -18,9 +18,9 @@
    }
    else
    {
-    $p = 0;
+    $p = 1;
    }
-   foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . $p . ", 1") as $rows) {
+   foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . ($p - 1) . ", 1") as $rows) {
     echo "<div class='posts'>
      " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
      if ($reports)

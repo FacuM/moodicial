@@ -19,7 +19,7 @@
   $server->query("CREATE DATABASE " . $credentials['db']);
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_creation_ok'] . "</div>";
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_c_ctable'] . "</div>";
-  $server->query("CREATE TABLE `" . $credentials['ctable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` text NOT NULL, `rep` int(1) NOT NULL, `img` text NOT NULL)");
+  $server->query("CREATE TABLE `" . $credentials['ctable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` text NOT NULL, `img` text NOT NULL)");
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_c_table_ok'] . "<b>" . $credentials['ctable'] . "</b>.</div>";
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_c_ptable'] . "</div>";
   $server->query("CREATE TABLE `" . $credentials['ptable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` text NOT NULL, `rep` int(1) NOT NULL, `img` text NOT NULL)");

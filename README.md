@@ -27,7 +27,7 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 
 ## Known bugs
 
-- None at the moment.
+- Infinite Scroll is broken.
 
 ## Installation
 

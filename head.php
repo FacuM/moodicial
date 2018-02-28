@@ -1,5 +1,12 @@
 <?php
- require_once("lang/" . $language . ".php");
+ if (isset($language) && file_exists("lang/" . $language . ".php"))
+ {
+  require_once("lang/" . $language . ".php");
+ }
+ else
+ {
+  require_once("lang/en_US.php");
+ }
  echo "<html>
  <head>
   <title>$info[title]</title>

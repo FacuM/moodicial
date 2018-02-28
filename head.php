@@ -35,18 +35,23 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
   <script src='https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js'></script>
-  <script type='text/javascript'>
-   $('.posts').infiniteScroll({
-   // options
-   path: '/?&p={{#}}',
-   append: '.posts',
-   prefill: true,
-   history: false,
-   scrollThreshold: 1000,
-   status: '.page-load-status',
-   checkLastPage: '.card',
-   });
-  </script>
  ";
+ }
+ function loadis()
+ {
+  echo "
+   <script type='text/javascript'>
+    $('.posts').infiniteScroll({
+    // options
+    path: '/?&p={{#}}',
+    append: '.posts',
+    prefill: true,
+    history: false,
+    scrollThreshold: 1000,
+    status: '.page-load-status',
+    checkLastPage: '.card',
+    });
+   </script>
+   ";
  }
 ?>

@@ -115,6 +115,7 @@
    <div class='infinite-scroll-error alert alert-danger'>" . $LANG['is_err'] . "</div>
   </div>";
  loadscripts();
+ loadis();
  if ( ! $noposts)
  {
   echo "

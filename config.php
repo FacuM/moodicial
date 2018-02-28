@@ -51,7 +51,7 @@
    try {
    $server = new PDO('mysql:host=' . $credentials['hostname'] . ';port=' . $credentials['port'] . ';charset=utf8', $credentials['username'], $credentials['password']);
    $server->query("CREATE DATABASE " . $credentials['db']);
-   header("location: " . $root . "/install.php?nodb=true");
+   header("location: " . $root . "/install.php");
    } catch (\Exception $errcon) {
     die("The connection to the SQL server is totally broken, please double check your settings in 'config.php'.");
    }

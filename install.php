@@ -2,12 +2,6 @@
  require_once("config.php");
  require_once("beginning.php");
  loadscripts();
- if (!isset($_GET['nodb']) ||  $_GET['nodb'])
- {
-  echo "<div class='alert alert-secondary mx-auto'>" . $LANG['installer_no_db'] . "</div>";
-  $server->query("CREATE DATABASE " . $credentials['db']);
-  echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_creation_ok'] . "<b>" . $credentials['db'] . "</b>.</div>";
- }
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_connecting'] . "</div>";
   try
   {

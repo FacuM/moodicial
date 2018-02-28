@@ -16,7 +16,7 @@
      echo "<div class='badge badge-primary float-right' id='visits'>" . $LANG['visits'] . ": " . $visits . "</div><br>";
     }
   echo "
-    <a href='$root'><center><h1>$info[title]</h1></center></a>
+    <a href='$root'><h1>$info[title]</h1></a>
   </div>
   ";
 ?>

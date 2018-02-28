@@ -8,7 +8,8 @@
  {
   require_once("lang/en_US.php");
  }
- echo "<html>
+ echo "<!DOCTYPE html>
+ <html>
  <head>
   <title>$info[title]</title>
   <meta charset='utf-8'>

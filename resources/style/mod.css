@@ -73,3 +73,9 @@ body {
 .alert {
 	max-width: 95%;
 }
+
+img,h1 {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}

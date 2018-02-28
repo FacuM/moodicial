@@ -48,7 +48,7 @@
 	 {
       echo "
 	  <div class='imgcontainer mx-auto'>
-	   <center><img class='img-thumbnail' src='" . $rows['img'] . "'></center>
+	   <img class='img-thumbnail' src='" . $rows['img'] . "'>
 	  </div>";
 	 }
 	 echo "
@@ -76,7 +76,7 @@
       {
        echo "
         <div class='imgcontainer mx-auto'>
-         <center><img class='img-thumbnail' src='" . $rowscom['img'] . "' alt='" . $LANG['alt_broken_image'] . "' ></center>
+         <img class='img-thumbnail' src='" . $rowscom['img'] . "' alt='" . $LANG['alt_broken_image'] . "' >
         </div>
    	   </div>";
       }

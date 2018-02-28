@@ -48,7 +48,7 @@
 	 {
       echo "
 	  <div class='imgcontainer mx-auto'>
-	   <img class='img-thumbnail' src='" . $rows['img'] . "'>
+	   <img class='img-thumbnail' src='" . $rows['img'] . "' alt='" . $LANG['alt_broken_image'] . "'>
 	  </div>";
 	 }
 	 echo "

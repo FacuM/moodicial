@@ -27,6 +27,8 @@
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_c_mtable'] . "</div>";
   $server->query("CREATE TABLE `" . $credentials['mtable'] . "` (`id` int(1) NOT NULL, `amount` BIGINT NOT NULL)");
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_c_table_ok'] . "<b>" . $credentials['mtable'] . "</b>.</div>";
+  $server->query("TRUNCATE " . $credentials['mtable']);
+  echo "<div class='alert alert-secondary mx-auto'>" . $LANG['installer_metrics_cleanup'] . "<b>" . $credentials['mtable'] . "</b></div>";
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_metrics_visits'] . "<b>" . $credentials['mtable'] . "</b></div>";
   $server->query("INSERT INTO `" . $credentials['mtable'] . "` (`id`, `amount`) VALUES ('0', '0')");
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_metrics_ok'] . "</div>";

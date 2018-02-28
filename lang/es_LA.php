@@ -55,6 +55,7 @@
   'installer_metrics_ok'      => 'Éxito incializando la base de datos de estadísticas.',
   'installer_success_a'       => '¡Muy buen trabajo! Parece que todo salió bien ;). ¿Te gustaría ',
   'installer_success_b'       => 'probar tu sitio ahora?',
+  'installer_metrics_cleanup' => 'Se eliminaron todas las entradas de ',
   // All
   'no_nick'                   => 'Anónimo'
  );

@@ -52,9 +52,10 @@
   'installer_db_c_mtable'     => 'Creating the metrics table...',
   'installer_db_c_table_ok'   => 'Created table ',
   'installer_metrics_visits'  => 'Creating the visits entry on ',
-  'installer_metrics_ok'      => 'Successfully initiated the metrics table.',
+  'installer_metrics_ok'      => 'Successfully initialized the metrics table.',
   'installer_success_a'       => 'Great job! It seems like everything works ;). Would you like to ',
   'installer_success_b'       => 'try your site now?',
+  'installer_metrics_cleanup' => 'Removed all entries from ',
   // All
   'no_nick'                   => 'Anonymous'
  );

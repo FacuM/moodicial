@@ -70,7 +70,7 @@
 	   {
 	   echo "
      <div class='card bg-gradient-dark text-white pb-4' id='comments'>
-	    <div class='card-header' id='cheader'>" . (empty($rowscom['nick']) ? "<i>" . $LANG['no_nick'] . "</i>":$rowscom['nick']) . $LANG['comment_after_nick'] . "</div>
+	    <div class='card-header' id='cheader'>" . (empty($rowscom['nick']) ? "<i>" . $LANG['no_nick'] . "</i>":$rowscom['nick']) . " " . $LANG['comment_after_nick'] . "</div>
 	    <div class='card-body'>" . $rowscom['cont'] . "</div>";
       if ( ! empty($rowscom['img']))
       {

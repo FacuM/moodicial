@@ -23,12 +23,13 @@
    {
     $nick = '';
    }
+   echo "INSERT INTO `" . $credentials['ctable'] . "` (`nick`, `date`, `pid`, `cont`, `img`) VALUES (" . $nick . ", now(), " . $server->quote($_GET['pid']) . ", " . $server->quote($content) . ", " . $server->quote($_POST['image']) . ")";
    $server->query("INSERT INTO `" . $credentials['ctable'] . "` (`nick`, `date`, `pid`, `cont`, `img`) VALUES (" . $nick . ", now(), " . $server->quote($_GET['pid']) . ", " . $server->quote($content) . ", " . $server->quote($_POST['image']) . ")");
-   echo "
+   /*echo "
     <script type='text/javascript'>
      window.location = '$root';
     </script>"
-   ;
+   ;*/
   }
  }
  else

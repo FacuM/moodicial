@@ -3,11 +3,11 @@
  {
   // Automatic language detection code block
 
-  $langs = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
-  if (isset($langs[2]))
+  $language = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+  if (isset($language[2]))
   {
-   $langs = explode(';', $langs[2]);
-   $language = str_replace('-', '_', $langs[0]);
+   $language = explode(';', $language[2]);
+   $language = str_replace('-', '_', $language[0]);
 
    switch ($language) {
      case 'es_AR':

@@ -136,7 +136,7 @@
  echo "
   <script type='text/javascript'>
   var amountpage = " . $amountpage . ";
-  var dtl = $('#last').offset().top * -1 - $('#footer').offset().top * -1;
+  /*var dtl = $('#last').offset().top * -1 - $('#footer').offset().top * -1;
   if(dtl < 500) {
        $('#loading').css('display', 'block');
        $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
@@ -146,7 +146,7 @@
          $('#last').append(content);
        });
        amountpage = amountpage + 1;
-  }
+  }*/
   $(window).scroll(function (event) {
     if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
     {

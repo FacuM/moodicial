@@ -1,13 +1,14 @@
 <?php
 
 require_once("config.php");
+$noformat = true;
 require_once("head.php");
 
 $row = $_GET['row'];
 
-foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " LIMIT " . $row . ', ' . $amountpage) as $rows)
+foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " LIMIT " . $row . ', ' . 1) as $rows)
 {
- echo "<div class='posts'>
+ echo "<div class='posts' id='posts'>
   " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
   if ($reports)
 {
@@ -72,6 +73,5 @@ echo "
 </div>";
 
 }
-loadscripts();
 
 ?>

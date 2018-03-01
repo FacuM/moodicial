@@ -20,8 +20,14 @@
    {
     $p = 1;
    }
+   $shown = 0; $extra = '';
    foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . ($p - 1) . $amountpage) as $rows) {
-    echo "<div class='posts'>
+   $shown = $shown + 1;
+   if ($shown == $amountpage)
+   {
+    $extra = "id='last'";
+   }
+    echo "<div class='posts' " . $extra . ">
      " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
      if ($reports)
 	 {
@@ -110,13 +116,27 @@
  // Load the Infinite Scroll status indicator
  echo "
   <div class='page-load-status'>
-   <div class='infinite-scroll-request alert alert-primary mx-auto'> " . $LANG['is_loading'] . "</div>
-   <div class='infinite-scroll-last alert alert-light mx-auto'>" . $LANG['is_lastpage_a'] . "<a href='" . $root . "'>" . $LANG['is_lastpage_b'] . "</a></div>
-   <div class='infinite-scroll-error alert alert-danger'>" . $LANG['is_err'] . "</div>
+   <div class='alert alert-primary mx-auto' id='load'> " . $LANG['is_loading'] . "</div>
+   <div class='alert alert-light mx-auto' id='end'>" . $LANG['is_lastpage_a'] . "<a href='" . $root . "'>" . $LANG['is_lastpage_b'] . "</a></div>
   </div>";
  loadscripts();
  echo "
-  <script type='text/javascript' src='test.js'></script>
+  <script type='text/javascript'>
+  var amountpage = " . $amountpage . ";
+  $(window).scroll(function (event) {
+    if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
+    {
+     $('#loading').css('display', 'block');
+     $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
+     {
+       content = data;
+       if(content === '') { $(window).off('scroll'); $('#load').css('display', 'none'); $('#end').fadeIn(500); }
+       $('#last').append(content);
+     });
+     amountpage = amountpage + 1;
+    };
+   });
+  </script>
  ";
  if ( ! $noposts)
  {
@@ -130,9 +150,5 @@
   </div>
   ";
  }
- echo "
-  <input type='hidden' id='row' value='0'>
-  <input type='hidden' id='all' value='" . $amount . "'>
- ";
  require_once('footer.php');
 ?>

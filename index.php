@@ -120,9 +120,33 @@
    <div class='alert alert-light mx-auto' id='end'>" . $LANG['is_lastpage_a'] . "<a href='" . $root . "'>" . $LANG['is_lastpage_b'] . "</a></div>
   </div>";
  loadscripts();
+ if ( ! $noposts)
+ {
+  echo "
+  <div class='container-fluid fixed-bottom' id='createpost' >
+   <form action='" . $root . "/create.php'>
+    <button type='submit' class='btn float-right'>
+	   <span class='octicon octicon-plus' aria-hidden='true'></span>
+    </button>
+   </form>
+  </div>
+  ";
+ }
+ require_once('footer.php');
  echo "
   <script type='text/javascript'>
   var amountpage = " . $amountpage . ";
+  var dtl = $('#last').offset().top * -1 - $('#footer').offset().top * -1;
+  if(dtl < 500) {
+       $('#loading').css('display', 'block');
+       $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
+       {
+         content = data;
+         if(content === '') { $(window).off('scroll'); $('#load').css('display', 'none'); $('#end').fadeIn(500); }
+         $('#last').append(content);
+       });
+       amountpage = amountpage + 1;
+  }
   $(window).scroll(function (event) {
     if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
     {
@@ -138,17 +162,4 @@
    });
   </script>
  ";
- if ( ! $noposts)
- {
-  echo "
-  <div class='container-fluid fixed-bottom' id='createpost' >
-   <form action='" . $root . "/create.php'>
-    <button type='submit' class='btn float-right'>
-	   <span class='octicon octicon-plus' aria-hidden='true'></span>
-    </button>
-   </form>
-  </div>
-  ";
- }
- require_once('footer.php');
 ?>

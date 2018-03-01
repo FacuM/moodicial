@@ -1,6 +1,6 @@
 <?php
  echo "
- <footer class='page-footer fixed-bottom' style='background-color: black'>
+ <footer class='page-footer fixed-bottom' style='background-color: black' id='footer'>
   <hr>
   <div class='footer-copyright'>
    <div class='container-fluid mb-2'>

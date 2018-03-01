@@ -35,11 +35,19 @@
    'visits'      => 'yes'
  );
 
+ // Amount of items to fill with by default.
+ $amountpage = 3;
+ // Offset from viewport end before trying to load more content.
+ $offset = 500;
+ 
  // From now on, don't edit anything as you could break the whole website.
 
 
  // Set the URL that would point to the root of the server and hold the index.
  $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . "://" . $_SERVER['HTTP_HOST'] . $path;
+
+ // We aren't normally getting single posts.
+ $noformat = false;
 
  // Create the PDO object for the MySQL server connection.
   try {

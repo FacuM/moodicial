@@ -45,6 +45,5 @@ If you find any security flaw, report it! :wink:
 - [Popper](https://github.com/FezVrasta/popper.js)
 - [Octicons](https://octicons.github.com/)
 - [jQuery](https://github.com/jquery/jquery)
-- [Infinite Scroll](https://github.com/metafizzy/infinite-scroll)
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 - [Favicon Generator](https://realfavicongenerator.net/)

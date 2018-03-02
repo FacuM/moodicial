@@ -31,15 +31,15 @@
 hr {
 	background-color: grey;
 	margin-top: 0px;
-	margin-bottom: 1em;
+	margin-bottom: 0.2rem;
 }
 
-#comments {
+.comments {
 	background-color: #333333;
 	max-width: 100%;
 }
 
-#cheader {
+.cheader {
 	background-color: #303030;
 }
 
@@ -59,14 +59,14 @@ a:hover {
 
 #createpost {
 	max-width: 95%;
-	padding-bottom: 6em;
+	padding-bottom: 5rem;
 }
 
 body {
 	padding-bottom: 5em;
 }
 
-#loading,#end,#err {
+#load,#end,#err {
 	display: none;
 }
 
@@ -78,4 +78,8 @@ body {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.page-footer {
+	padding-bottom: 0rem;
 }

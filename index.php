@@ -126,9 +126,9 @@
  if ( ! $noposts)
  {
   echo "
-  <div class='container-fluid fixed-bottom' id='createpost' >
+  <div class='fixed-bottom' id='createpost' >
    <form action='" . $root . "/create.php'>
-    <button type='submit' class='btn float-right'>
+    <button type='submit' class='btn float-right' >
 	   <span class='octicon octicon-plus' aria-hidden='true'></span>
     </button>
    </form>

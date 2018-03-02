@@ -20,15 +20,9 @@
    {
     $p = 1;
    }
-   $shown = 0; $extra = '';
    foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . ($p - 1) . $amountpage) as $rows) {
-   $shown = $shown + 1;
-   if ($shown == $amountpage)
-   {
-    $extra = "id='last'";
-   }
-    echo "<div class='posts' " . $extra . ">
-     " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
+    echo "<div class='posts' id='" . $rows['pid'] . "'>
+     " . ($reports ? "<form method=get action='" . $root . "'><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
      if ($reports)
 	 {
 	  if ($rows['rep'] == 0)
@@ -75,8 +69,8 @@
 	   foreach($server->query("SELECT * FROM " . $credentials["ctable"] . " WHERE pid = " . $rows['pid']) as $rowscom)
 	   {
 	   echo "
-     <div class='card bg-gradient-dark text-white pb-4' id='comments'>
-	    <div class='card-header' id='cheader'>" . (empty($rowscom['nick']) ? "<i>" . $LANG['no_nick'] . "</i>":$rowscom['nick']) . " " . $LANG['comment_after_nick'] . "</div>
+     <div class='comments card bg-gradient-dark text-white pb-4'>
+	    <div class='cheader card-header'>" . (empty($rowscom['nick']) ? "<i>" . $LANG['no_nick'] . "</i>":$rowscom['nick']) . " " . $LANG['comment_after_nick'] . "</div>
 	    <div class='card-body'>" . $rowscom['cont'] . "</div>";
       if ( ! empty($rowscom['img']))
       {
@@ -89,7 +83,8 @@
 	   }
 	 echo "
 	  </div>
-   </div>";
+   </div>
+  </div>";
    }
   }
   else
@@ -113,13 +108,21 @@
     }
    }
   }
- // Load the Infinite Scroll status indicator
+ // Pass the divs that will show the loading status of the infinite scrolling mechanism (mimics IS behavior).
  echo "
   <div class='page-load-status'>
    <div class='alert alert-primary mx-auto' id='load'> " . $LANG['is_loading'] . "</div>
    <div class='alert alert-light mx-auto' id='end'>" . $LANG['is_lastpage_a'] . "<a href='" . $root . "'>" . $LANG['is_lastpage_b'] . "</a></div>
   </div>";
  loadscripts();
+ if (isset($_GET['report']))
+ {
+  echo  "
+  <script>
+   window.location = '" . $root . "';
+  </script>
+  ";
+ }
  if ( ! $noposts)
  {
   echo "
@@ -132,21 +135,22 @@
   </div>
   ";
  }
- require_once('footer.php');
  echo "
-  <script type='text/javascript'>
+  <script>
   var amountpage = " . $amountpage . ";
-  /*var dtl = $('#last').offset().top * -1 - $('#footer').offset().top * -1;
-  if(dtl < 500) {
-       $('#loading').css('display', 'block');
-       $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
-       {
-         content = data;
-         if(content === '') { $(window).off('scroll'); $('#load').css('display', 'none'); $('#end').fadeIn(500); }
-         $('#last').append(content);
-       });
-       amountpage = amountpage + 1;
-  }*/
+   var dynamicload = setInterval (
+    function()
+    {
+     $.get('fetchdata.php?&row=new&oldpid=' + $('.posts').first().attr('id') + '&', function(newdata)
+     {
+      newcontent = newdata;
+      if(!(newcontent === '')) { $('.posts').first().before(newcontent); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(1500); };
+    });
+  }, 2500);
+  if($('.posts').length > 1)
+  {
+   $('.posts').last().attr('id', 'last');
+  };
   $(window).scroll(function (event) {
     if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
     {
@@ -162,4 +166,5 @@
    });
   </script>
  ";
+ require_once('footer.php');
 ?>

@@ -7,9 +7,8 @@
   $language = explode('-', $language[0]);
   if (isset($language[0]))
   {
-   $language = explode(';', $language[0]);
 
-   switch ($language) {
+   switch ($language[0]) {
      case 'en':
        $language = 'en_US';
        break;

@@ -154,7 +154,7 @@
   $(window).scroll(function (event) {
     if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
     {
-     $('#loading').css('display', 'block');
+     $('#load').css('display', 'block');
      $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
      {
        content = data;

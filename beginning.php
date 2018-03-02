@@ -13,9 +13,13 @@
   <div class='page-header'>";
     if ($metrics && $metricsset['visits'] == 'yes')
     {
-     echo "<div class='badge badge-primary float-right' id='visits'>" . $LANG['visits'] . ": " . $visits . "</div><br>";
+     echo "<div class='badge badge-primary float-right' id='visits'>" . $LANG['visits'] . ": " . $visits . "</div>";
     }
-  echo "
+    if ($langbadge)
+    {
+     echo "<div class='badge badge-info float-left' id='langbadge'>Language: " . $language . "</div>";
+    }
+  echo "<br>
     <a href='$root'><h1>$info[title]</h1></a>
   </div>
   ";

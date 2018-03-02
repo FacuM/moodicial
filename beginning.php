@@ -9,7 +9,7 @@
   require_once("metrics.php");
  }
  echo "
- <body class='mb-5'>
+ <body>
   <div class='page-header'>";
     if ($metrics && $metricsset['visits'] == 'yes')
     {

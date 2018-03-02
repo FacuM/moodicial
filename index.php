@@ -126,12 +126,17 @@
  if ( ! $noposts)
  {
   echo "
-  <div class='fixed-bottom' id='createpost' >
+  <div class='onfooter fixed-bottom' id='createpost' >
    <form action='" . $root . "/create.php'>
-    <button type='submit' class='btn float-right' >
+    <button type='submit' class='onfooter btn float-right' >
 	   <span class='octicon octicon-plus' aria-hidden='true'></span>
     </button>
    </form>
+  </div>
+  <div class='onfooter fixed-bottom' id='gotop' >
+   <button class='onfooter btn float-right' onclick='gotop()' >
+	   <span class='octicon octicon-chevron-up' aria-hidden='true'></span>
+   </button>
   </div>
   ";
  }
@@ -152,8 +157,8 @@
    $('.posts').last().attr('id', 'last');
   };
   $(window).scroll(function (event) {
-    if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
     {
+      if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
      $('#load').css('display', 'block');
      $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
      {
@@ -164,6 +169,17 @@
      amountpage = amountpage + 1;
     };
    });
+   var offset = " . $offset . ";
+   /*$(window).scroll(function (controltopbtn) {
+     if($(window).scrollTop() + $(window).height() <= ($(document).height() / 2))
+     {
+      $('#gotop').stop(true, true).fadeIn(1000);
+     }
+     else
+     {
+      $('#gotop').stop(true, true).fadeOut(1000);
+     };
+   });*/
   </script>
  ";
  require_once('footer.php');

@@ -4,17 +4,20 @@
   // Automatic language detection code block
 
   $language = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
-  if (isset($language[2]))
+  $language = explode('-', $language[0]);
+  if (isset($language[0]))
   {
-   $language = explode(';', $language[2]);
-   $language = str_replace('-', '_', $language[0]);
+   $language = explode(';', $language[0]);
 
    switch ($language) {
-     case 'es_AR':
+     case 'en':
+       $language = 'en_US';
+       break;
+     case 'es':
        $language = 'es_LA';
        break;
-     case 'es_MX':
-       $language = 'es_LA';
+     case 'pt':
+       $language = 'pt_BR';
        break;
      default:
        $language = 'en_US';

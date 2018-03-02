@@ -25,6 +25,8 @@
   // Metrics
    // Visits
    'visits'                   => 'Visitas',
+  // Misc
+   'langbadge'                => 'Idioma',
   // Forms
    // Comments
    'comment_content_label'    => 'Contenido del comentario',

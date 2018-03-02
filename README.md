@@ -20,6 +20,8 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Support for secure source code displaying of PHP files (complying with AGPL)
 - Full translation support, included languages are Spanish (Latin America) and English (United States), Portuguese (Brazil)
 - Automatic language detection
+- Dynamic updates (new content)
+- Detected language badge
 
 #### Upcoming features
 

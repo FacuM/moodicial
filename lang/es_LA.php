@@ -20,7 +20,7 @@
    // Content loading status
    'is_loading'               => 'Cargando...',
    'is_lastpage_a'            => 'No hay más contenido que mostrar, ¿te gustaría ',
-   'is_lastpage_b'            => ' recargar?',
+   'is_lastpage_b'            => ' volver arriba?',
    'is_err'                   => 'No fue posible cargar los datos, ¡por favor contacta al administrador!',
   // Metrics
    // Visits

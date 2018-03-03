@@ -75,6 +75,7 @@ a:hover {
 
 #gotop {
 	margin-bottom: 7rem;
+	display: none;
 }
 
 #createpost {

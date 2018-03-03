@@ -1,3 +1,6 @@
+// Dummy variables
+var scrolling = false;
+
 function redesign(newhtml)
 {
  $('#langbadge').fadeOut(atimeb);
@@ -29,10 +32,12 @@ function badgefun()
 
 function gotop()
 {
+ scrolling = true;
  $("html, body").animate({ scrollTop: 0 }, atime);
  $('#gotop').fadeOut(atimeb);
- setTimeout(function() {
-   $('#gotop').fadeIn(atimeb);
+ setTimeout(function ()
+ {
+   scrolling = false;
  }, atime);
 }
 
@@ -49,15 +54,28 @@ if($('.posts').length > 1)
 {
  $('.posts').last().attr('id', 'last');
 };
+
+var doload = true;
 $(window).scroll(function (event) {
  {
+  if (doload)
+  {
    if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
   $('#load').css('display', 'block');
   $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
   {
-    if(data === '') { $(window).off('scroll'); $('#load').css('display', 'none'); $('#end').fadeIn(atime); }
+    if(data === '') { doload = false; $('#load').css('display', 'none'); $('#end').fadeIn(atime); }
     $('#last').append(data);
   });
   amountpage = amountpage + 1;
+  };
+  if($(window).scrollTop() > 0 && !scrolling)
+  {
+   $('#gotop').fadeIn(atimeb);
+  }
+  else
+  {
+   $('#gotop').fadeOut(atimeb);
+  }
  };
 });

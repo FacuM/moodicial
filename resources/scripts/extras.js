@@ -1,12 +1,12 @@
 function redesign(newhtml)
 {
- $('#langbadge').fadeOut(1500);
+ $('#langbadge').fadeOut(atimeb);
  setTimeout(function() {
  $('#langbadge').removeClass('badge-info'); $('#langbadge').addClass('badge-secondary');
  $('#langbadge').html(newhtml);
  $('#langbadge').prop('onclick', null).off('click');
- $('#langbadge').fadeIn(1500);
-}, 1500);
+ $('#langbadge').fadeIn(atimeb);
+}, atimeb);
 };
 
 function badgefun()
@@ -29,7 +29,11 @@ function badgefun()
 
 function gotop()
 {
- $("html, body").animate({ scrollTop: 0 }, 2500);
+ $("html, body").animate({ scrollTop: 0 }, atime);
+ $('#gotop').fadeOut(atimeb);
+ setTimeout(function() {
+   $('#gotop').fadeIn(atimeb);
+ }, atime);
 }
 
 var dynamicload = setInterval (
@@ -37,14 +41,13 @@ var dynamicload = setInterval (
  {
   $.get('fetchdata.php?&row=new&oldpid=' + $('.posts').first().attr('id') + '&', function(newdata)
   {
-   newcontent = newdata;
-   if(!(newcontent === '')) { $('.posts').first().before(newcontent); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(1500); };
+   if(!(newdata === '')) { $('.posts').first().before(newdata); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(atime); };
  });
-}, 2500);
+}, dynloadint);
 
 if($('.posts').length > 1)
 {
-$('.posts').last().attr('id', 'last');
+ $('.posts').last().attr('id', 'last');
 };
 $(window).scroll(function (event) {
  {
@@ -52,9 +55,8 @@ $(window).scroll(function (event) {
   $('#load').css('display', 'block');
   $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
   {
-    content = data;
-    if(content === '') { $(window).off('scroll'); $('#load').css('display', 'none'); $('#end').fadeIn(500); }
-    $('#last').append(content);
+    if(data === '') { $(window).off('scroll'); $('#load').css('display', 'none'); $('#end').fadeIn(atime); }
+    $('#last').append(data);
   });
   amountpage = amountpage + 1;
  };

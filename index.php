@@ -141,7 +141,10 @@
   var amountpage = " . $amountpage . ";
   var offset = " . $offset . ";
   var atime = " . $atime . ";
+  var atimeb = " . $atimeb . ";
+  var dynloadint = " . $dynloadint . ";
   </script>
+  <script src='resources/scripts/extras.js'></script>
  ";
  require_once('footer.php');
 ?>

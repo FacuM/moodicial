@@ -37,10 +37,18 @@
    'visits'      => 'yes'
  );
 
+ // => Client-side scripting settings (in milliseconds)
+
  // Amount of items to fill with by default.
  $amountpage = 10;
  // Offset from viewport end before trying to load more content.
  $offset = 500;
+ // Default animations duration.
+ $atime = 2000;
+ // Seconday animations duration.
+ $atimeb = 750;
+ // Dynamic load interval.
+ $dynloadint = 2500;
 
  // From now on, don't edit anything as you could break the whole website.
 

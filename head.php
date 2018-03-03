@@ -28,7 +28,7 @@
    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
    <link rel='stylesheet' href='https://bootswatch.com/4/cyborg/bootstrap.min.css'>
    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
-   <link rel='stylesheet' href='resources/style/mod.css?v=2'>
+   <link rel='stylesheet' href='resources/style/mod.css?v=3'>
   </head>
   ";
   function loadscripts($amountpage,$offset,$atime,$atimeb,$dynloadint,$hint)
@@ -46,7 +46,7 @@
     var dynloadint = " . $dynloadint . ";
     var hint = '" . $hint . "';
    </script>
-   <script src='resources/scripts/extras.js?v=1'></script>
+   <script src='resources/scripts/extras.js?v=3'></script>
   ";
   }
  }

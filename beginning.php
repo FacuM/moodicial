@@ -17,10 +17,10 @@
     }
     if ($langbadge)
     {
-     echo "<div class='badge badge-info float-left' id='langbadge' onclick='badgefun()'>" . $LANG['langbadge'] . ": <span id='lang'>" . $language . "</span></div>";
+     echo "<div class='badge badge-info float-left' id='langbadge' onclick='langsel()'>" . $LANG['langbadge'] . ": <span id='lang'>" . $language . "</span></div>";
     }
-  echo "<br>
-    <a href='$root'><h1>$info[title]</h1></a>
+  echo "<br><br>
+    <a href='$root'><h1 id='title'>$info[title]</h1></a>
   </div>
   ";
 ?>

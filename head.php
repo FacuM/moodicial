@@ -31,7 +31,7 @@
    <link rel='stylesheet' href='resources/style/mod.css?v=2'>
   </head>
   ";
-  function loadscripts($amountpage,$offset,$atime,$atimeb,$dynloadint)
+  function loadscripts($amountpage,$offset,$atime,$atimeb,$dynloadint,$hint)
   {
   echo "
    <script src='https://code.jquery.com/jquery-3.3.1.min.js 'integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
@@ -44,6 +44,7 @@
     var atime = " . $atime . ";
     var atimeb = " . $atimeb . ";
     var dynloadint = " . $dynloadint . ";
+    var hint = '" . $hint . "';
    </script>
    <script src='resources/scripts/extras.js?v=1'></script>
   ";

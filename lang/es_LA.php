@@ -27,6 +27,7 @@
    'visits'                   => 'Visitas',
   // Misc
    'langbadge'                => 'Idioma',
+   'langbadge_hint'           => 'Cliquea o toca aquí',
   // Forms
    // Comments
    'comment_content_label'    => 'Contenido del comentario',

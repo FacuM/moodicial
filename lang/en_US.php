@@ -28,6 +28,7 @@
    'visits'                   => 'Visits',
   // Misc
    'langbadge'                => 'Language',
+   'langbadge_hint'           => 'Click or tap here',
   // Forms
    // Comments
    'comment_content_label'    => 'Comment content',

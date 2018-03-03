@@ -61,6 +61,10 @@ hr {
 	margin-left: 1em;
 }
 
+#langlink {
+	color: white;
+}
+
 a:hover {
 	text-decoration: none;
 }

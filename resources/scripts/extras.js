@@ -1,33 +1,37 @@
 // Dummy variables
-var scrolling = false;
+var scrolling = false; var doload = true; var original = $('#langbadge').html();
 
-function redesign(newhtml)
+$('#langbadge').fadeOut(atimeb);
+setTimeout(function() {
+ $('#langbadge').html(hint);
+ $('#langbadge').fadeIn(atimeb);
+ }, atimeb);
+setTimeout(function() {
+$('#langbadge').fadeOut(atimeb);
+ setTimeout(function() {
+  $('#langbadge').html(original);
+  $('#langbadge').fadeIn(atimeb);
+ }, atimeb);
+}, atimeb * 4);
+
+function langsel(newhtml)
 {
  $('#langbadge').fadeOut(atimeb);
  setTimeout(function() {
- $('#langbadge').removeClass('badge-info'); $('#langbadge').addClass('badge-secondary');
+ $('#langbadge').replaceWith(''
+ + '<div class="badge badge-primary float-left" id="langbadge">'
+ +  '<a href="?lang=en" id="langlink">EN</a>'
+ + '</div>'
+ + '<div class="badge badge-primary float-left" id="langlink">'
+ +  '<a href="?lang=es" id="langlink">ES</a>'
+ + '</div>'
+ + '<div class="badge badge-primary float-left" id="langlink">'
+ +  '<a href="?lang=pt" id="langlink">PT</a>'
+ + '</div>');
  $('#langbadge').html(newhtml);
  $('#langbadge').prop('onclick', null).off('click');
  $('#langbadge').fadeIn(atimeb);
 }, atimeb);
-};
-
-function badgefun()
-{
- switch ($('#lang').html())
- {
-  case 'en_US':
-   redesign('English (United States)');
-   break;
-  case 'es_LA':
-   redesign('Español (Latinoamérica)');
-   break;
-  case 'pt_BR':
-   redesign('Português (Brasil)');
-   break;
-  default:
-   console.log('If you are reading this, I shouldn\'t even try to write an easter egg.');
- };
 };
 
 function gotop()
@@ -55,7 +59,6 @@ if($('.posts').length > 1)
  $('.posts').last().attr('id', 'last');
 };
 
-var doload = true;
 $(window).scroll(function (event) {
  {
   if (doload)

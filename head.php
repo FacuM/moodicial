@@ -45,7 +45,7 @@
     var atimeb = " . $atimeb . ";
     var dynloadint = " . $dynloadint . ";
    </script>
-   <script src='resources/scripts/extras.js'></script>
+   <script src='resources/scripts/extras.js?v=1'></script>
   ";
   }
  }

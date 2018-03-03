@@ -126,18 +126,14 @@
  if ( ! $noposts)
  {
   echo "
-  <div class='onfooter fixed-bottom' id='createpost' >
    <form action='" . $root . "/create.php'>
-    <button type='submit' class='onfooter btn float-right' >
+    <button type='submit' class='btn float-right sidebarbtns fixed-bottom' id='createpost' >
 	   <span class='octicon octicon-plus' aria-hidden='true'></span>
     </button>
    </form>
-  </div>
-  <div class='onfooter fixed-bottom' id='gotop' >
-   <button class='onfooter btn float-right' onclick='gotop()' >
+   <button class='btn float-right sidebarbtns fixed-bottom' onclick='gotop()' id='gotop' >
 	   <span class='octicon octicon-chevron-up' aria-hidden='true'></span>
    </button>
-  </div>
   ";
  }
  echo "

@@ -31,3 +31,31 @@ function gotop()
 {
  $("html, body").animate({ scrollTop: 0 }, 2500);
 }
+
+var dynamicload = setInterval (
+ function()
+ {
+  $.get('fetchdata.php?&row=new&oldpid=' + $('.posts').first().attr('id') + '&', function(newdata)
+  {
+   newcontent = newdata;
+   if(!(newcontent === '')) { $('.posts').first().before(newcontent); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(1500); };
+ });
+}, 2500);
+
+if($('.posts').length > 1)
+{
+$('.posts').last().attr('id', 'last');
+};
+$(window).scroll(function (event) {
+ {
+   if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
+  $('#load').css('display', 'block');
+  $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
+  {
+    content = data;
+    if(content === '') { $(window).off('scroll'); $('#load').css('display', 'none'); $('#end').fadeIn(500); }
+    $('#last').append(content);
+  });
+  amountpage = amountpage + 1;
+ };
+});

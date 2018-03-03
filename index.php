@@ -139,43 +139,8 @@
  echo "
   <script>
   var amountpage = " . $amountpage . ";
-   var dynamicload = setInterval (
-    function()
-    {
-     $.get('fetchdata.php?&row=new&oldpid=' + $('.posts').first().attr('id') + '&', function(newdata)
-     {
-      newcontent = newdata;
-      if(!(newcontent === '')) { $('.posts').first().before(newcontent); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(1500); };
-    });
-  }, 2500);
-  if($('.posts').length > 1)
-  {
-   $('.posts').last().attr('id', 'last');
-  };
-  $(window).scroll(function (event) {
-    {
-      if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
-     $('#load').css('display', 'block');
-     $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
-     {
-       content = data;
-       if(content === '') { $(window).off('scroll'); $('#load').css('display', 'none'); $('#end').fadeIn(500); }
-       $('#last').append(content);
-     });
-     amountpage = amountpage + 1;
-    };
-   });
-   var offset = " . $offset . ";
-   /*$(window).scroll(function (controltopbtn) {
-     if($(window).scrollTop() + $(window).height() <= ($(document).height() / 2))
-     {
-      $('#gotop').stop(true, true).fadeIn(1000);
-     }
-     else
-     {
-      $('#gotop').stop(true, true).fadeOut(1000);
-     };
-   });*/
+  var offset = " . $offset . ";
+  var atime = " . $atime . ";
   </script>
  ";
  require_once('footer.php');

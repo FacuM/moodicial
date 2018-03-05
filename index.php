@@ -2,7 +2,7 @@
  require_once("config.php");
  require_once("beginning.php");
  $noposts = false;
- if ($warnnocdn && isset($nocdn) && $nocdn)
+ if ($warnnocdn && isset($connected) && !$connected)
  {
   echo "<div class='alert alert-danger mx-auto'>" . $LANG['warn_nocdn'] . "</div>";
  }

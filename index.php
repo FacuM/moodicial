@@ -129,14 +129,42 @@
  if ( ! $noposts)
  {
   echo "
-   <form action='" . $root . "/create.php'>
-    <button type='submit' class='btn float-right sidebarbtns fixed-bottom' id='createpost' >
+    <button type='submit' class='btn float-right sidebarbtns fixed-bottom' data-toggle='modal' data-target='.cpdlg' id='createpost' >
 	   <span class='octicon octicon-plus' aria-hidden='true'></span>
     </button>
-   </form>
-   <button class='btn float-right sidebarbtns fixed-bottom' onclick='gotop()' id='gotop' >
+   <button class='btn float-right sidebarbtns fixed-bottom' onclock='gotop()' id='gotop' >
 	   <span class='octicon octicon-chevron-up' aria-hidden='true'></span>
    </button>
+   <div class='modal fade cpdlg' tabindex=-1 role='dialog' arialabelledby='createpostdialog' aria-hidden='true'>
+    <div class='modal-dialog modal-dialog-centered modal-sm'>
+     <div class='modal-content'>
+      <div class='modal-header'>
+       <h5 class='modal-title'>"
+       . $LANG['post_content_label'] .
+      "</h5>
+      </div>
+      <div class='modal-body'>
+      <form method=post action='create.php'>
+    <div class='form-group mx-auto'>
+    <label for='post'>" . $LANG['post_content_label'] . "</label>
+    <input type='text' class='form-control' name='content'>
+   </div>
+   <div class='form-group mx-auto'>
+    <label class='nick' for='nick'>" . $LANG['nick_label'] . "</label>
+    <input class='nick form-control' type='text' name='nick' maxlength=16 placeholder='" . $LANG['no_nick'] . "'>
+   </div>
+   <div class='form-group mx-auto'>
+    <label class='image' for='image'>" . $LANG['image_url_label'] . "</label>
+    <input class='image form-control' type='text' name='image'>
+   </div>
+   </div>
+   <div class='modal-footer'>
+    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+    <button type='submit' class='btn btn-primary'>" . $LANG['forms_button_submit'] . "</button>
+  </form>
+     </div>
+    </div>
+   </div>
   ";
   sendLoader($amountpage,$offset,$atime,$atimeb,$dynloadint,$LANG['langbadge_hint']);
  }

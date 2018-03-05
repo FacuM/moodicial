@@ -29,8 +29,8 @@
  $maxrep = 5;
  // Allow empty posts? (without text)
  $allowempty = false;
- // Show warning when a CDN becomes unavailable? (set this to 'true' if you aren't gonna connect your installation to a public network).
- $warnnocdn = true;
+ // Work without internet? (set this to 'true' if you aren't gonna connect your installation to a public network).
+ $nointernet = false;
 
  // Enable metrics?
  $metrics = true;

@@ -82,3 +82,27 @@ $(window).scroll(function (event) {
   }
  };
 });
+
+$('#submit').click(function ()
+{
+ $(this).prop('disabled', true);
+ $(this).html('Loading...');
+ $.ajax({
+   url: 'create.php',
+   type: 'POST',
+   data: {
+     content: $('#content').val(),
+     nick: $('#nick').val(),
+     image: $('#image').val(),
+   },
+   success: function() {
+    var button = $('#submit');
+    setTimeout (function ()
+    {
+     button.html('Submit');
+     button.prop('disabled', false);
+    }, dynloadint);
+    $('.cpdlg').modal('hide');
+   }
+ });
+});

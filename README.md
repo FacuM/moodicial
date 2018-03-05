@@ -27,7 +27,7 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 #### Upcoming features
 
 - NoJS automatic detection and NoScript mode
-- Script the comments and posting area
+- Script the comments area
 
 ## Known bugs
 

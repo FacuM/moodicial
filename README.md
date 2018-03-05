@@ -22,10 +22,12 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Automatic language detection
 - Dynamic updates (new content)
 - Detected language badge
+- Offline mode (host yourself, in your own network)
 
 #### Upcoming features
 
-- Offline mode (host yourself, in your own network).
+- NoJS automatic detection and NoScript mode
+- Script the comments and posting area
 
 ## Known bugs
 

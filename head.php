@@ -13,22 +13,28 @@
  {
   if (!isset($connected))
   {
-   $connection = @fsockopen($url, 80);
-   if ($connection)
-   {
-    $GLOBALS['connected'] = true;
-    fclose($connection);
-    return true;
-   }
-   else
+   if (false === @file_get_contents($url,0,null,0,1))
    {
     $GLOBALS['connected'] = false;
     return false;
    }
+   else
+   {
+    $GLOBALS['connected'] = true;
+    $GLOBALS['final'] = $url;
+    return true;
+   }
   }
   else
   {
-   return $connected;
+   if ($connected)
+   {
+    $GLOBALS['final'] = $url;
+   }
+   else
+   {
+    return false;
+    }
   }
  }
  // If the whole page is requested ($noformat = false), use ternary operators and the previously defined 'availdet' function to detect whether CDNs are reachable or not.

@@ -138,6 +138,7 @@
 	   <span class='octicon octicon-chevron-up' aria-hidden='true'></span>
    </button>
   ";
+  sendLoader($amountpage,$offset,$atime,$atimeb,$dynloadint,$LANG['langbadge_hint']);
  }
  require_once('footer.php');
 ?>

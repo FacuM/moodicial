@@ -63,7 +63,7 @@ $(window).scroll(function (event) {
  {
   if (doload)
   {
-   if($(window).scrollTop() + $(window).height() >= $(document).height() - " . $offset . ")
+   if($(window).scrollTop() + $(window).height() >= $(document).height() - offset)
   $('#load').css('display', 'block');
   $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
   {

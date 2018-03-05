@@ -10,46 +10,26 @@
  }
  // Detect required third part content availability.
  function availdet($url)
- {/*
-  if (!isset($GLOBALS['failed']))
+ {
+  if (!isset($connected))
   {
-   // NOTE: Global variable will be 'true' every time this function returns 'false'.
-   $c = curl_init($url);
-   curl_setopt($c, CURLOPT_NOBODY, true);
-   $r = curl_exec($c);
-
-   if ($r !== false)
+   $connection = @fsockopen($url, 80);
+   if ($connection)
    {
-    $failed = false;
-    $GLOBALS['final'] = $url;
+    $GLOBALS['connected'] = true;
+    fclose($connection);
     return true;
    }
    else
    {
-    $failed = true;
-    $GLOBALS['nocdn'] = true;
+    $GLOBALS['connected'] = false;
     return false;
    }
-
-   curl_close($c);
   }
   else
   {
-   if (!$failed)
-   {
-    $GLOBALS['final'] = $url;
-    return true;
-   }
-   else
-   {
-    $GLOBALS['nocdn'] = true;
-    return false;
-   }
+   return $connected;
   }
-  */
-  // NOTE: Looking on a faster solution.
-  $GLOBALS['final'] = $url;
-  return true;
  }
  // If the whole page is requested ($noformat = false), use ternary operators and the previously defined 'availdet' function to detect whether CDNs are reachable or not.
  if (!$noformat)

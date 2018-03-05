@@ -60,7 +60,7 @@
      var dynloadint = " . $dynloadint . ";
      var hint = '" . $hint . "';
    </script>
-   <script src='resources/scripts/extras.js?v=4'></script>
+   <script src='resources/scripts/extras.js?v=5'></script>
   ";
  }
 ?>

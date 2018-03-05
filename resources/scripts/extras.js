@@ -83,7 +83,7 @@ $(window).scroll(function (event) {
  };
 });
 
-$('#submit').click(function ()
+$('#submitp').click(function ()
 {
  $(this).prop('disabled', true);
  $(this).html('Loading...');
@@ -96,7 +96,7 @@ $('#submit').click(function ()
      image: $('#image').val(),
    },
    success: function() {
-    var button = $('#submit');
+    var button = $('#submitp');
     setTimeout (function ()
     {
      button.html('Submit');
@@ -106,3 +106,28 @@ $('#submit').click(function ()
    }
  });
 });
+
+function comment(pid)
+{
+  $('#pcontent').html( $(('.') + pid).html().substr(0, 120) + '...' );
+  $('.ccdlg').modal('show');
+  $('#submitc').click(function ()
+  {
+   $('#submitc').prop('disabled', true);
+   $('#submitc').html('Loading...');
+   $.ajax({
+     url: 'comment.php',
+     type: 'POST',
+     data: {
+       content: $('#contentc').val(),
+       nick: $('#nickc').val(),
+       image: $('#imagec').val(),
+       pid: pid,
+     },
+     success: function() {
+       $('.ccdlg').modal('hide');
+       window.location.reload();
+     }
+   });
+ });
+}

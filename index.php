@@ -43,7 +43,7 @@
 	 }
      echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
      " . ($reports ? "</form>" : "") . "
-     <div class='card-body'>$rows[cont]";
+     <div class='card-body $rows[pid]'>$rows[cont]";
 	 if ( ! empty($rows['img']))
 	 {
       echo "
@@ -63,7 +63,7 @@
     {
    	echo "$rows[nick]";
     }
-    echo "<a href='comment.php?pid=$rows[pid]' class='float-right'><span class='octicon octicon-comment-discussion'></span> " . $LANG['comment_button_create'] . "</a>
+    echo "<a href='#' onclick='comment(" . $rows['pid'] . ")' class='float-right'><span class='octicon octicon-comment-discussion'></span> " . $LANG['comment_button_create'] . "</a>
       </div>
 	   ";
 	   foreach($server->query("SELECT * FROM " . $credentials["ctable"] . " WHERE pid = " . $rows['pid']) as $rowscom)
@@ -77,14 +77,15 @@
        echo "
         <div class='imgcontainer mx-auto'>
          <img class='img-thumbnail' src='" . $rowscom['img'] . "' alt='" . $LANG['alt_broken_image'] . "' >
-        </div>
-   	   </div>";
+        </div>";
       }
 	   }
-	 echo "
-	  </div>
+	 echo "</div>
+	   </div>
+    </div>
    </div>
-  </div>";
+  </div>
+  ";
    }
   }
   else
@@ -155,11 +156,42 @@
           </div>
           <div class='modal-footer'>
             <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
-            <button type='button' class='btn btn-primary' id='submit'>" . $LANG['forms_button_submit'] . "</button>
+            <button type='button' class='btn btn-primary' id='submitp'>" . $LANG['forms_button_submit'] . "</button>
         </div>
       </div>
     </div>
   </div>
+  <div class='modal fade ccdlg' tabindex=-1 role='dialog' arialabelledby='commentpostdialog' aria-hidden='true'>
+   <div class='modal-dialog modal-dialog-centered modal-lg'>
+    <div class='modal-content'>
+     <div class='modal-header'>
+      <h5 class='modal-title'>"
+      . $LANG['comment_button_create'] .
+      "</h5>
+     </div>
+     <div class='modal-body'>
+      <div class='form-group mx-auto'>
+       <label for='post'>" . $LANG['comment_content_label'] . "</label>
+       <br>
+       <small>\"<span id='pcontent'></span>\"</small>
+       <textarea type='text' class='form-control' id='contentc' name='content'></textarea>
+      </div>
+      <div class='form-group mx-auto'>
+       <label class='nick' for='nick'>" . $LANG['nick_label'] . "</label>
+       <input class='nick form-control' type='text' id='nickc' name='nick' maxlength=16 placeholder='" . $LANG['no_nick'] . "'>
+      </div>
+      <div class='form-group mx-auto'>
+       <label class='image' for='image'>" . $LANG['image_url_label'] . "</label>
+       <input class='image form-control' type='text' id='imagec' name='image'>
+      </div>
+      <div class='modal-footer'>
+       <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+       <button type='button' class='btn btn-primary' id='submitc'>" . $LANG['forms_button_submit'] . "</button>
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
   ";
   sendLoader($amountpage,$offset,$atime,$atimeb,$dynloadint,$LANG['langbadge_hint']);
  }

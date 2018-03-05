@@ -31,7 +31,7 @@
    'langbadge_hint'           => 'Click or tap here',
   // Forms
    // Comments
-   'comment_content_label'    => 'Comment content',
+   'comment_content_label'    => 'Content',
    // Posts
    'post_content_label'       => 'Post content',
    // Both

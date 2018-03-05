@@ -1,7 +1,14 @@
 <?php
  require_once("config.php");
  require_once("beginning.php");
- $test = $server->query("SELECT * FROM " . $credentials['ctable'] . " WHERE pid = " . $_GET['pid']);
+ if (isset($_GET['pid']))
+ {
+  $pid = $server->quote($_GET['pid']);
+ }
+ elseif (isset($_POST['pid']))
+ {
+  $pid = $server->quote($_POST['pid']);
+ }
  if (isset($_POST['content']))
  {
   if (empty($_POST['content']))
@@ -23,7 +30,7 @@
    {
     $nick = '';
    }
-   $server->query("INSERT INTO `" . $credentials['ctable'] . "` (`nick`, `date`, `pid`, `cont`, `img`) VALUES (" . $nick . ", now(), " . $server->quote($_GET['pid']) . ", " . $server->quote($content) . ", " . $server->quote($_POST['image']) . ")");
+   $server->query("INSERT INTO `" . $credentials['ctable'] . "` (`nick`, `date`, `pid`, `cont`, `img`) VALUES (" . $nick . ", now(), " . $pid . ", " . $server->quote($content) . ", " . $server->quote($_POST['image']) . ")");
    echo "
     <script type='text/javascript'>
      window.location = '$root';
@@ -33,25 +40,9 @@
  }
  else
  {
-   echo "
-   <form method=post action='' >
-    <div class='form-group mx-auto'>
-	   <label for='post'>" . $LANG['comment_content_label'] . "</label>
-	   <input type='text' class='form-control' id='content' name='content'>
-	  </div>
-    <div class='form-group mx-auto'>
-     <label class='nick' for='nick'>" . $LANG['nick_label'] . "</label>
-     <input class='nick form-control' type='text' name='nick' maxlength=16 placeholder='" . $LANG['no_nick'] . "'>
-    </div>
-    <div class='form-group mx-auto'>
-     <label class='image' for='image'>" . $LANG['image_url_label'] . "</label>
-     <input class='image form-control' type='text' name='image'>
-    </div>
-    <div class='form-group container-fluid sticky-bottom'>
-     <button type='submit' class='btn float-right bg-success'>" . $LANG['forms_button_submit'] . "</button>
-    </div>
-   </form>
-  ";
+  echo "<script>
+   window.location = '$root';
+  </script>";
  }
  require_once("footer.php");
 ?>

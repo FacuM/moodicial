@@ -30,7 +30,7 @@
    'langbadge_hint'           => 'Clique ou toque aqui',
   // Forms
    // Comments
-   'comment_content_label'    => 'Conteúdo do comentário',
+   'comment_content_label'    => 'Conteúdo',
    // Posts
    'post_content_label'       => 'Conteúdo da publicação',
    // Both

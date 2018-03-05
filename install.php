@@ -1,7 +1,6 @@
 ﻿<?php
  require_once("config.php");
  require_once("beginning.php");
- loadscripts();
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_connecting'] . "</div>";
   try
   {
@@ -32,6 +31,21 @@
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_metrics_visits'] . "<b>" . $credentials['mtable'] . "</b></div>";
   $server->query("INSERT INTO `" . $credentials['mtable'] . "` (`id`, `amount`) VALUES ('0', '0')");
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_metrics_ok'] . "</div>";
+  echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_fol_mk'] . "</div>";
+  if (!file_exists("thirdparty"))
+  {
+   mkdir($tpdir, 0777, true);
+  }
+  echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_fol_ok_a'] . "<b>" . $tpdir . "</b>" . $LANG['installer_fol_ok_b'] . "</div>";
+  echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_dl_extras'] . "</div>";
+  file_put_contents($tpdir . "/jquery-3.3.1.min.js", file_get_contents('https://code.jquery.com/jquery-3.3.1.min.js'));
+  file_put_contents($tpdir . "/bootstrap_cyborg.min.css", file_get_contents('https://bootswatch.com/4/cyborg/bootstrap.min.css'));
+  file_put_contents($tpdir . "/bootstrap.min.css", file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'));
+  file_put_contents($tpdir . "/octicons.min.css", file_get_contents('https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'));
+  file_put_contents($tpdir . "/popper.min.js", file_get_contents('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'));
+  file_put_contents($tpdir . "/bootstrap.min.js", file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'));
+  file_put_contents($tpdir . "/opensans.css", file_get_contents('https://fonts.googleapis.com/css?family=Open+Sans'));
+  echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_dl_ok'] . "</div>";
   echo "
   <br>
   <br>

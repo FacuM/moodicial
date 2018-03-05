@@ -62,6 +62,5 @@
   </form>"
  ;
  }
- loadscripts();
  require_once("footer.php");
 ?>

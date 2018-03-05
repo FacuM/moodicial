@@ -29,6 +29,7 @@
   // Misc
    'langbadge'                => 'Language',
    'langbadge_hint'           => 'Click or tap here',
+   'warn_nocdn'               => 'Unable to connect to CDNs, will fallback to local third party content. This will very likely slow down the overall performance. If that\'s the expected behavior, please tell the owner to set $warnnocdn to "false" in "config.php".',
   // Forms
    // Comments
    'comment_content_label'    => 'Comment content',
@@ -59,6 +60,11 @@
   'installer_success_a'       => 'Great job! It seems like everything works ;). Would you like to ',
   'installer_success_b'       => 'try your site now?',
   'installer_metrics_cleanup' => 'Removed all entries from ',
+  'installer_dl_extras'       => 'Downloading third party content.',
+  'installer_dl_ok'           => 'Download completed, you can now disconnect from the internet.',
+  'installer_fol_mk'          => 'Creating directory for third party content...',
+  'installer_fol_ok_a'        => 'Success creating ',
+  'installer_fol_ok_b'        => ' folder.',
   // All
   'no_nick'                   => 'Anonymous'
  );

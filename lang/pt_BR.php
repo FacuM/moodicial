@@ -28,6 +28,7 @@
   // Misc
    'langbadge'                => 'Linguagem',
    'langbadge_hint'           => 'Clique ou toque aqui',
+   'warn_nocdn'               => 'Não foi possível se conectar aos CDN, em vez disso, o conteúdo baixado no servidor será usado. Isso, provavelmente, reduzirá o desempenho. Se este for o comportamento esperado, peça ao proprietário que altere $warnnocdn para "falso" em "config.php".',
   // Forms
    // Comments
    'comment_content_label'    => 'Conteúdo do comentário',
@@ -58,6 +59,11 @@
   'installer_success_a'       => 'Muito bom trabalho! Parece que tudo correu bem;). Você gostaria ',
   'installer_success_b'       => 'tentar seu site agora?',
   'installer_metrics_cleanup' => 'Todas as entradas foram removidas de ',
+  'installer_dl_extras'       => 'Carregando conteúdo de terceiros...',
+  'installer_dl_ok'           => 'Download completo, você pode se desconectar da internet.',
+  'installer_fol_mk'          => 'Criando o diretório para conteúdo de terceiros...',
+  'installer_fol_ok_a'        => 'Sucesso criando o diretório ',
+  'installer_fol_ok_b'        => '.',
   // All
   'no_nick'                   => 'Anônimo'
  );

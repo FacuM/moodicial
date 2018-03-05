@@ -29,6 +29,8 @@
  $maxrep = 5;
  // Allow empty posts? (without text)
  $allowempty = false;
+ // Show warning when a CDN becomes unavailable? (set this to 'true' if you aren't gonna connect your installation to a public network).
+ $warnnocdn = true;
 
  // Enable metrics?
  $metrics = true;
@@ -58,6 +60,9 @@
 
  // We aren't normally getting single posts.
  $noformat = false;
+
+ // Set the path for the third party content.
+ $tpdir = (empty($path) ? "thirdparty" : $path . "/thirdparty");
 
  // Create the PDO object for the MySQL server connection.
   try {

@@ -2,6 +2,10 @@
  require_once("config.php");
  require_once("beginning.php");
  $noposts = false;
+ if ($warnnocdn && isset($nocdn) && $nocdn)
+ {
+  echo "<div class='alert alert-danger mx-auto'>" . $LANG['warn_nocdn'] . "</div>";
+ }
  if ((isset($_GET['report'])) && $reports == false)
  {
   echo "<div class='alert alert-danger mx-auto'>" . $LANG['report_err_disabled'] . "</div>";
@@ -114,7 +118,6 @@
    <div class='alert alert-primary mx-auto' id='load'> " . $LANG['is_loading'] . "</div>
    <div class='alert alert-light mx-auto' id='end'>" . $LANG['is_lastpage_a'] . "<a href='#' onclick='gotop()'>" . $LANG['is_lastpage_b'] . "</a></div>
   </div>";
- loadscripts($amountpage,$offset,$atime,$atimeb,$dynloadint,$LANG['langbadge_hint']);
  if (isset($_GET['report']))
  {
   echo  "

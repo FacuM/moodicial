@@ -28,7 +28,6 @@
   // Misc
    'langbadge'                => 'Linguagem',
    'langbadge_hint'           => 'Clique ou toque aqui',
-   'warn_nocdn'               => 'Não foi possível se conectar aos CDN, em vez disso, o conteúdo baixado no servidor será usado. Isso, provavelmente, reduzirá o desempenho. Se este for o comportamento esperado, peça ao proprietário que altere $warnnocdn para "falso" em "config.php".',
   // Forms
    // Comments
    'comment_content_label'    => 'Conteúdo do comentário',

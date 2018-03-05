@@ -29,7 +29,6 @@
   // Misc
    'langbadge'                => 'Language',
    'langbadge_hint'           => 'Click or tap here',
-   'warn_nocdn'               => 'Unable to connect to CDNs, will fallback to local third party content. This will very likely slow down the overall performance. If that\'s the expected behavior, please tell the owner to set $warnnocdn to "false" in "config.php".',
   // Forms
    // Comments
    'comment_content_label'    => 'Comment content',

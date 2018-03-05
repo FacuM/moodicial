@@ -25,7 +25,7 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 
 #### Upcoming features
 
-- There are some other planned features that I can't document yet.
+- Offline mode (host yourself, in your own network).
 
 ## Known bugs
 

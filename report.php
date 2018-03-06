@@ -12,7 +12,7 @@ else
 {
   foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report'])) as $rows)
   {
-    echo $rows['rep'];
+    echo $rows['rep'] + 1;
     if ($rows['rep'] >= $maxrep)
     {
       $server->query("DELETE FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report']));

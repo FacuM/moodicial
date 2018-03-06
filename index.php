@@ -129,7 +129,7 @@
   <button type='submit' class='btn float-right sidebarbtns fixed-bottom' data-toggle='modal' data-target='.cpdlg' id='createpost' >
     <span class='octicon octicon-plus' aria-hidden='true'></span>
   </button>
-  <button class='btn float-right sidebarbtns fixed-bottom' onclock='gotop()' id='gotop' >
+  <button class='btn float-right sidebarbtns fixed-bottom' onclick='gotop()' id='gotop' >
     <span class='octicon octicon-chevron-up' aria-hidden='true'></span>
   </button>
   <div class='modal fade cpdlg' tabindex=-1 role='dialog' arialabelledby='createpostdialog' aria-hidden='true'>

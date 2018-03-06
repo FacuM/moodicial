@@ -1,11 +1,7 @@
 <?php
  require_once("config.php");
  require_once("beginning.php");
- if (isset($_GET['pid']))
- {
-  $pid = $server->quote($_GET['pid']);
- }
- elseif (isset($_POST['pid']))
+ if (isset($_POST['pid']))
  {
   $pid = $server->quote($_POST['pid']);
  }

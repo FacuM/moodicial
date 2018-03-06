@@ -92,7 +92,7 @@
   {
    $noposts = true;
    echo "
-   <div class='alert alert-primary mx-auto'>" . $LANG['no_data_a'] . "<a href='/create.php'>" . $LANG['no_data_b'] . "</a></div>
+   <div class='alert alert-primary mx-auto'>" . $LANG['no_data_a'] . "<a href='#' onclick=\"$('.cpdlg').modal('show')\">" . $LANG['no_data_b'] . "</a></div>
    ";
    }
   if ((isset($_GET['report'])) && $reports)

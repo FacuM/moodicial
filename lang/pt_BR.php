@@ -28,6 +28,7 @@
   // Misc
    'langbadge'                => 'Linguagem',
    'langbadge_hint'           => 'Clique ou toque aqui',
+   'ui_loading'               => 'Carregando...',
   // Forms
    // Comments
    'comment_content_label'    => 'Conteúdo',

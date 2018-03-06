@@ -2,7 +2,7 @@
  require_once("config.php");
  require_once("beginning.php");
  $noposts = false;
- if ((isset($_GET['report'])) && $reports == false)
+ if (isset($_GET['reporterr']) && $_GET['reporterr'])
  {
   echo "<div class='alert alert-danger mx-auto'>" . $LANG['report_err_disabled'] . "</div>";
  }
@@ -22,7 +22,7 @@
    }
    foreach($server->query("SELECT * FROM " . $credentials["ptable"] . " ORDER BY date DESC LIMIT " . ($p - 1) . $amountpage) as $rows) {
     echo "<div class='posts' id='" . $rows['pid'] . "'>
-     " . ($reports ? "<form method=get action='" . $root . "'><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
+     <div class='card text-white bg-dark mb-2 mx-auto' >";
      if ($reports)
 	 {
 	  if ($rows['rep'] == 0)
@@ -41,8 +41,7 @@
 	   }
 	  }
 	 }
-     echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
-     " . ($reports ? "</form>" : "") . "
+     echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm' type='button' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right' id='rid" . $rows['pid'] . "'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
      <div class='card-body $rows[pid]'>$rows[cont]";
 	 if ( ! empty($rows['img']))
 	 {
@@ -95,20 +94,6 @@
    <div class='alert alert-primary mx-auto'>" . $LANG['no_data_a'] . "<a href='#' onclick=\"$('.cpdlg').modal('show')\">" . $LANG['no_data_b'] . "</a></div>
    ";
    }
-  if ((isset($_GET['report'])) && $reports)
-  {
-   foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_GET['report'])) as $rows)
-   {
-	if ($rows['rep'] > ($maxrep - 1))
-	{
-	 $server->query("DELETE FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_GET['report']));
-	}
-	else
-	{
-     $server->query("UPDATE `" . $credentials['ptable'] . "` SET `rep`=rep+1 WHERE `pid` = " . $server->quote($_GET['report']));
-    }
-   }
-  }
  // Pass the divs that will show the loading status of the infinite scrolling mechanism (mimics IS behavior).
  echo "
   <div class='page-load-status'>
@@ -193,7 +178,7 @@
   </div>
  </div>
   ";
-  sendLoader($amountpage,$offset,$atime,$atimeb,$dynloadint,$LANG['langbadge_hint']);
+  sendLoader($amountpage,$offset,$atime,$atimeb,$dynloadint,$LANG['langbadge_hint'],$maxrep,$LANG['ui_loading'],$LANG['forms_button_submit']);
  }
  require_once('footer.php');
 ?>

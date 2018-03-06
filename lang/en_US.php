@@ -29,6 +29,7 @@
   // Misc
    'langbadge'                => 'Language',
    'langbadge_hint'           => 'Click or tap here',
+   'ui_loading'               => 'Loading...',
   // Forms
    // Comments
    'comment_content_label'    => 'Content',

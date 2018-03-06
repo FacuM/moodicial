@@ -49,7 +49,7 @@
   </head>
   ";
  }
- function sendLoader($amountpage,$offset,$atime,$atimeb,$dynloadint,$hint)
+ function sendLoader($amountpage,$offset,$atime,$atimeb,$dynloadint,$hint,$maxrep,$ui_loading,$submit)
  {
   echo "
     <script>
@@ -59,8 +59,11 @@
      var atimeb = " . $atimeb . ";
      var dynloadint = " . $dynloadint . ";
      var hint = '" . $hint . "';
+     var maxrep = " . $maxrep . ";
+     var ui_loading = '" . $ui_loading . "';
+     var submit = '" . $submit . "';
    </script>
-   <script src='resources/scripts/extras.js?v=5'></script>
+   <script src='resources/scripts/extras.js?v=6'></script>
   ";
  }
 ?>

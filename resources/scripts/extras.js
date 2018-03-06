@@ -1,16 +1,16 @@
 // Dummy variables
 var scrolling = false; var doload = true; var original = $('#langbadge').html();
 
-$('#langbadge').fadeOut(atimeb);
+$('#langbadge').fadeToggle(atimeb);
 setTimeout(function() {
  $('#langbadge').html(hint);
- $('#langbadge').fadeIn(atimeb);
+ $('#langbadge').fadeToggle(atimeb);
  }, atimeb);
 setTimeout(function() {
-$('#langbadge').fadeOut(atimeb);
+$('#langbadge').fadeToggle(atimeb);
  setTimeout(function() {
   $('#langbadge').html(original);
-  $('#langbadge').fadeIn(atimeb);
+  $('#langbadge').fadeToggle(atimeb);
  }, atimeb);
 }, atimeb * 4);
 
@@ -19,18 +19,19 @@ function langsel(newhtml)
  $('#langbadge').fadeOut(atimeb);
  setTimeout(function() {
  $('#langbadge').replaceWith(''
- + '<div class="badge badge-primary float-left" id="langbadge">'
- +  '<a href="?lang=en" id="langlink">EN</a>'
- + '</div>'
- + '<div class="badge badge-primary float-left" id="langlink">'
- +  '<a href="?lang=es" id="langlink">ES</a>'
- + '</div>'
- + '<div class="badge badge-primary float-left" id="langlink">'
- +  '<a href="?lang=pt" id="langlink">PT</a>'
- + '</div>');
- $('#langbadge').html(newhtml);
+ +  '<div class="badge badge-primary float-left langlink" id="langbadge">'
+ +   '<a href="?lang=en" id="langlink">EN</a>'
+ +  '</div>'
+ +  '<div class="badge badge-primary float-left langlink" id="langlink">'
+ +   '<a href="?lang=es" id="langlink">ES</a>'
+ +  '</div>'
+ +  '<div class="badge badge-primary float-left langlink" id="langlink">'
+ +   '<a href="?lang=pt" id="langlink">PT</a>'
+ +  '</div>');
+ $('.langlink').css('display', 'none');
+ $('.langlink').html(newhtml);
  $('#langbadge').prop('onclick', null).off('click');
- $('#langbadge').fadeIn(atimeb);
+ $('.langlink').fadeIn(atimeb);
 }, atimeb);
 };
 
@@ -86,7 +87,7 @@ $(window).scroll(function (event) {
 $('#submitp').click(function ()
 {
  $(this).prop('disabled', true);
- $(this).html('Loading...');
+ $(this).html(ui_loading);
  $.ajax({
    url: 'create.php',
    type: 'POST',
@@ -99,7 +100,7 @@ $('#submitp').click(function ()
     var button = $('#submitp');
     setTimeout (function ()
     {
-     button.html('Submit');
+     button.html(forms_button_submit);
      button.prop('disabled', false);
     }, dynloadint);
     $('.cpdlg').modal('hide');
@@ -114,7 +115,7 @@ function comment(pid)
   $('#submitc').click(function ()
   {
    $('#submitc').prop('disabled', true);
-   $('#submitc').html('Loading...');
+   $('#submitc').html(ui_loading);
    $.ajax({
      url: 'comment.php',
      type: 'POST',
@@ -131,3 +132,38 @@ function comment(pid)
    });
  });
 }
+
+function report(pid)
+{
+ $.ajax({
+   url: 'report.php',
+   type: 'POST',
+   data: {
+     report: pid
+   },
+   success: function(data) {
+     if (parseInt(data) >= maxrep)
+     {
+      window.location.reload();
+     }
+     else
+     {
+      var eid = '#rid' + pid; var newstatus = '';
+      if (parseInt(data) == 0)
+      {
+       newstatus = 'badge-success';
+      }
+      else if (parseInt(data) <= (maxrep / 2))
+      {
+        newstatus = 'badge-warning';
+      }
+      else
+      {
+        newstatus = 'badge-danger';
+      }
+      $(eid).removeClass('badge-success','badge-warning','badge-danger').addClass(newstatus);
+      $(eid).html(parseInt(data) + '/' + maxrep);
+     }
+   }
+ });
+};

@@ -32,6 +32,13 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 
 - No bugs found for now.
 
+## System requirements
+
+- **Any** web server supporting PHP 5.x or greater.
+- **Any** kind of networking access (works on localhost and offline/LAN).
+- **SSL** PHP module (even if you aren't gonna use it, third party files are downloaded from secure servers).
+- At least **220 KB** of free storage (**172 KB** for the source code, **48 KB** for the database contents).
+
 ## Installation
 
 Here comes the good part. For **download**, **configuration** and **installation**, please [take a look at the wiki](https://github.com/FacuM/moodicial/wiki).

@@ -77,6 +77,8 @@ $(window).scroll(function (event) {
   if (doload)
   {
    if($(window).scrollTop() + $(window).height() >= $(document).height() - offset)
+   {
+   doload = false;
    $('#load').css('display', 'block');
    $.ajax({
     url: 'fetchdata.php',
@@ -86,11 +88,12 @@ $(window).scroll(function (event) {
     },
     success: function(data)
     {
-     if(data === '') { doload = false; $('#load').css('display', 'none'); $('#end').fadeIn(atime); }
+     if(data === '') { doload = false; $('#load').css('display', 'none'); $('#end').fadeIn(atime); } else { doload = true; };
      $('#last').append(data);
      amountpage = amountpage + 1;
     }
    });
+   };
   };
   if($(window).scrollTop() > 0 && !scrolling)
   {

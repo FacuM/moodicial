@@ -91,7 +91,7 @@
   {
    $noposts = true;
    echo "
-   <div class='alert alert-primary mx-auto'>" . $LANG['no_data_a'] . "<a href='#' onclick=\"$('.cpdlg').modal('show')\">" . $LANG['no_data_b'] . "</a></div>
+   <div class='alert alert-primary mx-auto'>" . $LANG['no_data_a'] . "<a href='#' data-toggle='modal' data-target='.cpdlg'>" . $LANG['no_data_b'] . "</a></div>
    ";
    }
  // Pass the divs that will show the loading status of the infinite scrolling mechanism (mimics IS behavior).
@@ -149,7 +149,7 @@
   </div>
  </div>
   ";
-  sendLoader($amountpage,$offset,$atime,$atimeb,$dynloadint,$LANG['langbadge_hint'],$maxrep,$LANG['ui_loading'],$LANG['forms_button_submit']);
+  sendLoader();
  }
  echo "
    <div class='modal fade cpdlg' tabindex=-1 role='dialog' arialabelledby='createpostdialog' aria-hidden='true'>
@@ -181,6 +181,17 @@
       </div>
     </div>
   </div>
-  ";
+  <script>
+     var amountpage = " . $amountpage . ";
+     var offset = " . $offset . ";
+     var atime = " . $atime . ";
+     var atimeb = " . $atimeb . ";
+     var dynloadint = " . $dynloadint . ";
+     var hint = '" . $LANG['langbadge_hint'] . "';
+     var maxrep = " . $maxrep . ";
+     var ui_loading = '" . $LANG['ui_loading'] . "';
+     var submit = '" . $LANG['forms_button_submit'] . "';
+  </script>
+ <script src='resources/scripts/handlepost.js?v=2'></script>";
  require_once('footer.php');
 ?>

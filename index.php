@@ -2,6 +2,11 @@
  require_once("config.php");
  require_once("beginning.php");
  $noposts = false;
+ echo "
+ <script>
+  var firstpost = false;
+ </script>"
+ ;
  if (isset($_GET['reporterr']) && $_GET['reporterr'])
  {
   echo "<div class='alert alert-danger mx-auto'>" . $LANG['report_err_disabled'] . "</div>";
@@ -92,6 +97,9 @@
    $noposts = true;
    echo "
    <div class='alert alert-primary mx-auto'>" . $LANG['no_data_a'] . "<a href='#' data-toggle='modal' data-target='.cpdlg'>" . $LANG['no_data_b'] . "</a></div>
+   <script>
+    var firstpost = true;
+   </script>
    ";
    }
  // Pass the divs that will show the loading status of the infinite scrolling mechanism (mimics IS behavior).
@@ -107,49 +115,6 @@
    window.location = '" . $root . "';
   </script>
   ";
- }
- if ( ! $noposts)
- {
-  echo "
-  <button type='submit' class='btn float-right sidebarbtns fixed-bottom' data-toggle='modal' data-target='.cpdlg' id='createpost' >
-    <span class='octicon octicon-plus' aria-hidden='true'></span>
-  </button>
-  <button class='btn float-right sidebarbtns fixed-bottom' onclick='gotop()' id='gotop' >
-    <span class='octicon octicon-chevron-up' aria-hidden='true'></span>
-  </button>
-  <div class='modal fade ccdlg' tabindex=-1 role='dialog' arialabelledby='commentpostdialog' aria-hidden='true'>
-   <div class='modal-dialog modal-dialog-centered modal-lg'>
-    <div class='modal-content'>
-     <div class='modal-header'>
-      <h5 class='modal-title'>"
-      . $LANG['comment_button_create'] .
-      "</h5>
-     </div>
-     <div class='modal-body'>
-      <div class='form-group mx-auto'>
-       <label for='post'>" . $LANG['comment_content_label'] . "</label>
-       <br>
-       <small>\"<span id='pcontent'></span>\"</small>
-       <textarea type='text' class='form-control' id='contentc' name='content'></textarea>
-      </div>
-      <div class='form-group mx-auto'>
-       <label class='nick' for='nick'>" . $LANG['nick_label'] . "</label>
-       <input class='nick form-control' type='text' id='nickc' name='nick' maxlength=16 placeholder='" . $LANG['no_nick'] . "'>
-      </div>
-      <div class='form-group mx-auto'>
-       <label class='image' for='image'>" . $LANG['image_url_label'] . "</label>
-       <input class='image form-control' type='text' id='imagec' name='image'>
-      </div>
-      <div class='modal-footer'>
-       <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
-       <button type='button' class='btn btn-primary' id='submitc'>" . $LANG['forms_button_submit'] . "</button>
-      </div>
-    </div>
-   </div>
-  </div>
- </div>
-  ";
-  sendLoader();
  }
  echo "
    <div class='modal fade cpdlg' tabindex=-1 role='dialog' arialabelledby='createpostdialog' aria-hidden='true'>
@@ -193,5 +158,48 @@
      var submit = '" . $LANG['forms_button_submit'] . "';
   </script>
  <script src='resources/scripts/handlepost.js?v=2'></script>";
+ if ( ! $noposts)
+ {
+  echo "
+  <button type='submit' class='btn float-right sidebarbtns fixed-bottom' data-toggle='modal' data-target='.cpdlg' id='createpost' >
+    <span class='octicon octicon-plus' aria-hidden='true'></span>
+  </button>
+  <button class='btn float-right sidebarbtns fixed-bottom' onclick='gotop()' id='gotop' >
+    <span class='octicon octicon-chevron-up' aria-hidden='true'></span>
+  </button>
+  <div class='modal fade ccdlg' tabindex=-1 role='dialog' arialabelledby='commentpostdialog' aria-hidden='true'>
+   <div class='modal-dialog modal-dialog-centered modal-lg'>
+    <div class='modal-content'>
+     <div class='modal-header'>
+      <h5 class='modal-title'>"
+      . $LANG['comment_button_create'] .
+      "</h5>
+     </div>
+     <div class='modal-body'>
+      <div class='form-group mx-auto'>
+       <label for='post'>" . $LANG['comment_content_label'] . "</label>
+       <br>
+       <small>\"<span id='pcontent'></span>\"</small>
+       <textarea type='text' class='form-control' id='contentc' name='content'></textarea>
+      </div>
+      <div class='form-group mx-auto'>
+       <label class='nick' for='nick'>" . $LANG['nick_label'] . "</label>
+       <input class='nick form-control' type='text' id='nickc' name='nick' maxlength=16 placeholder='" . $LANG['no_nick'] . "'>
+      </div>
+      <div class='form-group mx-auto'>
+       <label class='image' for='image'>" . $LANG['image_url_label'] . "</label>
+       <input class='image form-control' type='text' id='imagec' name='image'>
+      </div>
+      <div class='modal-footer'>
+       <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+       <button type='button' class='btn btn-primary' id='submitc'>" . $LANG['forms_button_submit'] . "</button>
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ ";
+  sendLoader();
+ }
  require_once('footer.php');
 ?>

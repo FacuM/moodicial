@@ -16,8 +16,7 @@
   }
   else
   {
-   $content = str_replace('<', '&lt;', $_POST['content']);
-   $content = str_replace('>', '&gt;', $content);
+   $content = strip_tags($_POST['content']);
    if (isset($_POST['nick']))
    {
     $nick = $server->quote($_POST['nick']);

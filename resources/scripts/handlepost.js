@@ -20,4 +20,8 @@ $('#submitp').click(function ()
     $('.cpdlg').modal('hide');
    }
  });
+ if (firstpost)
+ {
+  window.location.reload();
+ }
 });

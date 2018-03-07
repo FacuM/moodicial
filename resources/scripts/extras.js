@@ -77,13 +77,20 @@ $(window).scroll(function (event) {
   if (doload)
   {
    if($(window).scrollTop() + $(window).height() >= $(document).height() - offset)
-  $('#load').css('display', 'block');
-  $.get('fetchdata.php?&row=' + amountpage + '&', function(data)
-  {
-    if(data === '') { doload = false; $('#load').css('display', 'none'); $('#end').fadeIn(atime); }
-    $('#last').append(data);
-  });
-  amountpage = amountpage + 1;
+   $('#load').css('display', 'block');
+   $.ajax({
+    url: 'fetchdata.php',
+    type: 'POST',
+    data: {
+	  row: amountpage,
+    },
+    success: function(data)
+    {
+     if(data === '') { doload = false; $('#load').css('display', 'none'); $('#end').fadeIn(atime); }
+     $('#last').append(data);
+     amountpage = amountpage + 1;
+    }
+   });
   };
   if($(window).scrollTop() > 0 && !scrolling)
   {

@@ -64,11 +64,6 @@ var dynamicload = setInterval (
      if(!(newdata === '')) { $('.posts').first().before(newdata); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(atime); };
    }
   });
-  /*
-  $.get('fetchdata.php?&row=new&oldpid=' + $('.posts').first().attr('id') + '&', function(newdata)
-  {
-   if(!(newdata === '')) { $('.posts').first().before(newdata); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(atime); };
- });*/
 }, dynloadint);
 
 if($('.posts').length > 1)

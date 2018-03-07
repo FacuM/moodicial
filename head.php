@@ -52,7 +52,7 @@
  function sendLoader()
  {
   echo "
-   <script src='resources/scripts/extras.js?v=7'></script>
+   <script src='resources/scripts/extras.js?v=8'></script>
   ";
  }
 ?>

@@ -14,7 +14,7 @@ $('#submitp').click(function ()
     var button = $('#submitp');
     setTimeout (function ()
     {
-     button.html(forms_button_submit);
+     button.html(submit);
      button.prop('disabled', false);
     }, dynloadint);
     $('.cpdlg').modal('hide');

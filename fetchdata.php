@@ -4,12 +4,12 @@ require_once("config.php");
 $noformat = true;
 require_once("head.php");
 
-$oldpid = (isset($_GET['oldpid']) ? $_GET['oldpid'] : NULL);
+$oldpid = (isset($_POST['oldpid']) ? $_POST['oldpid'] : NULL);
 
-foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " ORDER BY date DESC LIMIT " . ($_GET['row'] == 'new' ? 0 : $_GET['row']) . ', ' . 1) as $rows)
+foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " ORDER BY date DESC LIMIT " . ($_POST['row'] == 'new' ? 0 : $_POST['row']) . ', ' . 1) as $rows)
 {
   $newpid = $rows['pid'];
-  if (!($_GET['row'] == 'new') || !($newpid == $oldpid))
+  if (!($_POST['row'] == 'new') || !($newpid == $oldpid))
   {
     echo "<div class='posts' id='" . $rows['pid'] . "'>
     " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";

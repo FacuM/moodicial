@@ -157,7 +157,7 @@
      var ui_loading = '" . $LANG['ui_loading'] . "';
      var submit = '" . $LANG['forms_button_submit'] . "';
   </script>
- <script src='resources/scripts/handlepost.js?v=2'></script>";
+ <script src='resources/scripts/handlepost.js?v=3'></script>";
  if ( ! $noposts)
  {
   echo "

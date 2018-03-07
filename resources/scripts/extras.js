@@ -1,6 +1,7 @@
 // Dummy variables
 var scrolling = false; var doload = true; var original = $('#langbadge').html();
 
+// Language badge initial animation
 $('#langbadge').fadeToggle(atimeb);
 setTimeout(function() {
  $('#langbadge').html(hint);
@@ -14,6 +15,7 @@ $('#langbadge').fadeToggle(atimeb);
  }, atimeb);
 }, atimeb * 4);
 
+// Language badge animation + language picker generator
 function langsel(newhtml)
 {
  $('#langbadge').fadeOut(atimeb);
@@ -35,6 +37,7 @@ function langsel(newhtml)
 }, atimeb);
 };
 
+// Go to the top of the page
 function gotop()
 {
  scrolling = true;
@@ -46,13 +49,26 @@ function gotop()
  }, atime);
 }
 
+// Dynamically load new posts and prepend them to the first one
 var dynamicload = setInterval (
  function()
  {
+  $.ajax({
+   url: 'fetchdata.php',
+   type: 'POST',
+   data: {
+     row: 'new',
+     oldpid: $('.posts').first().attr('id')
+   },
+   success: function(newdata){
+     if(!(newdata === '')) { $('.posts').first().before(newdata); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(atime); };
+   }
+  });
+  /*
   $.get('fetchdata.php?&row=new&oldpid=' + $('.posts').first().attr('id') + '&', function(newdata)
   {
    if(!(newdata === '')) { $('.posts').first().before(newdata); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(atime); };
- });
+ });*/
 }, dynloadint);
 
 if($('.posts').length > 1)
@@ -60,6 +76,7 @@ if($('.posts').length > 1)
  $('.posts').last().attr('id', 'last');
 };
 
+// Dynamically load old posts while reaching the bottom of the page
 $(window).scroll(function (event) {
  {
   if (doload)
@@ -84,6 +101,7 @@ $(window).scroll(function (event) {
  };
 });
 
+// Handle comments and fill extra info on modal popup
 function comment(pid)
 {
   $('#pcontent').html( $(('.') + pid).html().substr(0, 120) + '...' );
@@ -109,6 +127,7 @@ function comment(pid)
  });
 }
 
+// Handle reporting
 function report(pid)
 {
  $.ajax({

@@ -22,7 +22,7 @@
    'is_loading'               => 'Loading...',
    'is_lastpage_a'            => 'No more content to display. Would you like to ',
    'is_lastpage_b'            => ' go back to the top?',
-   'is_err'                   => 'Unable to load data, please contact the server administrator!',
+   'update_running' => 'New content available!',
   // Metrics
    // Visits
    'visits'                   => 'Visits',

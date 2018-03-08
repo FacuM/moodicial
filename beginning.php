@@ -22,12 +22,6 @@
   echo "<br><br>
     <a href='$root'><h1 id='title'>$info[title]</h1></a>
   </div>
-  <!--<div id='pbarc'>
-   <div class='progress sticky-bottom'>
-    <div class='progress-bar progress-bar-striped bg-primary' style='width: 0%'></div>
-   </div>
-  </div>
-  <script src='resources/scripts/animations.js'></script>-->
   <br>
   ";
 ?>

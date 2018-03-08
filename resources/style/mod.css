@@ -91,10 +91,17 @@ a:hover {
 	margin-bottom: 4rem;
 }
 
-#load,#end,#err {
+#load,#end,#err,#update {
 	display: none;
 }
 
+#update {
+	width: 8rem;
+	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3rem;
+}
 .alert {
 	max-width: 95%;
 }

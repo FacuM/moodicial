@@ -53,17 +53,17 @@ function gotop()
 var dynamicload = setInterval (
  function()
  {
-  $.ajax({
-   url: 'fetchdata.php',
-   type: 'POST',
-   data: {
-     row: 'new',
-     oldpid: $('.posts').first().attr('id')
-   },
-   success: function(newdata){
-     if(!(newdata === '')) { $('.posts').first().before(newdata); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(atime); };
-   }
-  });
+   $.ajax({
+    url: 'fetchdata.php',
+    type: 'POST',
+    data: {
+      row: 'new',
+      oldpid: $('.posts').first().attr('id')
+    },
+    success: function(newdata){
+      if(!(newdata === '')) { $('.posts').first().before(newdata); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(atimeb); $('#update').clearQueue().css('display', 'block').animate({ 'marginTop' : '3rem' }); };
+    }
+   });
 }, dynloadint);
 
 if($('.posts').length > 1)
@@ -166,4 +166,11 @@ function report(pid)
      }
    }
  });
+};
+
+// Hide the element that's passed through this function.
+
+function hideupd()
+{
+ $('#update').clearQueue().animate({ 'marginTop' : '-3rem' }).fadeOut(atimeb);
 };

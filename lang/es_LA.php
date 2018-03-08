@@ -21,7 +21,7 @@
    'is_loading'               => 'Cargando...',
    'is_lastpage_a'            => 'No hay más contenido que mostrar, ¿te gustaría ',
    'is_lastpage_b'            => ' volver arriba?',
-   'is_err'                   => 'No fue posible cargar los datos, ¡por favor contacta al administrador!',
+   'update_running' => '¡Nuevo contenido disponible!',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',

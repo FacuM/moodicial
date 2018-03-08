@@ -13,6 +13,10 @@
 	display: none;
 }
 
+#loading {
+	text-align: center;
+}
+
 .page-header {
 	font-family: 'Roboto';
 }

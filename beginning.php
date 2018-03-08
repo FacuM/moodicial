@@ -9,7 +9,10 @@
   require_once("metrics.php");
  }
  echo "
- <body>
+ <body>";
+ // Initialize the scripting (JS).
+ require_once("includes/scripts_init.php");
+ echo "
   <div class='page-header'>";
     if ($metrics && $metricsset['visits'] == 'yes')
     {

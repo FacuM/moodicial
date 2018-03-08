@@ -1,6 +1,5 @@
 <?php
 
-require_once("config.php");
 $noformat = true;
 require_once("head.php");
 // Prepare the $row variable that'll be passed to the SQL query.

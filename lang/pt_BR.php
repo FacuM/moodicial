@@ -65,7 +65,8 @@
   'installer_fol_ok_a'        => 'Sucesso criando o diretório ',
   'installer_fol_ok_b'        => '.',
   // All
-  'no_nick'                   => 'Anônimo'
+  'no_nick'                   => 'Anônimo',
+  'time_seconds'              => ' segundos'
  );
 
 ?>

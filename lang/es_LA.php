@@ -65,7 +65,8 @@
   'installer_fol_ok_a'        => 'Éxito creando la carpeta ',
   'installer_fol_ok_b'        => '.',
   // All
-  'no_nick'                   => 'Anónimo'
+  'no_nick'                   => 'Anónimo',
+  'time_seconds'              => ' segundos'
  );
 
 ?>

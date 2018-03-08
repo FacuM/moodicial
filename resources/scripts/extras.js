@@ -53,6 +53,7 @@ function gotop()
 var dynamicload = setInterval (
  function()
  {
+  showload();
   $.ajax({
    url: 'fetchdata.php',
    type: 'POST',

@@ -4,8 +4,13 @@
 	background-color: #444444;
 }
 
-.card {
+.card,#pbarc {
 	max-width: 95%;
+}
+
+#pbarc {
+	margin: auto;
+	display: none;
 }
 
 .page-header {

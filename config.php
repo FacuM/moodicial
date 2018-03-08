@@ -77,4 +77,7 @@
    }
   }
 
+  // Start measuring the page generation time;
+  $stime = microtime(true);
+
 ?>

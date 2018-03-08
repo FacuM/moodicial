@@ -66,7 +66,8 @@
   'installer_fol_ok_a'        => 'Success creating ',
   'installer_fol_ok_b'        => ' folder.',
   // All
-  'no_nick'                   => 'Anonymous'
+  'no_nick'                   => 'Anonymous',
+  'time_seconds'              => ' seconds'
  );
 
 ?>

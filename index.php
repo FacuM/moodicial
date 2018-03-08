@@ -19,7 +19,7 @@
  }
   if ( $amount > 0 )
   {
-   require_once("getposts.php");
+   require_once("includes/getposts.php");
   }
   else
   {

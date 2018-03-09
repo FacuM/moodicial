@@ -11,6 +11,9 @@
      var maxrep = " . $maxrep . ";
      var ui_loading = '" . $LANG['ui_loading'] . "';
      var submit = '" . $LANG['forms_button_submit'] . "';
+     var server_lag = '" . $LANG['server_lag'] . "';
+     var server_err = '" . $LANG['server_err'] . "';
+     var maxload = " . $maxload . ";
   </script>
  ";
 ?>

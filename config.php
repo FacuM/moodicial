@@ -39,7 +39,7 @@
    'visits'      => 'yes'
  );
 
- // => Client-side scripting settings (in milliseconds)
+ // => Client-side scripting settings (time values measured in milliseconds)
 
  // Amount of items to fill with by default.
  $amountpage = 10;
@@ -51,6 +51,8 @@
  $atimeb = 750;
  // Dynamic load interval.
  $dynloadint = 2500;
+ // Max time a request should take before showing an alert.
+ $maxload = 5000;
 
  // From now on, don't edit anything as you could break the whole website.
 

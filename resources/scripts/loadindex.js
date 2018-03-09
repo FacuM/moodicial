@@ -7,18 +7,19 @@ function requester()
 {
   var size = 0; var stime = performance.now();
   interval = setInterval( function() {
-   $('.progress-bar').css('width', size + '%');
-   var etime = performance.now();
-   time = etime - stime;
-   // If time taken is greater than 5 seconds, show a warning.
-   if (time >= 5000 && !$('.alert-warning').length)
-   {
-    $('body').append("<div class='alert alert-warning' id='loader'>It seems like the server is taking some time to process your request, please wait for a while.</div>");
-    // Recreate the object including the new element.
-    misc = $('#pbarc, #loader');
-    $('.alert-warning').fadeIn(atimeb /2);
-   };
-   size++;
+    $('.progress-bar').css('width', size + '%');
+    var etime = performance.now();
+    time = etime - stime;
+    // If time taken is greater than 5 seconds, show a warning.
+    if (time >= maxload && !$('.alert-warning').length)
+    {
+      $('body').append("<div class='alert alert-warning' id='loader'>" + server_lag + " Took <span id='time'>" + (time / 1000).toString().substr(0, 5) + "</span> seconds.</div>")
+      // Recreate the object including the new element.
+      misc = $('#pbarc, #loader');
+      misc.fadeIn(atimeb /2);
+    };
+    size++;
+    $('#time').html((time / 1000).toString().substr(0, 5));
   }, atimeb);
   $.ajax({
     url: 'main.php',
@@ -35,7 +36,7 @@ function requester()
     },
     error: function()
     {
-     error();
+      error();
     }
   });
 }
@@ -56,22 +57,22 @@ function succeded(data)
   clearInterval(interval);
   $('.progress-bar').animate({ backgroundColor : '#77B300' }, atime).css('width', '100%');
   setTimeout( function () {
-  misc.fadeOut(atimeb /2);
-  setTimeout(function ()
-  {
-    title.animate({ 'marginTop' : '0px'}, atimeb /2);
-  setTimeout(function ()
-  {
-    $('body').fadeOut(atimeb);
+    misc.fadeOut(atimeb /2);
     setTimeout(function ()
     {
-      document.open();
-      document.write(data);
-      document.close();
-    }, atimeb);
-  }, atimeb / 2);
-}, atimeb / 2);
-}, atimeb * 2);
+      title.animate({ 'marginTop' : '0px'}, atimeb /2);
+      setTimeout(function ()
+      {
+        $('body').fadeOut(atimeb);
+        setTimeout(function ()
+        {
+          document.open();
+          document.write(data);
+          document.close();
+        }, atimeb);
+      }, atimeb / 2);
+    }, atimeb / 2);
+  }, atimeb * 2);
 }
 
 // This function serves as a handler whenever the server can't process the request.
@@ -80,7 +81,7 @@ function error()
   misc.fadeOut(atimeb);
   setTimeout( function()
   {
-    $(document.body).append('<div class="alert alert-danger mx-auto fixed-bottom" id="err">Couldn\'t complete the request. Please try again later.</div>');
+    $(document.body).append('<div class="alert alert-danger mx-auto fixed-bottom" id="err">' + server_err + '</div>');
     $('#err').fadeIn(atimeb);
   }, atimeb);
 }

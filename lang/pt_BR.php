@@ -23,6 +23,8 @@
    'is_lastpage_b'            => ' de voltar a subir?',
    'update_running'           => 'Novo conteúdo disponível!',
    'ui_nojs'                  => 'Sem Javascript? Clique aqui!',
+   'server_lag'               => 'Parece que o servidor demora um pouco, por favor aguarde um momento.',
+   'server_err'               => 'Não foi possível processar o pedido, por favor tente novamente mais tarde.',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',

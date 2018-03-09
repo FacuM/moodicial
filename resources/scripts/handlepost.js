@@ -1,7 +1,8 @@
 $('#submitp').click(function ()
 {
- $(this).prop('disabled', true);
- $(this).html(ui_loading);
+ var boxes = $('input, textarea');
+ $(this).prop('disabled', true).html(ui_loading);
+ boxes.prop('disabled', true);
  $.ajax({
    url: 'create.php',
    type: 'POST',
@@ -14,8 +15,8 @@ $('#submitp').click(function ()
     var button = $('#submitp');
     setTimeout (function ()
     {
-     button.html(submit);
-     button.prop('disabled', false);
+     boxes.val('').prop('disabled', false);
+     button.html(submit).prop('disabled', false);
     }, dynloadint);
     $('.cpdlg').modal('hide');
    }

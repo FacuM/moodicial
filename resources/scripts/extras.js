@@ -114,10 +114,10 @@ function comment(pid)
 {
   $('#pcontent').html( $(('.') + pid).html().substr(0, 120) + '...' );
   $('.ccdlg').modal('show');
-  $('#submitc').click(function ()
+  var cbutton = $('#submitc');
+  cbutton.click(function ()
   {
-   $('#submitc').prop('disabled', true);
-   $('#submitc').html(ui_loading);
+   cbutton.prop('disabled', true).html(ui_loading);
    $.ajax({
      url: 'comment.php',
      type: 'POST',

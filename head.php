@@ -37,14 +37,14 @@
    <link rel='manifest' href='/resources/favicons/site.webmanifest'>
    <link rel='mask-icon' href='/resources/favicons/safari-pinned-tab.svg' color='#5bbad5'>
    <link href='" . (chooseloc('https://fonts.googleapis.com/css?family=Open+Sans', $nointernet) ? 'https://fonts.googleapis.com/css?family=Open+Sans' : $tpdir . '/opensans.css') . "' rel='stylesheet'>
-   <script src='" . (chooseloc('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', $nointernet) ? $final : $tpdir . '/bootstrap.min.js') . "' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
    <meta name='msapplication-TileColor' content='#da532c'>
    <meta name='theme-color' content='#ffffff'>
    <link rel='stylesheet' href='" . (chooseloc('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', $nointernet) ? $final : $tpdir . '/bootstrap.min.css') . "' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
    <link rel='stylesheet' href='" . (chooseloc('https://bootswatch.com/4/cyborg/bootstrap.min.css', $nointernet) ? $final : $tpdir . '/bootstrap_cyborg.min.css') . "'>
    <link rel='stylesheet' href='" . (chooseloc('https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css', $nointernet) ? $final : $tpdir . '/octicons.min.css') . "'>
-   <link rel='stylesheet' href='resources/style/mod.css?v=8'>
+   <link rel='stylesheet' href='resources/style/mod.css?v=7'>
    <script src='" . (chooseloc('https://code.jquery.com/jquery-3.3.1.min.js', $nointernet) ? $final : $tpdir . '/jquery-3.3.1.min.js') . "' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
+   <script src='" . (chooseloc('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', $nointernet) ? $final : $tpdir . '/bootstrap.min.js') . "' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
    <script src='" . (chooseloc('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', $nointernet) ? $final : $tpdir . '/popper.min.js') . "' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
   </head>
   ";
@@ -52,7 +52,7 @@
  function sendLoader()
  {
   echo "
-   <script src='resources/scripts/extras.js?v=18'></script>
+   <script src='resources/scripts/extras.js?v=17'></script>
   ";
  }
 ?>

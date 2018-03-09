@@ -28,7 +28,7 @@ foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " ORDER BY d
   if (!($row == 'new') || !($newpid == $oldpid))
   {
     echo "<div class='posts' id='" . $rows['pid'] . "'>
-    " . ($reports ? "<form method=get action=''><input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
+    " . ($reports ? "<input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
     if ($reports)
     {
       if ($rows['rep'] == 0)
@@ -47,8 +47,7 @@ foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " ORDER BY d
         }
       }
     }
-    echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
-    " . ($reports ? "</form>" : "") . "
+    echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
     <div class='card-body " . $rows['pid'] . "'>$rows[cont]";
     if ( ! empty($rows['img']))
     {

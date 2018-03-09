@@ -11,5 +11,10 @@
   </div>
  </div>
  <script src='resources/scripts/loadindex.js' onload='loader()'></script>
+ <noscript>
+  <form action='main.php'>
+   <button class='fixed-bottom btn btn-primary' id='nojs'>" . $LANG['ui_nojs'] . "</button>
+  </form>
+ </noscript>
  ";
 ?>

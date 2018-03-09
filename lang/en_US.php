@@ -22,7 +22,7 @@
    'is_loading'               => 'Loading...',
    'is_lastpage_a'            => 'No more content to display. Would you like to ',
    'is_lastpage_b'            => ' go back to the top?',
-   'update_running' => 'New content available!',
+   'update_running'           => 'New content available!',
   // Metrics
    // Visits
    'visits'                   => 'Visits',
@@ -30,6 +30,7 @@
    'langbadge'                => 'Language',
    'langbadge_hint'           => 'Click or tap here',
    'ui_loading'               => 'Loading...',
+   'ui_nojs'                  => 'No Javascript? Click here!',
   // Forms
    // Comments
    'comment_content_label'    => 'Content',

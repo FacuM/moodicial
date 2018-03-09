@@ -21,7 +21,8 @@
    'is_loading'               => 'Carregando...',
    'is_lastpage_a'            => 'Não há mais conteúdo para mostrar, você gostaria ',
    'is_lastpage_b'            => ' de voltar a subir?',
-   'update_running' => 'Novo conteúdo disponível!',
+   'update_running'           => 'Novo conteúdo disponível!',
+   'ui_nojs'                  => 'Sem Javascript? Clique aqui!',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',

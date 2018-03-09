@@ -6,7 +6,7 @@
  <p class='mx-auto' id='loader'>" . $LANG['is_loading'] . "</p>
  <div class='fixed-bottom' id='pbarc'>
   <div class='progress'>
-   <div class='progress-bar'>
+   <div class='progress-bar progress-bar-striped progress-bar-animated'>
    </div>
   </div>
  </div>

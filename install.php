@@ -45,6 +45,7 @@
   file_put_contents($tpdir . "/popper.min.js", file_get_contents('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'));
   file_put_contents($tpdir . "/bootstrap.min.js", file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'));
   file_put_contents($tpdir . "/opensans.css", file_get_contents('https://fonts.googleapis.com/css?family=Open+Sans'));
+  file_put_contents($tpdir . "/jquery-ui.min.js", file_get_gontents('https://code.jquery.com/ui/1.12.1/jquery-ui.min.js'));
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_dl_ok'] . "</div>";
   echo "
   <br>

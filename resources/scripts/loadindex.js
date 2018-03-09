@@ -1,11 +1,15 @@
 // Make objects out of the DOM elements we're gonna modify.
 
-var title = $('#title'); var misc = $('#pbarc, #loader');
+var title = $('#title'); var misc = $('#pbarc, #loader'); var interval = null;
 
 // This function retrieves the full page.
 function requester()
 {
-  $('.progress-bar').animate({ 'width' : '100%' }, atime);
+  var size = 0;
+  interval = setInterval( function() {
+   $('.progress-bar').css('width', size + '%');
+   size++;
+  }, 150);
   $.ajax({
     url: 'main.php',
     type: 'POST',
@@ -39,6 +43,9 @@ function loader()
 // This function makes the final animations and replaces the whole page with the one that'll be passed by the Ajax request.
 function succeded(data)
 {
+  clearInterval(interval);
+  $('.progress-bar').animate({ backgroundColor : '#77B300', width: '100%' }, atime);
+  setTimeout( function () {
   misc.fadeOut(atimeb);
   setTimeout(function ()
   {
@@ -54,6 +61,7 @@ function succeded(data)
     }, atimeb);
   }, atime);
 }, atimeb);
+}, atimeb * 4);
 }
 
 // This function serves as a handler whenever the server can't process the request.

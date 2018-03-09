@@ -49,7 +49,7 @@ foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " ORDER BY d
     }
     echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
     " . ($reports ? "</form>" : "") . "
-    <div class='card-body'>$rows[cont]";
+    <div class='card-body " . $rows['pid'] . "'>$rows[cont]";
     if ( ! empty($rows['img']))
     {
       echo "
@@ -69,7 +69,7 @@ foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " ORDER BY d
     {
       echo "$rows[nick]";
     }
-    echo "<a href='comment.php?pid=$rows[pid]' class='float-right'><span class='octicon octicon-comment-discussion'></span> " . $LANG['comment_button_create'] . "</a>
+    echo "<a href='#' class='float-right' onclick='comment(" . $rows['pid'] . ")'><span class='octicon octicon-comment-discussion'></span> " . $LANG['comment_button_create'] . "</a>
     </div>
     ";
     foreach($server->query("SELECT * FROM " . $credentials["ctable"] . " WHERE pid = " . $rows['pid']) as $rowscom)

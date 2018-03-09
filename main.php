@@ -1,5 +1,6 @@
 ﻿<?php
  require_once("config.php");
+ $loading = false;
  require_once("beginning.php");
  // At first, assume that at least one post will be present.
  $noposts = false;

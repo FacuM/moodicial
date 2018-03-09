@@ -106,11 +106,11 @@ a:hover {
 }
 
 #update {
-	width: 8rem;
+	width: 10rem;
 	text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -3rem;
 }
 .alert {
 	max-width: 95%;

@@ -1,15 +1,25 @@
 // Make objects out of the DOM elements we're gonna modify.
 
-var title = $('#title'); var misc = $('#pbarc, #loader'); var interval = null;
+var title = $('#title'); var misc = $('#pbarc, #loader'); var time, interval = null;
 
 // This function retrieves the full page.
 function requester()
 {
-  var size = 0;
+  var size = 0; var stime = performance.now();
   interval = setInterval( function() {
    $('.progress-bar').css('width', size + '%');
+   var etime = performance.now();
+   time = etime - stime;
+   // If time taken is greater than 5 seconds, show a warning.
+   if (time >= 5000 && !$('.alert-warning').length)
+   {
+    $('body').append("<div class='alert alert-warning' id='loader'>It seems like the server is taking some time to process your request, please wait for a while.</div>");
+    // Recreate the object including the new element.
+    misc = $('#pbarc, #loader');
+    $('.alert-warning').fadeIn(atimeb /2);
+   };
    size++;
-  }, 150);
+  }, atimeb);
   $.ajax({
     url: 'main.php',
     type: 'POST',

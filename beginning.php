@@ -12,6 +12,8 @@
  <body>";
  // Initialize the scripting (JS).
  require_once("includes/scripts_init.php");
+ if (isset($_POST['loading']) && $_POST['loading'])
+ {
  echo "
   <div class='page-header'>";
     if ($metrics && $metricsset['visits'] == 'yes')
@@ -22,6 +24,7 @@
     {
      echo "<div class='badge badge-info float-left' id='langbadge' onclick='langsel()'>" . $LANG['langbadge'] . ": <span id='lang'>" . $language . "</span></div>";
     }
+  }
   echo "<br><br>
     <a href='$root'><h1 id='title'>$info[title]</h1></a>
   </div>

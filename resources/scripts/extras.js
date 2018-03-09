@@ -1,19 +1,22 @@
 // Dummy variables
 var scrolling = false; var doload = true; var original = $('#langbadge').html();
 
-// Language badge initial animation
-$('#langbadge').fadeToggle(atimeb);
-setTimeout(function() {
- $('#langbadge').html(hint);
- $('#langbadge').fadeToggle(atimeb);
- }, atimeb);
-setTimeout(function() {
-$('#langbadge').fadeToggle(atimeb);
- setTimeout(function() {
-  $('#langbadge').html(original);
-  $('#langbadge').fadeToggle(atimeb);
- }, atimeb);
-}, atimeb * 4);
+// Language badge initial animation (delayed to allow render completion)
+setTimeout(function ()
+{
+  $('#langbadge').fadeOut(atimeb);
+  setTimeout(function() {
+    $('#langbadge').html(hint);
+    $('#langbadge').fadeIn(atimeb);
+  }, atimeb);
+  setTimeout(function() {
+    $('#langbadge').fadeOut(atimeb);
+    setTimeout(function() {
+      $('#langbadge').html(original);
+      $('#langbadge').fadeIn(atimeb);
+    }, atimeb);
+  }, atimeb * 4);
+}, atime);
 
 // Language badge animation + language picker generator
 function langsel(newhtml)

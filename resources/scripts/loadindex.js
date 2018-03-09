@@ -54,12 +54,12 @@ function loader()
 function succeded(data)
 {
   clearInterval(interval);
-  $('.progress-bar').animate({ backgroundColor : '#77B300', width: '100%' }, atime);
+  $('.progress-bar').animate({ backgroundColor : '#77B300' }, atime).css('width', '100%');
   setTimeout( function () {
-  misc.fadeOut(atimeb);
+  misc.fadeOut(atimeb /2);
   setTimeout(function ()
   {
-    title.animate({ 'marginTop' : '0px'}, atimeb);
+    title.animate({ 'marginTop' : '0px'}, atimeb /2);
   setTimeout(function ()
   {
     $('body').fadeOut(atimeb);
@@ -69,9 +69,9 @@ function succeded(data)
       document.write(data);
       document.close();
     }, atimeb);
-  }, atime);
-}, atimeb);
-}, atimeb * 4);
+  }, atimeb / 2);
+}, atimeb / 2);
+}, atimeb * 2);
 }
 
 // This function serves as a handler whenever the server can't process the request.

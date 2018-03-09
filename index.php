@@ -10,7 +10,7 @@
    </div>
   </div>
  </div>
- <script src='resources/scripts/loadindex.js?v=2' onload='loader()'></script>
+ <script src='resources/scripts/loadindex.js?v=3' onload='loader()'></script>
  <noscript>
   <form action='main.php'>
    <button class='fixed-bottom btn btn-primary' id='nojs'>" . $LANG['ui_nojs'] . "</button>

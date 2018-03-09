@@ -45,12 +45,13 @@ function succeded(data)
     title.animate({ 'marginTop' : '0px'}, atimeb);
   setTimeout(function ()
   {
-    var doc = $('body');
-    doc.fadeOut(atimeb);
+    $('body').fadeOut(atimeb);
     setTimeout(function ()
     {
-      doc.html(data).fadeIn(atimeb);
-    }, atime);
+      document.open();
+      document.write(data);
+      document.close();
+    }, atimeb);
   }, atime);
 }, atimeb);
 }

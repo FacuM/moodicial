@@ -30,7 +30,7 @@
    }
    $content = str_replace('<', '&lt;', $_POST['content']);
    $content = str_replace('>', '&gt;', $content);
-   $server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`, `img`) VALUES (" . $server->quote($_POST['nick']) . ", now(), '" . $rndn . "', " . $server->quote($content) . ", 0, " . $server->quote($_POST['image']) . ")");
+   $server->query("INSERT INTO `" . $credentials['ptable'] . "` (`nick`, `date`, `pid`, `cont`, `rep`, `img`) VALUES (" . $server->quote($_POST['nick']) . ", now(), '" . $rndn . "', " . $server->quote($content) . ", 0, " . (!@getimagesize($server->quote($_POST['image'])) ? "''" : $server->quote($_POST['image'])) . ")");
    echo "
     <script type='text/javascript'>
      window.location = '$root';

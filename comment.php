@@ -25,7 +25,7 @@
    {
     $nick = '';
    }
-   $server->query("INSERT INTO `" . $credentials['ctable'] . "` (`nick`, `date`, `pid`, `cont`, `img`) VALUES (" . $nick . ", now(), " . $pid . ", " . $server->quote($content) . ", " . $server->quote($_POST['image']) . ")");
+   $server->query("INSERT INTO `" . $credentials['ctable'] . "` (`nick`, `date`, `pid`, `cont`, `img`) VALUES (" . $nick . ", now(), " . $pid . ", " . $server->quote($content) . ", " . (!@getimagesize($server->quote($_POST['image'])) ? "''" : $server->quote($_POST['image'])) . ")");
    echo "
     <script type='text/javascript'>
      window.location = '$root';

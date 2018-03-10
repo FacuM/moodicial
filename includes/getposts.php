@@ -51,9 +51,8 @@ foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " ORDER BY d
     <div class='card-body " . $rows['pid'] . "'>$rows[cont]";
     if ( ! empty($rows['img']))
     {
-      echo "<div class='imgcontainer mx-auto'>" . (!@getimagesize($rows['img']) ? "<small>Unable to load image.</small>" : "
-      <img class='img-thumbnail' src='" . $rows['img'] . "' alt='" . $LANG['alt_broken_image'] . "'>") .
-      "</div>";
+      echo "<div class='imgcontainer mx-auto'><img class='img-thumbnail' src='" . $rows['img'] . "' alt='" . $LANG['alt_broken_image'] . "'>
+      </div>";
     }
     echo "
     </div>

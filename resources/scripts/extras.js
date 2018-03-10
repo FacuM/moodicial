@@ -88,6 +88,7 @@ $(window).scroll(function (event) {
     type: 'POST',
     data: {
 	  row: amountpage,
+	  amount: amount
     },
     success: function(data)
     {

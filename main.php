@@ -14,7 +14,7 @@
  {
   echo "<div class='alert alert-danger mx-auto'>" . $LANG['report_err_disabled'] . "</div>";
  }
- $amount = $server->query("SELECT COUNT(*) AS total FROM " . $credentials['ptable'])->fetch()['total'];
+ $amount = $server->query("SELECT COUNT(pid) AS total FROM " . $credentials['ptable'])->fetch()['total'];
   if ( $amount > 0 )
   {
    require_once("includes/getposts.php");

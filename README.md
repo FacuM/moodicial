@@ -23,6 +23,7 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Dynamic updates (new content)
 - Detected language badge
 - Offline mode (host yourself, in your own network)
+- Rate limits (how much interactions can someone do in a user-defined timespan)
 
 #### Upcoming features
 

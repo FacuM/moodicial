@@ -1,5 +1,23 @@
 /* This file includes all the customizations done to the Bootstrap 4 theme 'Cyborg' in order to make it look better and in context with the website content. */
 
+.glow {
+	-webkit-text-shadow: 0 0 2rem #ffffff;
+	   -moz-text-shadow: 0 0 2rem #ffffff;
+			    text-shadow: 0 0 2rem #ffffff;
+   -webkit-transition: 1s linear 0s;
+      -moz-transition: 1s linear 0s;
+           transition: 1s linear 0s;
+}
+
+.glow_off {
+	-webkit-text-shadow: 0 0 0px #ffffff;
+	   -moz-text-shadow: 0 0 0px #ffffff;
+			    text-shadow: 0 0 0px #ffffff;
+	 -webkit-transition: 1s linear 0s;
+	    -moz-transition: 1s linear 0s;
+	         transition: 1s linear 0s;
+}
+
 .card-footer {
 	background-color: #444444;
 }

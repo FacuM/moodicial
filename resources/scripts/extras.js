@@ -87,8 +87,7 @@ $(window).scroll(function (event) {
     url: 'fetchdata.php',
     type: 'POST',
     data: {
-	  row: amountpage,
-	  amount: amount
+	  row: amountpage
     },
     success: function(data)
     {

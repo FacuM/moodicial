@@ -26,6 +26,7 @@
    'server_lag'               => 'Parece que el servidor se está tardando un poco, por favor aguarda un momento.',
    'server_err'               => 'No fue posible procesar la solicitud, por favor inténtalo nuevamente más tarde.',
    'rate_limited'             => '¡Eh! Vas demasiado rápido para mí, por favor intenta más tarde.',
+   'rate_limited_sm'          => 'Limitado',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',

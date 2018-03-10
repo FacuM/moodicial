@@ -138,37 +138,57 @@ function comment(pid)
 // Handle reporting
 function report(pid)
 {
- $.ajax({
-   url: 'report.php',
-   type: 'POST',
-   data: {
-     report: pid
-   },
-   success: function(data) {
-     if (parseInt(data) >= maxrep)
-     {
-      window.location.reload();
-     }
-     else
-     {
-      var eid = '#rid' + pid; var newstatus = '';
-      if (parseInt(data) == 0)
+  $.ajax({
+    url: 'report.php',
+    type: 'POST',
+    data: {
+      report: pid
+    },
+    success: function(data) {
+      if (data == 'Limited')
       {
-       newstatus = 'badge-success';
-      }
-      else if (parseInt(data) <= (maxrep / 2))
-      {
-        newstatus = 'badge-warning';
+        var report_button_color = $('.btn-danger').css('backgroundColor'); var report_label_original = $('.btn-danger').first().html(); var report_buttons = $('.btn-danger');
+        report_buttons.prop('disabled', true).animate({ 'borderColor' : '#dddddd' , 'backgroundColor' : '#dddddd' }, atimeb)
+        setTimeout(function()
+        {
+         report_buttons.html(rate_limited_sm);
+        }, atimeb);
+        setTimeout(function()
+        {
+          report_buttons.prop('disabled', false).animate({ 'borderColor' : report_button_color, 'backgroundColor' : report_button_color }, atimeb);
+          setTimeout(function()
+          {
+           report_buttons.html(report_label_original);
+          }, atimeb);
+        }, throttletime);
       }
       else
       {
-        newstatus = 'badge-danger';
-      }
-      $(eid).removeClass('badge-success','badge-warning','badge-danger').addClass(newstatus);
-      $(eid).html(parseInt(data) + '/' + maxrep);
-     }
-   }
- });
+        if (parseInt(data) >= maxrep)
+        {
+          window.location.reload();
+        }
+        else
+        {
+          var eid = '#rid' + pid; var newstatus = '';
+          if (parseInt(data) == 0)
+          {
+            newstatus = 'badge-success';
+          }
+          else if (parseInt(data) <= (maxrep / 2))
+          {
+            newstatus = 'badge-warning';
+          }
+          else
+          {
+            newstatus = 'badge-danger';
+          }
+          $(eid).removeClass('badge-success','badge-warning','badge-danger').addClass(newstatus);
+          $(eid).html(parseInt(data) + '/' + maxrep);
+        }
+      };
+    }
+  });
 };
 
 // Hide the element that's passed through this function.

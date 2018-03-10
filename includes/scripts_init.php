@@ -15,6 +15,8 @@
      var server_err = '" . $LANG['server_err'] . "';
      var maxload = " . $maxload . ";
      var rate_limited = '" . $LANG['rate_limited'] . "';
+     var rate_limited_sm = '" . $LANG['rate_limited_sm'] . "';
+     var throttletime = " . $throttletime . ";
   </script>
  ";
 ?>

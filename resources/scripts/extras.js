@@ -197,3 +197,12 @@ function hideupd()
 {
  $('#update').clearQueue().animate({ 'marginTop' : '-3rem' }).fadeOut(atimeb);
 };
+
+// If the image isn't reachable, replace it with a text regarding that.
+
+function imgerr(pid)
+{
+ // Make an object of the broken element
+ var broken = $('#' + pid);
+ broken.find('img').replaceWith('<small>' + img_unreachable + '</small>');
+};

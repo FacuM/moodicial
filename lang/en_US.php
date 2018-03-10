@@ -35,6 +35,7 @@
    'server_err'               => 'Unable to complete the request. Please try again later.',
    'rate_limited'             => 'Hey! You are too quick for me! Please try again later.',
    'rate_limited_sm'          => 'Limited',
+   'img_unreachable'          => 'Unable to fetch image from remote server.',
   // Forms
    // Comments
    'comment_content_label'    => 'Content',

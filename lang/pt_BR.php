@@ -27,6 +27,7 @@
    'server_err'               => 'Não foi possível processar o pedido, por favor tente novamente mais tarde.'
    'rate_limited'             => 'Ei! Você está indo muito rápido para mim, por favor tente novamente mais tarde. ',
    'rate_limited_sm'          => 'Limitado',
+   'img_unreachable'          => 'Não foi possível obter a imagem do servidor remoto.',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',

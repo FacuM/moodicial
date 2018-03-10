@@ -164,13 +164,13 @@ function report(pid)
       }
       else
       {
-        if (parseInt(data) >= maxrep)
+        if (parseInt(data) - 1 >= maxrep)
         {
           window.location.reload();
         }
         else
         {
-          var eid = '#rid' + pid; var newstatus = '';
+          var eid = $('#' + pid).find('.badge'); var newstatus = '';
           if (parseInt(data) == 0)
           {
             newstatus = 'badge-success';

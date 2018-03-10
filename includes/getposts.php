@@ -47,7 +47,7 @@ foreach ($server->query("SELECT * FROM " . $credentials['ptable'] . " ORDER BY d
         }
       }
     }
-    echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right' id='rid" . $rows['pid'] . "'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
+    echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . "</div>
     <div class='card-body " . $rows['pid'] . "'>$rows[cont]";
     if ( ! empty($rows['img']))
     {

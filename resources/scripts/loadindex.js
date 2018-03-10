@@ -51,7 +51,7 @@ function loader()
     var body = $('body');
     body.animate({ backgroundColor: 'white' }, atime);
     title.animate({ color: 'black'}, atime);
-    body.append('<div class="alert alert-info align-middle mx-auto" id="maintenance">' + title.html() + ' is in maintenance, please come back later.</div>');
+    body.append('<div class="alert alert-info align-middle mx-auto" id="maintenance">' + title.html() + ' is under maintenance, please come back later.</div>');
   }
   else
   {

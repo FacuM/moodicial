@@ -1,5 +1,9 @@
 ﻿<?php
  require_once("config.php");
+ if ($maintenance)
+ {
+  header('location: ' . $root);
+ }
  $loading = false;
  require_once("beginning.php");
  // At first, assume that at least one post will be present.

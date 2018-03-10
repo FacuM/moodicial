@@ -134,7 +134,7 @@ a:hover {
 	max-width: 95%;
 }
 
-.imgcontainer,img,h1,#loader {
+.imgcontainer,img,h1,#loader,#maintenance {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;

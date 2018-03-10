@@ -46,11 +46,21 @@ function requester()
 function loader()
 {
   title.animate({ 'marginTop' : $(window).height() / 3 }, atime);
-  setTimeout(function() {
-    title.addClass('glow');
-    misc.fadeIn(atimeb);
-    requester();
-  }, atime);
+  if (maintenance)
+  {
+    var body = $('body');
+    body.animate({ backgroundColor: 'white' }, atime);
+    title.animate({ color: 'black'}, atime);
+    body.append('<div class="alert alert-info align-middle mx-auto" id="maintenance">' + title.html() + ' is in maintenance, please come back later.</div>');
+  }
+  else
+  {
+   setTimeout(function() {
+     title.addClass('glow');
+     misc.fadeIn(atimeb);
+     requester();
+   }, atime);
+  };
 };
 
 // This function makes the final animations and replaces the whole page with the one that'll be passed by the Ajax request.

@@ -18,6 +18,7 @@
      var rate_limited_sm = '" . $LANG['rate_limited_sm'] . "';
      var throttletime = " . $throttletime . ";
      var img_unreachable = '" . $LANG['img_unreachable'] . "';
+     var maintenance = " . ($maintenance ? 'true' : 'false') . ";
   </script>
  ";
 ?>

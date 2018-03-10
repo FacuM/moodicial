@@ -1,7 +1,6 @@
 // Make objects out of the DOM elements we're gonna modify.
 
-var title = $('#title'); var misc = $('#pbarc, #loader'); var time, interval = null;
-$('#title').addClass('glow');
+var title = $('#title'); var misc = $('#pbarc, #loader'); var time, interval = null; var glowtime = 1000;
 
 // This function retrieves the full page.
 function requester()
@@ -9,7 +8,7 @@ function requester()
   var size = 0; var stime = performance.now();
   interval = setInterval( function() {
     $('.progress-bar').css('width', size + '%');
-    $('#title').toggleClass('glow_off');
+    title.toggleClass('glow_off');
     var etime = performance.now();
     time = etime - stime;
     // If time taken is greater than 5 seconds, show a warning.
@@ -48,15 +47,19 @@ function loader()
 {
   title.animate({ 'marginTop' : $(window).height() / 3 }, atime);
   setTimeout(function() {
-    $(misc).fadeIn(atimeb);
+    title.addClass('glow');
+    misc.fadeIn(atimeb);
     requester();
-  }, atimeb);
+  }, atime);
 };
 
 // This function makes the final animations and replaces the whole page with the one that'll be passed by the Ajax request.
 function succeded(data)
 {
-  $('#title').addClass('glow_off').removeClass('glow glow_off');
+  title.addClass('glow_off')
+  setTimeout( function() {
+   title.removeClass('glow glow_off');
+  }, glowtime);
   clearInterval(interval);
   $('.progress-bar').animate({ backgroundColor : '#77B300' }, atime).css('width', '100%');
   setTimeout( function () {

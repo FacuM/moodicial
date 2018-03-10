@@ -24,7 +24,9 @@
  // Server document root. Set this to the path to your website files, omitting the root dir. If you put them in '/var/www/moodicial' write just '/moodicial'.
  $path = '';
  // Should people be able to report?
- $reports = true;
+ $reports = false;
+ // Enable thumbsmod?
+ $thumbsmod = true;
  // Max amount of reports
  $maxrep = 5;
  // Allow empty posts? (without text)

@@ -53,6 +53,8 @@
  $dynloadint = 2500;
  // Max time a request should take before showing an alert.
  $maxload = 5000;
+ // Minimum time between user interactions (0 for none).
+ $throttletime = 10000;
 
  // From now on, don't edit anything as you could break the whole website.
 

@@ -11,7 +11,11 @@ $('#submitp').click(function ()
      nick: $('#nick').val(),
      image: $('#image').val(),
    },
-   success: function() {
+   success: function(processing) {
+    if (processing == 'Limited')
+    {
+     ratel();
+   };
     var button = $('#submitp');
     setTimeout (function ()
     {
@@ -19,10 +23,18 @@ $('#submitp').click(function ()
      button.html(submit).prop('disabled', false);
     }, dynloadint);
     $('.cpdlg').modal('hide');
-   }
+ }
  });
  if (firstpost)
  {
   window.location.reload();
  }
 });
+
+function ratel()
+{
+ $('.posts').first().prepend("<div class='alert alert-warning mx-auto ratel'>" + rate_limited + "</div>").css('display', 'none').fadeIn(atimeb);
+ setTimeout(function() {
+  $('.ratel').fadeOut(atime);
+ }, atime * 2);
+}

@@ -10,13 +10,19 @@
    $language = explode('-', $language[0]);
   if (isset($lang))
   {
-   session_start();
+   if(session_status() == PHP_SESSION_NONE)
+   {
+    session_start();
+   }
    $language[0] = $lang;
    $_SESSION['lang'] = $lang;
   }
   else
   {
-   session_start();
+   if(session_status() == PHP_SESSION_NONE)
+   {
+    session_start();
+   }
    if (isset($_SESSION['lang']))
    {
     $language[0] = $_SESSION['lang'];

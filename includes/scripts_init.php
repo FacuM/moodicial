@@ -14,6 +14,7 @@
      var server_lag = '" . $LANG['server_lag'] . "';
      var server_err = '" . $LANG['server_err'] . "';
      var maxload = " . $maxload . ";
+     var rate_limited = '" . $LANG['rate_limited'] . "';
   </script>
  ";
 ?>

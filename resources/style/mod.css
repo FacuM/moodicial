@@ -101,7 +101,7 @@ a:hover {
 	margin-bottom: 4rem;
 }
 
-#load,#end,#err,#update,#loader {
+#load,#end,#err,#update,#loader,#ratel {
 	display: none;
 }
 

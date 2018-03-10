@@ -33,6 +33,7 @@
    'ui_nojs'                  => 'No Javascript? Click here!',
    'server_lag'               => 'It seems like the server is taking some time to process your request, please wait for a while.',
    'server_err'               => 'Unable to complete the request. Please try again later.',
+   'rate_limited'             => 'Hey! You are too quick for me! Please try again later.',
   // Forms
    // Comments
    'comment_content_label'    => 'Content',

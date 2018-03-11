@@ -106,7 +106,7 @@ a:hover {
 	max-height: 3rem;
 	padding-left: 0.2rem;
 	padding-right: 0.2rem;
-	margin-left: 0rem;
+	margin-left: -0.1rem;
 	margin-right: auto;
 }
 
@@ -138,6 +138,10 @@ a:hover {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#maintenance {
+	display: none;
 }
 
 .page-footer {

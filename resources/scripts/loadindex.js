@@ -48,18 +48,47 @@ function loader()
   title.animate({ 'marginTop' : $(window).height() / 3 }, atime);
   if (maintenance)
   {
-    var body = $('body');
+    // Set up the highest amount of values possible in a single time.
+    var body = $('body'); var retrytime = dynloadint * 4; var maintenance_label = title.html() + ' is under maintenance, please come back later.';
     body.animate({ backgroundColor: 'white' }, atime);
     title.animate({ color: 'black'}, atime);
-    body.append('<div class="alert alert-info align-middle mx-auto" id="maintenance">' + title.html() + ' is under maintenance, please come back later.</div>');
+    body.append('<div class="alert alert-info align-middle mx-auto" id="maintenance">' + maintenance_label + ' Retrying in ' + retrytime / 1000 + ' seconds.</div>');
+    var maintenance_element = $('#maintenance');
+    setTimeout(function () {
+      maintenance_element.fadeIn(atime);
+    }, atime * 2);
+    setInterval(function (){
+      maintenance_element.html(maintenance_label + ' Retrying...');
+      setTimeout(function ()
+      {
+        $.ajax({
+          url: 'index.php',
+          type: 'POST',
+          data: {
+            testav: true
+          },
+          success: function(testing)
+          {
+            if (testing == 'yes')
+            {
+              window.location.reload();
+            }
+            else
+            {
+              maintenance_element.html(maintenance_label + ' Still unavailable, retrying in ' + retrytime / 1000 + ' seconds.')
+            }
+          }
+        });
+      }, atime);
+    }, retrytime);
   }
   else
   {
-   setTimeout(function() {
-     title.addClass('glow');
-     misc.fadeIn(atimeb);
-     requester();
-   }, atime);
+    setTimeout(function() {
+      title.addClass('glow');
+      misc.fadeIn(atimeb);
+      requester();
+    }, atime);
   };
 };
 
@@ -68,7 +97,7 @@ function succeded(data)
 {
   title.addClass('glow_off')
   setTimeout( function() {
-   title.removeClass('glow glow_off');
+    title.removeClass('glow glow_off');
   }, glowtime);
   clearInterval(interval);
   $('.progress-bar').animate({ backgroundColor : '#77B300' }, atime).css('width', '100%');

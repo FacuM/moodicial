@@ -1,10 +1,10 @@
 <?php
- echo 
+ echo
  "
   <button type='submit' class='btn float-right sidebarbtns fixed-bottom' data-toggle='modal' data-target='.cpdlg' id='createpost' >
     <span class='octicon octicon-plus' aria-hidden='true'></span>
   </button>
-  <button class='btn float-right sidebarbtns fixed-bottom' onclick='gotop()' id='gotop' >
+  <button class='btn float-right sidebarbtns fixed-bottom' onclick='go('Top')' id='gotop' >
     <span class='octicon octicon-chevron-up' aria-hidden='true'></span>
   </button>
   <div class='modal fade ccdlg' tabindex=-1 role='dialog' arialabelledby='commentpostdialog' aria-hidden='true'>

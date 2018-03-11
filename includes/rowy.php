@@ -53,16 +53,13 @@ if (!($row == 'new') || !($newpid == $oldpid))
       <div class='card-body'>" . $rowscom['cont'] . "</div>";
       if ( ! empty($rowscom['img']))
       {
-        echo "
-        <div class='imgcontainer mx-auto'>
-        <img class='img-thumbnail' src='" . $rowscom['img'] . "' alt='" . $LANG['alt_broken_image'] . "' >
-        </div>
-        </div>";
+        echo "<div class='imgcontainer mx-auto'><img class='img-thumbnail' src='" . $rowscom['img'] . "' alt='" . $LANG['alt_broken_image'] . "'></div>";
       }
     }
     echo "
-    </div>
-    </div>
+       </div>
+      </div>
+     </div>
     </div>";
   }
  ?>

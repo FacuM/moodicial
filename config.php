@@ -49,7 +49,7 @@
  // Amount of items to fill with by default.
  $amountpage = 10;
  // Offset from viewport end before trying to load more content.
- $offset = 500;
+ $offset = 1000;
  // Default animations duration.
  $atime = 2000;
  // Seconday animations duration.

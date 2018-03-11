@@ -53,7 +53,7 @@
  function sendLoader()
  {
   echo "
-   <script src='resources/scripts/extras.js?v=25'></script>
+   <script src='resources/scripts/extras.js?v=26'></script>
   ";
  }
 ?>

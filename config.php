@@ -17,7 +17,7 @@
  );
 
  // Maintenance mode?
- $maintenance = false;
+ $maintenance = true;
 
  // Whether to enable or not automatic language switch. Type 'auto' for automatic or any language for manual (options are'es_LA', 'en_US' and everything in "lang").
  $language = 'auto';

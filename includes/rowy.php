@@ -4,7 +4,7 @@ $newpid = $rows['pid'];
 if (!($row == 'new') || !($newpid == $oldpid))
   {
     echo "<div class='posts' id='" . $rows['pid'] . "'>
-    " . ($reports ? "<input name='report' type=hidden value='$rows[pid]'>" : "") . "<div class='card text-white bg-dark mb-2 mx-auto' >";
+    <div class='card text-white bg-dark mb-2 mx-auto' >";
     if ($reports)
     {
       if ($rows['rep'] == 0)
@@ -24,7 +24,7 @@ if (!($row == 'new') || !($newpid == $oldpid))
       }
     }
     echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . ($thumbsmod ? "<button class='btn btn-sm float-right btn-dark'><span class='octicon octicon-thumbsdown'></span></button><button class='btn btn-sm float-right btn-dark'><span class='octicon octicon-thumbsup'></span></button>" : "") . "</div>
-    <div class='card-body " . $rows['pid'] . "'>$rows[cont]"; 
+    <div class='card-body " . $rows['pid'] . "'>$rows[cont]";
     if ( ! empty($rows['img']))
     {
       echo "<div class='imgcontainer mx-auto'><img class='img-thumbnail' src='" . $rows['img'] . "' alt='" . $LANG['alt_broken_image'] . "' onerror='imgerr(" . $rows['pid'] . ")'>

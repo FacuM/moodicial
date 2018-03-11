@@ -1,3 +1,5 @@
+$(document).ready( function() {
+
 // Dummy variables
 var scrolling = false; var doload = true; var original = $('#langbadge').html();
 
@@ -69,11 +71,6 @@ var dynamicload = setInterval (
    });
 }, dynloadint);
 
-if($('.posts').length > 1)
-{
- $('.posts').last().attr('id', 'last');
-};
-
 // Dynamically load old posts while reaching the bottom of the page
 $(window).scroll(function (event) {
  {
@@ -92,7 +89,7 @@ $(window).scroll(function (event) {
     success: function(data)
     {
      if(data === '') { doload = false; $('#load').css('display', 'none'); $('#end').fadeIn(atime); } else { doload = true; };
-     $('#last').append(data);
+     $('.posts').last().after(data);
      amountpage = amountpage + 1;
     }
    });
@@ -198,11 +195,4 @@ function hideupd()
  $('#update').clearQueue().animate({ 'marginTop' : '-3rem' }).fadeOut(atimeb);
 };
 
-// If the image isn't reachable, replace it with a text regarding that.
-
-function imgerr(pid)
-{
- // Make an object of the broken element
- var broken = $('#' + pid);
- broken.find('img').replaceWith('<small>' + img_unreachable + '</small>');
-};
+});

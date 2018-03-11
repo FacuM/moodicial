@@ -17,7 +17,7 @@
  );
 
  // Maintenance mode?
- $maintenance = true;
+ $maintenance = false;
 
  // Whether to enable or not automatic language switch. Type 'auto' for automatic or any language for manual (options are'es_LA', 'en_US' and everything in "lang").
  $language = 'auto';
@@ -29,7 +29,7 @@
  // Should people be able to report?
  $reports = true;
  // Enable thumbsmod?
- $thumbsmod = false;
+ $thumbsmod = true;
  // Max amount of reports
  $maxrep = 5;
  // Allow empty posts? (without text)

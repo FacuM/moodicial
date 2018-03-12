@@ -76,13 +76,16 @@ hr {
 	background-color: #303030;
 }
 
-.imgcontainer {
+.imgcontainer{
 	width: 40%;
 	height: auto;
 }
 
 .badge {
 	margin-top: 0.5em;
+}
+
+#rbg {
 	margin-right: 1em;
 }
 
@@ -134,10 +137,15 @@ a:hover {
 	max-width: 95%;
 }
 
-.imgcontainer,img,h1,#loader,#maintenance {
+.imgcontainer,img,h1,#loader,#maintenance,.thumbs {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.thumbs {
+	margin-top: -1.5rem;
+	padding-left: 6rem;
 }
 
 #maintenance {

@@ -23,7 +23,7 @@ if (!($row == 'new') || !($newpid == $oldpid))
         }
       }
     }
-    echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . ($thumbsmod ? "<button class='btn btn-sm float-right btn-dark'><span class='octicon octicon-thumbsdown'></span></button><button class='btn btn-sm float-right btn-dark'><span class='octicon octicon-thumbsup'></span></button>" : "") . "</div>
+    echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right' id='rbg'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . ($thumbsmod ? "<div class='thumbs'><div class='badge badge-secondary up'>" . $rows['up'] . "</div><button class='btn btn-sm btn-dark' onclick='react(true, " . $rows['pid'] . ")'><span class='octicon octicon-thumbsup'></span></button><button class='btn btn-sm btn-dark' onclick='react(false, " . $rows['pid'] . ")'><span class='octicon octicon-thumbsdown'></span></button><div class='badge badge-secondary down'>" . $rows['down'] . "</div></div>" : "") . "</div>
     <div class='card-body " . $rows['pid'] . "'>$rows[cont]";
     if ( ! empty($rows['img']))
     {

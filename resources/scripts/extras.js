@@ -15,7 +15,10 @@ function langsel(newhtml)
     +  '</div>'
     +  '<div class="badge badge-primary float-left langlink" id="langlink">'
     +   '<a href="?lang=pt" id="langlink">PT</a>'
-    +  '</div>');
+    +  '</div>'
+    +  '<div class="badge badge-primary float-left langlink" id="langlink">'
+    +   '<a href="?lang=bg" id="langlink">BG</a>'
+    +  '</div>'); 
     $('.langlink').css('display', 'none');
     $('.langlink').html(newhtml);
     $('#langbadge').prop('onclick', null).off('click');

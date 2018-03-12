@@ -40,6 +40,9 @@
      case 'pt':
        $language = 'pt_BR';
        break;
+     case 'bg':
+       $language = 'bg_BG';
+       break;
      default:
        $language = 'en_US';
        break;

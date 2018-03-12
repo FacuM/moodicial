@@ -111,9 +111,7 @@ function succeded(data)
         $('body').fadeOut(atimeb);
         setTimeout(function ()
         {
-          document.open();
-          document.write(data);
-          document.close();
+          $('body').html(data.substr(data.lastIndexOf("<body>"))).fadeIn(atimeb);
         }, atimeb);
       }, atimeb / 2);
     }, atimeb / 2);

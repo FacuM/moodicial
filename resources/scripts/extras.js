@@ -18,7 +18,7 @@ function langsel(newhtml)
     +  '</div>'
     +  '<div class="badge badge-primary float-left langlink" id="langlink">'
     +   '<a href="?lang=bg" id="langlink">BG</a>'
-    +  '</div>'); 
+    +  '</div>');
     $('.langlink').css('display', 'none');
     $('.langlink').html(newhtml);
     $('#langbadge').prop('onclick', null).off('click');
@@ -39,10 +39,10 @@ setTimeout(function ()
     setTimeout(function() {
       $('#langbadge').html(original);
       $('#langbadge').fadeIn(atimeb);
-	  $('#langbadge').on('click', function()
-	  {
-	   langsel();
-	  });
+      $('#langbadge').on('click', function()
+      {
+        langsel();
+      });
     }, atimeb);
   }, atimeb * 4);
 }, atime);
@@ -50,13 +50,13 @@ setTimeout(function ()
 // Go to the top of the page
 function gotop()
 {
- scrolling = true;
- $("html, body").animate({ scrollTop: 0 }, atime);
- $('#gotop').fadeOut(atimeb);
- setTimeout(function ()
- {
-   scrolling = false;
- }, atime);
+  scrolling = true;
+  $("html, body").animate({ scrollTop: 0 }, atime);
+  $('#gotop').fadeOut(atimeb);
+  setTimeout(function ()
+  {
+    scrolling = false;
+  }, atime);
 }
 
 // Dynamically load new posts and prepend them to the first one
@@ -100,14 +100,14 @@ var dynamicload = setInterval (
           });
         };
       };
-     if($(window).scrollTop() > 0 && !scrolling)
-     {
-      $('#gotop').fadeIn(atimeb);
-     }
-     else
-     {
-      $('#gotop').fadeOut(atimeb);
-     }
+      if($(window).scrollTop() > 0 && !scrolling)
+      {
+        $('#gotop').fadeIn(atimeb);
+      }
+      else
+      {
+        $('#gotop').fadeOut(atimeb);
+      }
     };
   });
 
@@ -199,40 +199,40 @@ var dynamicload = setInterval (
   {
     $('#update').clearQueue().animate({ 'marginTop' : '-3rem' }).fadeOut(atimeb);
   };
-  
+
   // Process thumbs up and down sending
   function react(thumbs, pid)
   {
-   $.ajax({
-	url: 'thumbs.php',
-	type: 'POST',
-	data: {
-	 action: thumbs,
-	 pid: pid
-	},
-	success: function(data)
-	{
-	 var idr = $('#' + pid).find('.down, .up');
-	 if (data == 'Limited')
-	 {
-	  idr.animate({ backgroundColor: 'red' }, atime);
-	  setTimeout( function() {
-	   idr.animate({ backgroundColor: '#555' }, atime);
-	  }, throttletime);
-	 }
-	 else
-	 {
-	  if (thumbs)
-	  {
-	   idr = $('#' + pid).find('.up');
-	   idr.html(data);
-	  }
-	  else
-	  {
-	   idr = $('#' + pid).find('.down');
-	   idr.html(data);
-	  };
-	 };
-	}
-   });
+    $.ajax({
+      url: 'thumbs.php',
+      type: 'POST',
+      data: {
+        action: thumbs,
+        pid: pid
+      },
+      success: function(data)
+      {
+        var idr = $('#' + pid).find('.down, .up');
+        if (data == 'Limited')
+        {
+          idr.animate({ backgroundColor: 'red' }, atime);
+          setTimeout( function() {
+            idr.animate({ backgroundColor: '#555' }, atime);
+          }, throttletime);
+        }
+        else
+        {
+          if (thumbs)
+          {
+            idr = $('#' + pid).find('.up');
+            idr.html(data);
+          }
+          else
+          {
+            idr = $('#' + pid).find('.down');
+            idr.html(data);
+          };
+        };
+      }
+    });
   };

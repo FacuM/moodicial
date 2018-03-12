@@ -44,6 +44,21 @@
    'visits'      => 'yes'
  );
 
+ $api = array (
+   // Enable the API?
+   'enable'             => true,
+   // Interval for global public requests.
+   'global_public'      => 3600000,
+   // Interval for per-post public requests.
+   'single_public'      => 60000,
+   // Interval for global protected requests.
+   'global_private'     => 0,
+   // Interval for per-post protected requests.
+   'single_private'     => 0,
+   // Passphrase for protected requests.
+   'key_private'        => 'admin'
+ );
+
  // => Client-side scripting settings (time values measured in milliseconds)
 
  // Amount of items to fill with by default.

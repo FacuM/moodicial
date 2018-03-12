@@ -1,23 +1,6 @@
 // Dummy variables
 var scrolling = false; var doload = true; var original = $('#langbadge').html();
 
-// Language badge initial animation (delayed to allow render completion)
-setTimeout(function ()
-{
-  $('#langbadge').fadeOut(atimeb);
-  setTimeout(function() {
-    $('#langbadge').html(hint);
-    $('#langbadge').fadeIn(atimeb);
-  }, atimeb);
-  setTimeout(function() {
-    $('#langbadge').fadeOut(atimeb);
-    setTimeout(function() {
-      $('#langbadge').html(original);
-      $('#langbadge').fadeIn(atimeb);
-    }, atimeb);
-  }, atimeb * 4);
-}, atime);
-
 // Language badge animation + language picker generator
 function langsel(newhtml)
 {
@@ -39,6 +22,27 @@ function langsel(newhtml)
     $('.langlink').fadeIn(atimeb);
   }, atimeb);
 };
+
+// Language badge initial animation (delayed to allow render completion)
+setTimeout(function ()
+{
+  $('#langbadge').fadeOut(atimeb);
+  setTimeout(function() {
+    $('#langbadge').html(hint);
+    $('#langbadge').fadeIn(atimeb);
+  }, atimeb);
+  setTimeout(function() {
+    $('#langbadge').fadeOut(atimeb);
+    setTimeout(function() {
+      $('#langbadge').html(original);
+      $('#langbadge').fadeIn(atimeb);
+	  $('#langbadge').on('click', function()
+	  {
+	   langsel();
+	  });
+    }, atimeb);
+  }, atimeb * 4);
+}, atime);
 
 // Go to the top of the page
 function gotop()
@@ -191,4 +195,41 @@ var dynamicload = setInterval (
   function hideupd()
   {
     $('#update').clearQueue().animate({ 'marginTop' : '-3rem' }).fadeOut(atimeb);
+  };
+  
+  // Process thumbs up and down sending
+  function react(thumbs, pid)
+  {
+   $.ajax({
+	url: 'thumbs.php',
+	type: 'POST',
+	data: {
+	 action: thumbs,
+	 pid: pid
+	},
+	success: function(data)
+	{
+	 var idr = $('#' + pid).find('.down, .up');
+	 if (data == 'Limited')
+	 {
+	  idr.animate({ backgroundColor: 'red' }, atime);
+	  setTimeout( function() {
+	   idr.animate({ backgroundColor: '#555' }, atime);
+	  }, throttletime);
+	 }
+	 else
+	 {
+	  if (thumbs)
+	  {
+	   idr = $('#' + pid).find('.up');
+	   idr.html(data);
+	  }
+	  else
+	  {
+	   idr = $('#' + pid).find('.down');
+	   idr.html(data);
+	  };
+	 };
+	}
+   });
   };

@@ -22,7 +22,7 @@
     }
     if ($langbadge)
     {
-     echo "<div class='badge badge-info float-left' id='langbadge' onclick='langsel()'>" . $LANG['langbadge'] . ": <span id='lang'>" . $language . "</span></div>";
+     echo "<div class='badge badge-info float-left' id='langbadge'>" . $LANG['langbadge'] . ": <span id='lang'>" . $language . "</span></div>";
     }
   }
   echo "<br><br>

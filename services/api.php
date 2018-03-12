@@ -154,7 +154,7 @@ else
    Global public: ' . $api['global_public'] / 1000 . ' seconds.<br>
    Single public: ' . $api['single_public'] / 1000 . ' seconds.<br><br>
 
-   === Intervals (public)<br>
+   === Intervals (private)<br>
 
    Global private: ' . $api['global_private'] / 1000 . ' seconds.<br>
    Single public: ' . $api['single_private'] / 1000 . ' seconds.

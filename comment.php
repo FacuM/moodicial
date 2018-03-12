@@ -1,7 +1,10 @@
 <?php
 require_once("config.php");
 session_start();
-$time = microtime(true) -  $_SESSION['lastinteraction'];
+if (isset($_SESSION['lastinteraction']))
+{
+ $time = microtime(true) -  $_SESSION['lastinteraction'];
+}
 if (isset($_SESSION['lastinteraction']) && $time < $throttletime / 1000)
 {
   die('Limited');

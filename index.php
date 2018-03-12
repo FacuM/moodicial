@@ -1,4 +1,4 @@
-﻿<?php
+<?php
  require_once("config.php");
  $loading = true;
  // Receive AJAX requests for availability checking.

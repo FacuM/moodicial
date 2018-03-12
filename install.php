@@ -1,4 +1,4 @@
-﻿<?php
+<?php
  require_once("config.php");
  require_once("beginning.php");
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_connecting'] . "</div>";

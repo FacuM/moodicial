@@ -172,7 +172,7 @@ var dynamicload = setInterval (
           }
           else
           {
-            var eid = $('#' + pid).find('.badge'); var newstatus = '';
+            var eid = $('#' + pid).find('#rbg'); var newstatus = '';
             if (parseInt(data) == 0)
             {
               newstatus = 'badge-success';
@@ -185,8 +185,8 @@ var dynamicload = setInterval (
             {
               newstatus = 'badge-danger';
             }
-            $(eid).removeClass('badge-success','badge-warning','badge-danger').addClass(newstatus);
-            $(eid).html(parseInt(data) + '/' + maxrep);
+            eid.removeClass('badge-success','badge-warning','badge-danger').addClass(newstatus);
+            eid.html(parseInt(data) + '/' + maxrep);
           }
         };
       }

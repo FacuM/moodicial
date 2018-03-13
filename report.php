@@ -22,10 +22,10 @@ elseif (!isset($_POST['report']))
 else
 {
   $_SESSION['lastinteraction'] = microtime(true);
-  foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report'])) as $rows)
+  $replist = $server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report']))->fetch()['rep'];
   {
-    echo $rows['rep'] + 1;
-    if ($rows['rep'] >= $maxrep)
+    echo $replist['rep'] + 1;
+    if ($replist['rep'] >= $maxrep)
     {
       $server->query("DELETE FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report']));
     }

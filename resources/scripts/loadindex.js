@@ -1,6 +1,6 @@
 // Make objects out of the DOM elements we're gonna modify.
 
-var title = $('#title'); var misc = $('#pbarc, #loader'); var time, interval = null; var glowtime = 1000;
+var body = $('body'); var title = $('#title'); var misc = $('#pbarc, #loader'); var time, interval = null; var glowtime = 1000;
 
 // This function retrieves the full page.
 function requester()
@@ -45,11 +45,17 @@ function requester()
 // This function makes the first animation.
 function loader()
 {
-  title.animate({ 'marginTop' : $(window).height() / 3 }, atime);
+  title.css('marginTop', $(window).height() / 3);
+  // If javascript is present, try to make the loading screen smoothly fadein.
+  body.css('display', 'none');
+  setTimeout(function ()
+  {
+   body.fadeIn(atimeb * 2);
+  }, atimeb * 2);
   if (maintenance)
   {
     // Set up the highest amount of values possible in a single time.
-    var body = $('body'); var retrytime = dynloadint * 4; var maintenance_label = title.html() + ' is under maintenance, please come back later.';
+    var retrytime = dynloadint * 4; var maintenance_label = title.html() + ' is under maintenance, please come back later.';
     body.animate({ backgroundColor: 'white' }, atime);
     title.animate({ color: 'black'}, atime);
     body.append('<div class="alert alert-info align-middle mx-auto" id="maintenance">' + maintenance_label + ' Retrying in ' + retrytime / 1000 + ' seconds.</div>');
@@ -128,3 +134,8 @@ function error()
     $('#err').fadeIn(atimeb);
   }, atimeb);
 }
+
+$(document).ready(function ()
+{
+ loader();
+});

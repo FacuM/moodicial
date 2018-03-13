@@ -6,6 +6,7 @@
  }
  $loading = false;
  require_once("beginning.php");
+ require_once("includes/custreader.php");
  // At first, assume that at least one post will be present.
  $noposts = false;
  // Define the variable that'll make the page reload if it's the first time posting.

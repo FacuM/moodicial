@@ -21,7 +21,7 @@
   $server->query("CREATE TABLE `" . $credentials['ctable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `img` text NOT NULL)");
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_c_table_ok'] . "<b>" . $credentials['ctable'] . "</b>.</div>";
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_c_ptable'] . "</div>";
-  $server->query("CREATE TABLE `" . $credentials['ptable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `rep` int(1) NOT NULL, `img` text NOT NULL)");
+  $server->query("CREATE TABLE `" . $credentials['ptable'] . "` (`nick` varchar(16) NOT NULL, `date` datetime NOT NULL, `pid` text NOT NULL, `cont` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `rep` int(1) NOT NULL, `img` text NOT NULL, `up` int NOT NULL, `down` int NOT NULL)");
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_db_c_table_ok'] ."<b>" . $credentials['ptable'] . "</b>.</div>";
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_db_c_mtable'] . "</div>";
   $server->query("CREATE TABLE `" . $credentials['mtable'] . "` (`id` int(1) NOT NULL, `amount` BIGINT NOT NULL)");

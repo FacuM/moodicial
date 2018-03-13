@@ -24,8 +24,8 @@
    'update_running'           => 'Novo conteúdo disponível!',
    'ui_nojs'                  => 'Sem Javascript? Clique aqui!',
    'server_lag'               => 'Parece que o servidor demora um pouco, por favor aguarde um momento.',
-   'server_err'               => 'Não foi possível processar o pedido, por favor tente novamente mais tarde.'
-   'rate_limited'             => 'Ei! Você está indo muito rápido para mim, por favor tente novamente mais tarde. ',
+   'server_err'               => 'Não foi possível processar o pedido, por favor tente novamente mais tarde.',
+   'rate_limited'             => 'Ei! Você está indo muito rápido para mim, por favor tente novamente mais tarde.',
    'rate_limited_sm'          => 'Limitado',
    'img_unreachable'          => 'Não foi possível obter a imagem do servidor remoto.',
   // Metrics

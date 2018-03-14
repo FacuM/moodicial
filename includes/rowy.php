@@ -7,13 +7,13 @@ if (!($row == 'new') || !($newpid == $oldpid))
     <div class='card text-white bg-dark mb-2 mx-auto' >";
     if ($reports)
     {
-      if ($rows['rep'] == 0)
+      if ($rows['rep'] <= ($maxrep / 2))
       {
         $status = 'badge-success';
       }
       else
       {
-        if ($rows['rep'] <= ($maxrep / 2))
+        if ($rows['rep'] >= ($maxrep / 2) && $rows['rep'] <= ($maxrep - ($maxrep / 3)))
         {
           $status = 'badge-warning';
         }

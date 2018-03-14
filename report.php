@@ -24,8 +24,8 @@ else
   $_SESSION['lastinteraction'] = microtime(true);
   $replist = $server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report']))->fetch()['rep'];
   {
-    echo $replist['rep'] + 1;
-    if ($replist['rep'] >= $maxrep)
+    echo $replist + 1;
+    if ($replist >= $maxrep)
     {
       $server->query("DELETE FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report']));
     }

@@ -185,8 +185,8 @@ var dynamicload = setInterval (
             {
               newstatus = 'badge-danger';
             }
-            eid.removeClass('badge-success','badge-warning','badge-danger').addClass(newstatus);
-            eid.html(parseInt(data) + '/' + maxrep);
+            $('#' + pid).find('#rbg').removeClass('badge-success badge-warning badge-danger').addClass(newstatus);
+            $('#' + pid).find('#rbg').html(parseInt(data) + '/' + maxrep);
           }
         };
       }

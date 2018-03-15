@@ -35,20 +35,20 @@
    <link rel='stylesheet' href='" . ($nointernet ? $tpdir . '/bootstrap.min.css' : 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css') . "' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
    <link rel='stylesheet' href='" . ($nointernet ? $tpdir . '/bootstrap_cyborg.min.css' : 'https://bootswatch.com/4/cyborg/bootstrap.min.css') . "'>
    <link rel='stylesheet' href='" . ($nointernet ? $tpdir . '/octicons.min.css' : 'https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css') . "'>
-   <link rel='stylesheet' href='/resources/style/mod.css?v=14'>
+   <link rel='stylesheet' href='/resources/style/mod.css?v=15'>
    <script src='" . ($nointernet ? $tpdir . '/jquery-3.3.1.min.js' : 'https://code.jquery.com/jquery-3.3.1.min.js') . "' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
    <script src='" . ($nointernet ? $tpdir . '/bootstrap.min.js' : 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js') . "' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
    <script src='" . ($nointernet ? $tpdir . '/popper.min.js' : 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js') . "' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
    <script src='" . ($nointernet ? $tpdir . '/jquery-ui.min.js' : 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js') . "'></script>
    <script src='/resources/scripts/admin.js?v=3'></script>
-   <script src='/resources/scripts/delreload.js?v=1'></script>
+   <script src='/resources/scripts/delreload.js?v=2'></script>
   </head>
   ";
  }
  function sendLoader()
  {
   echo "
-   <script src='/resources/scripts/extras.js?v=28'></script>
+   <script src='/resources/scripts/extras.js?v=29'></script>
   ";
  }
 ?>

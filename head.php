@@ -1,6 +1,6 @@
 <?php
  require_once("lang/detect.php");
- if (isset($language) && file_exists("lang/" . $language . ".php"))
+ if (isset($language))
  {
   require_once("lang/" . $language . ".php");
  }

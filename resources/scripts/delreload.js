@@ -3,6 +3,6 @@ function delreload()
  $('body').fadeOut(atimeb);
  setTimeout( function()
  {
-  window.location.reload();
+  window.location.href = root;
  },atimeb);
 }

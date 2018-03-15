@@ -19,6 +19,7 @@
      var throttletime = " . $throttletime . ";
      var img_unreachable = '" . $LANG['img_unreachable'] . "';
      var maintenance = " . ($maintenance ? 'true' : 'false') . ";
+     var root = '" . $root . "';
 
      // If the image isn't reachable, replace it with a text regarding that.
 

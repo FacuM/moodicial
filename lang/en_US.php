@@ -73,7 +73,20 @@
   'installer_fol_ok_b'        => ' folder.',
   // All
   'no_nick'                   => 'Anonymous',
-  'time_seconds'              => ' seconds'
+  'time_seconds'              => ' seconds',
+  // Errors
+   // 403
+   'err_403_a'                => 'Stand right where you are!',
+   'err_403_b'                => 'You aren\'t allowed to view this page.',
+   // 404
+   'err_404_a'                => 'Not found',
+   'err_404_b'                => 'The content you were looking for couldn\'t be found or has been removed.',
+   // 500
+   'err_500_a'                => 'Oh sh**, it crashed!',
+   'err_500_b'                => 'The page can\'t be displayed cause the script couldn\'t complete it\'s operation.',
+   // 503
+   'err_503_a'                => 'Can\'t process request',
+   'err_503_b'                => 'Ah... This is such a shame, but I\'m unable to complete your request due to server maintenance or overload.'
  );
 
 ?>

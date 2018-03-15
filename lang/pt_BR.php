@@ -73,6 +73,19 @@
   // All
   'no_nick'                   => 'Anônimo',
   'time_seconds'              => ' segundos'
+  // Errors
+   // 403
+   'err_403_a'                => '¡Quédate justo donde estás!',
+   'err_403_b'                => 'No tienes permiso para ver esta página.',
+   // 404
+   'err_404_a'                => 'No encontrado',
+   'err_404_b'                => 'El contenido que estabas buscando no pudo encontrarse o fue eliminado.',
+   // 500
+   'err_500_a'                => 'Oh mier**, ¡falló!',
+   'err_500_b'                => 'La página no pudo ser mostrada porque el programa no pudo completar la operación.',
+   // 503
+   'err_503_a'                => 'No fue posible procesar la solicitud',
+   'err_503_b'                => 'Ah... Es una pena, pero no pude completar la solicitud debido a una sobrecarga o mantenimiento del servidor.'
  );
 
 ?>

@@ -53,7 +53,7 @@
 	max-width: 90%;
 }
 
-.form-group {
+.form-group,.jumbotron {
 	max-width: 80%;
 }
 

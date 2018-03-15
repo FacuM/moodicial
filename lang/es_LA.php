@@ -72,7 +72,20 @@
   'installer_fol_ok_b'        => '.',
   // All
   'no_nick'                   => 'Anónimo',
-  'time_seconds'              => ' segundos'
+  'time_seconds'              => ' segundos',
+  // Errors
+   // 403
+   'err_403_a'                => '¡Quédate justo donde estás!',
+   'err_403_b'                => 'No tienes permiso para ver esta página.',
+   // 404
+   'err_404_a'                => 'No encontrado',
+   'err_404_b'                => 'El contenido que estabas buscando no pudo encontrarse o fue eliminado.',
+   // 500
+   'err_500_a'                => 'Oh mier**, ¡falló!',
+   'err_500_b'                => 'A página não pode ser exibida porque o programa não pôde completar a operação.',
+   // 503
+   'err_503_a'                => 'Não foi possível processar o pedido',
+   'err_503_b'                => 'Ah ... É uma pena, mas não consegui completar o pedido devido a uma sobrecarga ou manutenção do servidor.'
  );
 
 ?>

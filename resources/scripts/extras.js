@@ -111,32 +111,6 @@ var dynamicload = setInterval (
     };
   });
 
-  // Handle comments and fill extra info on modal popup
-  function comment(pid)
-  {
-    $('#pcontent').html( $(('.') + pid).html().substr(0, 120) + '...' );
-    $('.ccdlg').modal('show');
-    var cbutton = $('#submitc');
-    cbutton.click(function ()
-    {
-      cbutton.prop('disabled', true).html(ui_loading);
-      $.ajax({
-        url: 'comment.php',
-        type: 'POST',
-        data: {
-          content: $('#contentc').val(),
-          nick: $('#nickc').val(),
-          image: $('#imagec').val(),
-          pid: pid,
-        },
-        success: function() {
-          $('.ccdlg').modal('hide');
-          window.location.reload();
-        }
-      });
-    });
-  }
-
   // Handle reporting
   function report(pid)
   {

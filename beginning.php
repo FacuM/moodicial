@@ -25,9 +25,8 @@
      echo "<div class='badge badge-info float-left' id='langbadge'>" . $LANG['langbadge'] . ": <span id='lang'>" . $language . "</span></div>";
     }
   }
-  echo "<br><br><noscript><a href='" . $root . "'>$info[title]</a></noscript>
+  echo "<br><br>
     <a href='#' onclick='delreload()'><h1 id='title'>$info[title]</h1></a>
-  </div>
   <br>
   "
   ;

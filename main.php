@@ -59,5 +59,12 @@
   // Call 'sendLoader' for dynamic loading and other non-crucial JS (animations, dynamic loading, etc.).
   sendLoader();
  }
+ echo "<noscript>
+  <div class='pager mx-auto text-center'>
+   <a class='btn btn-primary pager-btns-l'><span class='octicon octicon-triangle-left'>Previous</span></a>
+   <a class='btn btn-primary pager-btns-r'><span class='octicon octicon-triangle-right'>Next</span></a>
+  </div>
+ </noscript>"
+ ;
  require_once('footer.php');
 ?>

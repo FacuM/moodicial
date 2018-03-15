@@ -155,3 +155,17 @@ a:hover {
 .page-footer {
 	padding-bottom: 0rem;
 }
+
+.pager {
+	display: block;
+	margin: auto;
+	font-family: 'Open Sans';
+	color: white;
+	padding-bottom: 1rem;
+}
+
+.pager-btns-l,.pager-btns-r {
+	width: 25%;
+	margin-right: 2rem;
+	margin-left: 2rem;
+}

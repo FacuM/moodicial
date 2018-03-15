@@ -29,5 +29,6 @@
     <a href='#' onclick='delreload()'><h1 id='title'>$info[title]</h1></a>
   </div>
   <br>
-  ";
+  "
+  ;
 ?>

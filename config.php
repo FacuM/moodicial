@@ -104,4 +104,7 @@
   // Start measuring the page generation time;
   $stime = microtime(true);
 
+ // Minimum amount of strings to consider a language up-to-date.
+ $minstr = 63;
+ 
 ?>

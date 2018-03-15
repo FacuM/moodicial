@@ -1,7 +1,9 @@
 <?php
  // This is the default language, it's a PHP file that contains an array with all the required strings for Moodicial to work.
  // Filename: en_US.php
- // Author: Facundo Montero <facumo.fm@gmail.com>
+ // Author:
+
+ $maintainer = 'Facundo Montero <facumo.fm@gmail.com>';
 
  $LANG = array (
   // Home

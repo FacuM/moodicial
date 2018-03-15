@@ -48,7 +48,8 @@
        break;
    }
   }
-  else {
+  else
+  {
    $language = 'en_US';
   }
  }

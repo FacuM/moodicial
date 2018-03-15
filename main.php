@@ -6,6 +6,10 @@
  }
  $loading = false;
  require_once("beginning.php");
+ if (isset($outdated))
+ {
+  echo "<div class='alert alert-danger mx-auto'>The requested language is outdated as it contains " . $outdated . " strings and " . $minstr . " were expected, falling back to English (US). Please ask it's maintainer (" . $author . ") to update it.</div>";
+ }
  require_once("includes/custreader.php");
  // At first, assume that at least one post will be present.
  $noposts = false;

@@ -1,13 +1,19 @@
 <?php
  require_once("lang/detect.php");
- if (isset($language))
- {
-  require_once("lang/" . $language . ".php");
- }
- else
- {
-  require_once("lang/en_US.php");
- }
+  if (isset($language))
+  {
+   require_once("lang/" . $language . ".php");
+   if (count($LANG) < $minstr)
+   {
+    $outdated = count($LANG);
+    $author = str_replace('>', '&gt;', str_replace('<', '&lt;', $maintainer));
+    require_once("lang/en_US.php");
+   }
+  }
+  else
+  {
+   require_once("lang/en_US.php");
+  }
  // If the whole page is requested ($noformat = false), use ternary operators and the previously defined 'chooseloc' function to detect whether CDNs are reachable or not.
  if (!$noformat)
  {

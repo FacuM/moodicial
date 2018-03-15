@@ -1,6 +1,8 @@
 <?php
  // Nombre de archivo: es_LA.php
- // Autor: Facundo Montero <facumo.fm@gmail.com>
+ // Autor:
+
+ $maintainer = 'Facundo Montero <facumo.fm@gmail.com>';
 
  $LANG = array (
   // Home

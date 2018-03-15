@@ -28,6 +28,8 @@
    'rate_limited'             => '¡Eh! Vas demasiado rápido para mí, por favor intenta más tarde.',
    'rate_limited_sm'          => 'Limitado',
    'img_unreachable'          => 'No fue posible obtener la imagen del servidor remoto.',
+   'ui_home'                  => 'Inicio',
+   'ui_goback_adv'            => '¿Te gustaría volver a la página principal?',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',

@@ -28,6 +28,8 @@
    'rate_limited'             => 'Ei! Você está indo muito rápido para mim, por favor tente novamente mais tarde.',
    'rate_limited_sm'          => 'Limitado',
    'img_unreachable'          => 'Não foi possível obter a imagem do servidor remoto.',
+   'ui_home'                  => 'Início',
+   'ui_goback_adv'            => 'Gostaria de voltar para a página principal?',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',
@@ -75,13 +77,13 @@
   'time_seconds'              => ' segundos'
   // Errors
    // 403
-   'err_403_a'                => '¡Quédate justo donde estás!',
-   'err_403_b'                => 'No tienes permiso para ver esta página.',
+   'err_403_a'                => 'Fique bem onde você está!',
+   'err_403_b'                => 'Você não tem permissão para ver esta página.',
    // 404
-   'err_404_a'                => 'No encontrado',
-   'err_404_b'                => 'El contenido que estabas buscando no pudo encontrarse o fue eliminado.',
+   'err_404_a'                => 'Nao encontrado',
+   'err_404_b'                => 'O conteúdo que você estava procurando não pôde ser encontrado ou foi excluído.',
    // 500
-   'err_500_a'                => 'Oh mier**, ¡falló!',
+   'err_500_a'                => 'Oh mer**, falhou!',
    'err_500_b'                => 'La página no pudo ser mostrada porque el programa no pudo completar la operación.',
    // 503
    'err_503_a'                => 'No fue posible procesar la solicitud',

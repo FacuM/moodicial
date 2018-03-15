@@ -36,6 +36,8 @@
    'rate_limited'             => 'Hey! You are too quick for me! Please try again later.',
    'rate_limited_sm'          => 'Limited',
    'img_unreachable'          => 'Unable to fetch image from remote server.',
+   'ui_home'                  => 'Home',
+   'ui_goback_adv'            => 'Would you like to go back to the main page?',
   // Forms
    // Comments
    'comment_content_label'    => 'Content',

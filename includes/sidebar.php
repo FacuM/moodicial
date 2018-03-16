@@ -31,8 +31,8 @@
         <label class='image' for='image'>" . $LANG['image_url_label'] . "</label>
         <input class='image form-control' type='text' id='imagec' name='image'>
        </div>
-       <div class='form-group mx-auto'>
-        <input name='file' class='form-control-file' id='filec' type='file'>
+       <div class='form-group mx-auto' " . ($allowuploads ? '' : "style='display: none'") . ">
+        <input name='file' class='form-control-file' id='filec' type='file' style='display: none'>
         <br><button class='btn btn-primary' type='button' name='button' id='tmc'>Post remote image</button>
        </div>
        <div class='modal-footer'>

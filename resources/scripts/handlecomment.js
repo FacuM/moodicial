@@ -52,7 +52,7 @@ function comment(pid)
 }
 
 // Handle the modal image upload mode (local/remote).
-var remotec = false;
+var remotec = true;
 function togglemethodc() {
  if (remotec)
  {
@@ -67,6 +67,7 @@ function togglemethodc() {
   remotec = true;
  }
 };
+togglemethodc();
 
 $(document).ready(function() {
  $('#tmc').on('click', function() {

@@ -27,7 +27,7 @@ else
         $count = $block->rowCount();
       }
     }
-    if (isset($_FILES['file']))
+    if (isset($_FILES['file']) && $allowuploads)
     {
       $target = 'uploads/' . $rndn;
       move_uploaded_file($_FILES['file']['tmp_name'], $target);

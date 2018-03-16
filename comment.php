@@ -36,7 +36,7 @@ else
       {
         $nick = '';
       }
-      if (isset($_FILES['file']))
+      if (isset($_FILES['file']) && $allowuploads)
       {
         $target = 'uploads/' . $_POST['pid'];
         $final = $target . rand();

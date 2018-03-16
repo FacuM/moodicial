@@ -45,7 +45,7 @@ function ratel()
 
 
  // Handle the modal image upload mode (local/remote).
- var remote = false;
+ var remote = true;
  function togglemethod() {
   if (remote)
   {
@@ -60,6 +60,7 @@ function ratel()
    remote = true;
   }
  };
+ togglemethod();
 
  $('#tm').on('click', function() {
   togglemethod();

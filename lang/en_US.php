@@ -1,7 +1,9 @@
 <?php
  // This is the default language, it's a PHP file that contains an array with all the required strings for Moodicial to work.
  // Filename: en_US.php
- // Author: Facundo Montero <facumo.fm@gmail.com>
+ // Author:
+
+ $maintainer = 'Facundo Montero <facumo.fm@gmail.com>';
 
  $LANG = array (
   // Home
@@ -23,6 +25,10 @@
    'is_lastpage_a'            => 'No more content to display. Would you like to ',
    'is_lastpage_b'            => ' go back to the top?',
    'update_running'           => 'New content available!',
+   'nojs_nocontent_a'         => 'No more content to display.',
+   'nojs_nocontent_b'         => 'Reload?',
+   'nojs_ro_alert_a'          => 'You\'re seeing this read-only version of ', //website name
+   'nojs_ro_alert_b'          => 'because your browser doesn\'t support Javascript.',
   // Metrics
    // Visits
    'visits'                   => 'Visits',
@@ -36,6 +42,8 @@
    'rate_limited'             => 'Hey! You are too quick for me! Please try again later.',
    'rate_limited_sm'          => 'Limited',
    'img_unreachable'          => 'Unable to fetch image from remote server.',
+   'ui_home'                  => 'Home',
+   'ui_goback_adv'            => 'Would you like to go back to the main page?',
   // Forms
    // Comments
    'comment_content_label'    => 'Content',
@@ -73,7 +81,20 @@
   'installer_fol_ok_b'        => ' folder.',
   // All
   'no_nick'                   => 'Anonymous',
-  'time_seconds'              => ' seconds'
+  'time_seconds'              => ' seconds',
+  // Errors
+   // 403
+   'err_403_a'                => 'Stand right where you are!',
+   'err_403_b'                => 'You aren\'t allowed to view this page.',
+   // 404
+   'err_404_a'                => 'Not found',
+   'err_404_b'                => 'The content you were looking for couldn\'t be found or has been removed.',
+   // 500
+   'err_500_a'                => 'Oh sh**, it crashed!',
+   'err_500_b'                => 'The page can\'t be displayed cause the script couldn\'t complete it\'s operation.',
+   // 503
+   'err_503_a'                => 'Can\'t process request',
+   'err_503_b'                => 'Ah... This is such a shame, but I\'m unable to complete your request due to server maintenance or overload.'
  );
 
 ?>

@@ -1,6 +1,8 @@
 <?php
  // Nombre de archivo: es_LA.php
- // Autor: Facundo Montero <facumo.fm@gmail.com>
+ // Autor:
+
+ $maintainer = 'Facundo Montero <facumo.fm@gmail.com>';
 
  $LANG = array (
   // Home
@@ -22,12 +24,18 @@
    'is_lastpage_a'            => 'No hay más contenido que mostrar, ¿te gustaría ',
    'is_lastpage_b'            => ' volver arriba?',
    'update_running'           => '¡Nuevo contenido disponible!',
+   'nojs_nocontent_a'         => 'No hay más contenido que mostrar.',
+   'nojs_nocontent_b'         => '¿Recargar?',
+   'nojs_ro_alert_a'          => 'Estás viendo una versión de sólo lectura de', //nombre del sitio web
+   'nojs_ro_alert_b'          => 'porque tu navegador no soporta Javscript.',
    'ui_nojs'                  => '¿Sin Javascript? ¡Cliquea aquí!',
    'server_lag'               => 'Parece que el servidor se está tardando un poco, por favor aguarda un momento.',
    'server_err'               => 'No fue posible procesar la solicitud, por favor inténtalo nuevamente más tarde.',
    'rate_limited'             => '¡Eh! Vas demasiado rápido para mí, por favor intenta más tarde.',
    'rate_limited_sm'          => 'Limitado',
    'img_unreachable'          => 'No fue posible obtener la imagen del servidor remoto.',
+   'ui_home'                  => 'Inicio',
+   'ui_goback_adv'            => '¿Te gustaría volver a la página principal?',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',
@@ -72,7 +80,20 @@
   'installer_fol_ok_b'        => '.',
   // All
   'no_nick'                   => 'Anónimo',
-  'time_seconds'              => ' segundos'
+  'time_seconds'              => ' segundos',
+  // Errors
+   // 403
+   'err_403_a'                => '¡Quédate justo donde estás!',
+   'err_403_b'                => 'No tienes permiso para ver esta página.',
+   // 404
+   'err_404_a'                => 'No encontrado',
+   'err_404_b'                => 'El contenido que estabas buscando no pudo encontrarse o fue eliminado.',
+   // 500
+   'err_500_a'                => 'Oh mier**, ¡falló!',
+   'err_500_b'                => 'A página não pode ser exibida porque o programa não pôde completar a operação.',
+   // 503
+   'err_503_a'                => 'Não foi possível processar o pedido',
+   'err_503_b'                => 'Ah ... É uma pena, mas não consegui completar o pedido devido a uma sobrecarga ou manutenção do servidor.'
  );
 
 ?>

@@ -1,6 +1,9 @@
 <?php
  // Filename: bg_BG.php
- // Author: Maxim Ivanov <m.ivanov2k@gmail.com>
+ // Author:
+
+ $maintainer = 'Maxim Ivanov <m.ivanov2k@gmail.com>';
+
  $LANG = array (
   // Home
    // Empty website

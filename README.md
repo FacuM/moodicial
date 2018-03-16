@@ -18,12 +18,13 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Installer
 - Reduced code size and overall final HTML size
 - Support for secure source code displaying of PHP files (complying with AGPL)
-- Full translation support, included languages are Spanish (Latin America) and English (United States), Portuguese (Brazil)
+- Full translation support, included languages are Spanish (Latin America) and English (United States), Portuguese (Brazil) and Bulgarian (Bulgaria)
 - Automatic language detection
 - Dynamic updates (new content)
 - Detected language badge
 - Offline mode (host yourself, in your own network)
 - Rate limits (how much interactions can someone do in a user-defined timespan)
+- Web API as a limited service with private key
 
 #### Upcoming features
 

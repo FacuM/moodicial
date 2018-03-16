@@ -1,23 +1,6 @@
 // Dummy variables
 var scrolling = false; var doload = true; var original = $('#langbadge').html();
 
-// Language badge initial animation (delayed to allow render completion)
-setTimeout(function ()
-{
-  $('#langbadge').fadeOut(atimeb);
-  setTimeout(function() {
-    $('#langbadge').html(hint);
-    $('#langbadge').fadeIn(atimeb);
-  }, atimeb);
-  setTimeout(function() {
-    $('#langbadge').fadeOut(atimeb);
-    setTimeout(function() {
-      $('#langbadge').html(original);
-      $('#langbadge').fadeIn(atimeb);
-    }, atimeb);
-  }, atimeb * 4);
-}, atime);
-
 // Language badge animation + language picker generator
 function langsel(newhtml)
 {
@@ -32,6 +15,9 @@ function langsel(newhtml)
     +  '</div>'
     +  '<div class="badge badge-primary float-left langlink" id="langlink">'
     +   '<a href="?lang=pt" id="langlink">PT</a>'
+    +  '</div>'
+    +  '<div class="badge badge-primary float-left langlink" id="langlink">'
+    +   '<a href="?lang=bg" id="langlink">BG</a>'
     +  '</div>');
     $('.langlink').css('display', 'none');
     $('.langlink').html(newhtml);
@@ -40,16 +26,37 @@ function langsel(newhtml)
   }, atimeb);
 };
 
+// Language badge initial animation (delayed to allow render completion)
+setTimeout(function ()
+{
+  $('#langbadge').fadeOut(atimeb);
+  setTimeout(function() {
+    $('#langbadge').html(hint);
+    $('#langbadge').fadeIn(atimeb);
+  }, atimeb);
+  setTimeout(function() {
+    $('#langbadge').fadeOut(atimeb);
+    setTimeout(function() {
+      $('#langbadge').html(original);
+      $('#langbadge').fadeIn(atimeb);
+      $('#langbadge').on('click', function()
+      {
+        langsel();
+      });
+    }, atimeb);
+  }, atimeb * 4);
+}, atime);
+
 // Go to the top of the page
 function gotop()
 {
- scrolling = true;
- $("html, body").animate({ scrollTop: 0 }, atime);
- $('#gotop').fadeOut(atimeb);
- setTimeout(function ()
- {
-   scrolling = false;
- }, atime);
+  scrolling = true;
+  $("html, body").animate({ scrollTop: 0 }, atime);
+  $('#gotop').fadeOut(atimeb);
+  setTimeout(function ()
+  {
+    scrolling = false;
+  }, atime);
 }
 
 // Dynamically load new posts and prepend them to the first one
@@ -93,42 +100,16 @@ var dynamicload = setInterval (
           });
         };
       };
-     if($(window).scrollTop() > 0 && !scrolling)
-     {
-      $('#gotop').fadeIn(atimeb);
-     }
-     else
-     {
-      $('#gotop').fadeOut(atimeb);
-     }
+      if($(window).scrollTop() > 0 && !scrolling)
+      {
+        $('#gotop').fadeIn(atimeb);
+      }
+      else
+      {
+        $('#gotop').fadeOut(atimeb);
+      }
     };
   });
-
-  // Handle comments and fill extra info on modal popup
-  function comment(pid)
-  {
-    $('#pcontent').html( $(('.') + pid).html().substr(0, 120) + '...' );
-    $('.ccdlg').modal('show');
-    var cbutton = $('#submitc');
-    cbutton.click(function ()
-    {
-      cbutton.prop('disabled', true).html(ui_loading);
-      $.ajax({
-        url: 'comment.php',
-        type: 'POST',
-        data: {
-          content: $('#contentc').val(),
-          nick: $('#nickc').val(),
-          image: $('#imagec').val(),
-          pid: pid,
-        },
-        success: function() {
-          $('.ccdlg').modal('hide');
-          window.location.reload();
-        }
-      });
-    });
-  }
 
   // Handle reporting
   function report(pid)
@@ -165,7 +146,7 @@ var dynamicload = setInterval (
           }
           else
           {
-            var eid = $('#' + pid).find('.badge'); var newstatus = '';
+            var eid = $('#' + pid).find('#rbg'); var newstatus = '';
             if (parseInt(data) == 0)
             {
               newstatus = 'badge-success';
@@ -178,8 +159,8 @@ var dynamicload = setInterval (
             {
               newstatus = 'badge-danger';
             }
-            $(eid).removeClass('badge-success','badge-warning','badge-danger').addClass(newstatus);
-            $(eid).html(parseInt(data) + '/' + maxrep);
+            $('#' + pid).find('#rbg').removeClass('badge-success badge-warning badge-danger').addClass(newstatus);
+            $('#' + pid).find('#rbg').html(parseInt(data) + '/' + maxrep);
           }
         };
       }
@@ -192,3 +173,66 @@ var dynamicload = setInterval (
   {
     $('#update').clearQueue().animate({ 'marginTop' : '-3rem' }).fadeOut(atimeb);
   };
+
+  // Process thumbs up and down sending
+  function react(thumbs, pid)
+  {
+    $.ajax({
+      url: 'thumbs.php',
+      type: 'POST',
+      data: {
+        action: thumbs,
+        pid: pid
+      },
+      success: function(data)
+      {
+        var idr = $('#' + pid).find('.down, .up');
+        if (data == 'Limited')
+        {
+          idr.animate({ backgroundColor: 'red' }, atime);
+          setTimeout( function() {
+            idr.animate({ backgroundColor: '#555' }, atime);
+          }, throttletime);
+        }
+        else
+        {
+          if (thumbs)
+          {
+            idr = $('#' + pid).find('.up');
+            idr.html(data);
+          }
+          else
+          {
+            idr = $('#' + pid).find('.down');
+            idr.html(data);
+          };
+        };
+      }
+    });
+  };
+
+ // Show sidebar ONLY if JS support is present.
+ $(document).ready(function() {
+   $('.sidebarbtns').fadeIn(atimeb);
+   $('.jsrq').css('display', 'block');
+ });
+
+ var remote = false;
+ function togglemethod() {
+  if (remote)
+  {
+   $('#tm').html('Upload image from your device');
+   $('#image').css('display', 'block'); $('#file').css('display', 'none');
+   remote = false;
+  }
+  else
+  {
+   $('#tm').html('Post remote image');
+   $('#image').css('display', 'none'); $('#file').css('display', 'block');
+   remote = true;
+  }
+ };
+
+ $('#tm').on('click', function() {
+  togglemethod();
+ });

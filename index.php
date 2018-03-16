@@ -1,4 +1,4 @@
-﻿<?php
+<?php
  require_once("config.php");
  $loading = true;
  // Receive AJAX requests for availability checking.
@@ -22,7 +22,7 @@
    </div>
   </div>
  </div>
- <script src='resources/scripts/loadindex.js?v=11' onload='loader()'></script>
+ <script src='/resources/scripts/loadindex.js?v=14' onload='$(\"body\").css(\"display\", \"none\")'></script>
  <noscript>
   <form action='main.php'>
    <button class='fixed-bottom btn btn-primary' id='nojs'>" . $LANG['ui_nojs'] . "</button>

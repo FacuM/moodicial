@@ -1,5 +1,10 @@
 <?php
 // Just the posts' arrays processor, Rowy :3.
+
+
+/* NOTE: The class 'jsrq' is attached to the HTML elements
+that would require Javascript in order to work properly. */
+
 $newpid = $rows['pid'];
 if (!($row == 'new') || !($newpid == $oldpid))
   {
@@ -7,13 +12,13 @@ if (!($row == 'new') || !($newpid == $oldpid))
     <div class='card text-white bg-dark mb-2 mx-auto' >";
     if ($reports)
     {
-      if ($rows['rep'] == 0)
+      if ($rows['rep'] <= ($maxrep / 2))
       {
         $status = 'badge-success';
       }
       else
       {
-        if ($rows['rep'] <= ($maxrep / 2))
+        if ($rows['rep'] >= ($maxrep / 2) && $rows['rep'] <= ($maxrep - ($maxrep / 3)))
         {
           $status = 'badge-warning';
         }
@@ -23,11 +28,12 @@ if (!($row == 'new') || !($newpid == $oldpid))
         }
       }
     }
-    echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") . ($thumbsmod ? "<button class='btn btn-sm float-right btn-dark'><span class='octicon octicon-thumbsdown'></span></button><button class='btn btn-sm float-right btn-dark'><span class='octicon octicon-thumbsup'></span></button>" : "") . "</div>
+    echo "<div class='card-header'>$rows[date]" . ($reports ? "<button class='btn btn-danger float-right btn-sm jsrq' onclick='report(" . $rows['pid'] . ")'>" . $LANG['report_button'] . "</button><span class='badge $status float-right rbg jsrq'>" . $rows['rep'] . "/" . $maxrep . "</span>" : "") .
+    ($thumbsmod ? "<div class='thumbs jsrq'><div class='badge badge-secondary up'>" . $rows['up'] . "</div><button class='btn btn-sm btn-dark' onclick='react(true, " . $rows['pid'] . ")'><span class='octicon octicon-thumbsup'></span></button><button class='btn btn-sm btn-dark' onclick='react(false, " . $rows['pid'] . ")'><span class='octicon octicon-thumbsdown'></span></button><div class='badge badge-secondary down'>" . $rows['down'] . "</div></div>" : "") . "</div>
     <div class='card-body " . $rows['pid'] . "'>$rows[cont]";
     if ( ! empty($rows['img']))
     {
-      echo "<div class='imgcontainer mx-auto'><img class='img-thumbnail' src='" . $rows['img'] . "' alt='" . $LANG['alt_broken_image'] . "' onerror='imgerr(" . $rows['pid'] . ")'>
+      echo "<div class='imgcontainer mx-auto'><img class='img-thumbnail' src='" . $rows['img'] . "' alt='" . $LANG['alt_broken_image'] . "' onerror='imgerr(" . $rows['pid'] . ")' />
       </div>";
     }
     echo "
@@ -42,7 +48,7 @@ if (!($row == 'new') || !($newpid == $oldpid))
     {
       echo "$rows[nick]";
     }
-    echo "<a href='#' class='float-right' onclick='comment(" . $rows['pid'] . ")'><span class='octicon octicon-comment-discussion'></span> " . $LANG['comment_button_create'] . "</a>
+    echo "<a href='#' class='float-right jsrq' onclick='comment(" . $rows['pid'] . ")'><span class='octicon octicon-comment-discussion'></span> " . $LANG['comment_button_create'] . "</a>
     </div>
     ";
     foreach($server->query("SELECT * FROM " . $credentials["ctable"] . " WHERE pid = " . $rows['pid']) as $rowscom)
@@ -53,12 +59,11 @@ if (!($row == 'new') || !($newpid == $oldpid))
       <div class='card-body'>" . $rowscom['cont'] . "</div>";
       if ( ! empty($rowscom['img']))
       {
-        echo "<div class='imgcontainer mx-auto'><img class='img-thumbnail' src='" . $rowscom['img'] . "' alt='" . $LANG['alt_broken_image'] . "'></div>";
+        echo "<div class='imgcontainer mx-auto'><img class='img-thumbnail' src='" . $rowscom['img'] . "' alt='" . $LANG['alt_broken_image'] . "' /></div>";
       }
+      echo "</div>";
     }
     echo "
-       </div>
-      </div>
      </div>
     </div>";
   }

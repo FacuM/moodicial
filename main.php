@@ -1,4 +1,4 @@
-﻿<?php
+<?php
  require_once("config.php");
  if ($maintenance)
  {
@@ -6,6 +6,12 @@
  }
  $loading = false;
  require_once("beginning.php");
+ if (isset($outdated))
+ {
+  echo "<div class='alert alert-danger mx-auto'>The requested language is outdated as it contains " . $outdated . " strings and " . $minstr . " were expected, falling back to English (US). Please ask it's maintainer (" . $author . ") to update it.</div>";
+ }
+ require_once("includes/warn_nojs.php");
+ require_once("includes/custreader.php");
  // At first, assume that at least one post will be present.
  $noposts = false;
  // Define the variable that'll make the page reload if it's the first time posting.
@@ -54,5 +60,6 @@
   // Call 'sendLoader' for dynamic loading and other non-crucial JS (animations, dynamic loading, etc.).
   sendLoader();
  }
- require_once('footer.php');
+ require_once("includes/nojs_nav.php");
+ require_once("footer.php");
 ?>

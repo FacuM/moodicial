@@ -21,7 +21,7 @@ else
 
 // Set up the query
 
-$query = "SELECT * FROM " . $credentials['ptable'] . " ORDER BY date DESC LIMIT " . $row . ', ' . $amountpage;
+$query = "SELECT * FROM " . $credentials['ptable'] . " ORDER BY date DESC LIMIT " . (isset($_GET['ridb']) ? (int)$_GET['ridb'] : $row) . ', ' . (isset($_GET['ride']) ? (int)$_GET['ride'] : $amountpage);
 
 // If the old PID isn't set, make it NULL so the conditional will return false.
 $oldpid = (isset($_POST['oldpid']) ? $_POST['oldpid'] : NULL);

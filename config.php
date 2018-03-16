@@ -17,7 +17,7 @@
  );
 
  // Maintenance mode?
- $maintenance = true;
+ $maintenance = false;
 
  // Whether to enable or not automatic language switch. Type 'auto' for automatic or any language for manual (options are'es_LA', 'en_US' and everything in "lang").
  $language = 'auto';
@@ -29,7 +29,7 @@
  // Should people be able to report?
  $reports = true;
  // Enable thumbsmod?
- $thumbsmod = false;
+ $thumbsmod = true;
  // Max amount of reports
  $maxrep = 5;
  // Allow empty posts? (without text)
@@ -42,6 +42,21 @@
  // What should we track?
  $metricsset = array (
    'visits'      => 'yes'
+ );
+
+ $api = array (
+   // Enable the API?
+   'enable'             => true,
+   // Interval for global public requests.
+   'global_public'      => 3600000,
+   // Interval for per-post public requests.
+   'single_public'      => 60000,
+   // Interval for global protected requests.
+   'global_private'     => 0,
+   // Interval for per-post protected requests.
+   'single_private'     => 0,
+   // Passphrase for protected requests.
+   'key_private'        => 'admin'
  );
 
  // => Client-side scripting settings (time values measured in milliseconds)
@@ -88,5 +103,8 @@
 
   // Start measuring the page generation time;
   $stime = microtime(true);
+
+ // Minimum amount of strings to consider a language up-to-date.
+ $minstr = 65;
 
 ?>

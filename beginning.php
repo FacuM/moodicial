@@ -22,12 +22,13 @@
     }
     if ($langbadge)
     {
-     echo "<div class='badge badge-info float-left' id='langbadge' onclick='langsel()'>" . $LANG['langbadge'] . ": <span id='lang'>" . $language . "</span></div>";
+     echo "<div class='badge badge-info float-left' id='langbadge'>" . $LANG['langbadge'] . ": <span id='lang'>" . $language . "</span></div>";
     }
   }
   echo "<br><br>
-    <a href='$root'><h1 id='title'>$info[title]</h1></a>
-  </div>
+    <a class='jsrq' href='#' onclick='delreload()'><h1 id='title'>$info[title]</h1></a>
+    <noscript><a href='" . $root . "'><h1 id='title'>$info[title]</h1></a></noscript>
   <br>
-  ";
+  "
+  ;
 ?>

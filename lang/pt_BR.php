@@ -1,6 +1,8 @@
 <?php
  // Nome do arquivo: pt_BR.php
- // Autor: Facundo Montero <facumo.fm@gmail.com>
+ // Autor:
+
+ $maintainer = 'Facundo Montero <facumo.fm@gmail.com>';
 
  $LANG = array (
   // Home
@@ -22,12 +24,18 @@
    'is_lastpage_a'            => 'Não há mais conteúdo para mostrar, você gostaria ',
    'is_lastpage_b'            => ' de voltar a subir?',
    'update_running'           => 'Novo conteúdo disponível!',
+   'nojs_nocontent_a'         => 'Não há mais conteúdo para exibir',
+   'nojs_nocontent_b'         => 'Recarregar?',
+   'nojs_ro_alert_a'          => 'Você está vendo uma versão somente leitura de', //nome do site
+   'nojs_ro_alert_b'          => 'porque o seu navegador não suporta Javascript.',
    'ui_nojs'                  => 'Sem Javascript? Clique aqui!',
    'server_lag'               => 'Parece que o servidor demora um pouco, por favor aguarde um momento.',
-   'server_err'               => 'Não foi possível processar o pedido, por favor tente novamente mais tarde.'
-   'rate_limited'             => 'Ei! Você está indo muito rápido para mim, por favor tente novamente mais tarde. ',
+   'server_err'               => 'Não foi possível processar o pedido, por favor tente novamente mais tarde.',
+   'rate_limited'             => 'Ei! Você está indo muito rápido para mim, por favor tente novamente mais tarde.',
    'rate_limited_sm'          => 'Limitado',
    'img_unreachable'          => 'Não foi possível obter a imagem do servidor remoto.',
+   'ui_home'                  => 'Início',
+   'ui_goback_adv'            => 'Gostaria de voltar para a página principal?',
   // Metrics
    // Visits
    'visits'                   => 'Visitas',
@@ -73,6 +81,19 @@
   // All
   'no_nick'                   => 'Anônimo',
   'time_seconds'              => ' segundos'
+  // Errors
+   // 403
+   'err_403_a'                => 'Fique bem onde você está!',
+   'err_403_b'                => 'Você não tem permissão para ver esta página.',
+   // 404
+   'err_404_a'                => 'Nao encontrado',
+   'err_404_b'                => 'O conteúdo que você estava procurando não pôde ser encontrado ou foi excluído.',
+   // 500
+   'err_500_a'                => 'Oh mer**, falhou!',
+   'err_500_b'                => 'La página no pudo ser mostrada porque el programa no pudo completar la operación.',
+   // 503
+   'err_503_a'                => 'No fue posible procesar la solicitud',
+   'err_503_b'                => 'Ah... Es una pena, pero no pude completar la solicitud debido a una sobrecarga o mantenimiento del servidor.'
  );
 
 ?>

@@ -1,7 +1,10 @@
 <?php
 require_once("config.php");
 session_start();
-$time = microtime(true) -  $_SESSION['lastinteraction'];
+if (isset($_SESSION['lastinteraction']))
+{
+ $time = microtime(true) -  $_SESSION['lastinteraction'];
+}
 if (isset($_SESSION['lastinteraction']) && $time < $throttletime / 1000)
 {
   die('Limited');
@@ -19,10 +22,10 @@ elseif (!isset($_POST['report']))
 else
 {
   $_SESSION['lastinteraction'] = microtime(true);
-  foreach($server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report'])) as $rows)
+  $replist = $server->query("SELECT * FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report']))->fetch()['rep'];
   {
-    echo $rows['rep'] + 1;
-    if ($rows['rep'] >= $maxrep)
+    echo $replist + 1;
+    if ($replist >= $maxrep)
     {
       $server->query("DELETE FROM `" . $credentials['ptable'] . "` WHERE `pid` = " . $server->quote($_POST['report']));
     }

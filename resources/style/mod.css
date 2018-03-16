@@ -53,7 +53,7 @@
 	max-width: 90%;
 }
 
-.form-group {
+.form-group,.jumbotron {
 	max-width: 80%;
 }
 
@@ -76,13 +76,16 @@ hr {
 	background-color: #303030;
 }
 
-.imgcontainer {
+.imgcontainer{
 	width: 40%;
 	height: auto;
 }
 
 .badge {
 	margin-top: 0.5em;
+}
+
+.rbg,#langbadge,.langlink {
 	margin-right: 1em;
 }
 
@@ -119,7 +122,7 @@ a:hover {
 	margin-bottom: 4rem;
 }
 
-#load,#end,#err,#update,#loader,#ratel {
+#load,#end,#err,#update,#loader,#ratel,.newcomment,.sidebarbtns,.jsrq {
 	display: none;
 }
 
@@ -134,10 +137,15 @@ a:hover {
 	max-width: 95%;
 }
 
-.imgcontainer,img,h1,#loader,#maintenance {
+.imgcontainer,img,h1,#loader,#maintenance,.thumbs {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.thumbs {
+	margin-top: -1.5rem;
+	padding-left: 6rem;
 }
 
 #maintenance {
@@ -146,4 +154,18 @@ a:hover {
 
 .page-footer {
 	padding-bottom: 0rem;
+}
+
+.pager {
+	display: block;
+	margin: auto;
+	font-family: 'Open Sans';
+	color: white;
+	margin-bottom: 0.5rem;
+}
+
+.pager-btns-l,.pager-btns-r {
+	width: 25%;
+	margin-right: 2rem;
+	margin-left: 2rem;
 }

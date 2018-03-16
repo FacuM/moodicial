@@ -1,5 +1,9 @@
 <?php
 require_once("config.php");
+if ($maintenance)
+{
+ header('location: ' . $root);
+}
 session_start();
 if (isset($_SESSION['lastinteraction']))
 {

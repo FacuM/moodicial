@@ -26,7 +26,8 @@
     }
   }
   echo "<br><br>
-    <a href='#' onclick='delreload()'><h1 id='title'>$info[title]</h1></a>
+    <a class='jsrq' href='#' onclick='delreload()'><h1 id='title'>$info[title]</h1></a>
+    <noscript><a href='" . $root . "'><h1 id='title'>$info[title]</h1></a></noscript>
   <br>
   "
   ;

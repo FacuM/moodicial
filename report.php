@@ -3,6 +3,7 @@ require_once("config.php");
 if ($maintenance)
 {
  header('location: ' . $root);
+ die('');
 }
 session_start();
 if (isset($_SESSION['lastinteraction']))

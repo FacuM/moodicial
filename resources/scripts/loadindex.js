@@ -45,6 +45,7 @@ function requester()
 // This function makes the first animation.
 function loader()
 {
+  $('.jsrq').css('display', 'block');
   title.css('marginTop', $(window).height() / 3);
   // If javascript is present, try to make the loading screen smoothly fadein.
   body.css('display', 'none');
@@ -77,7 +78,10 @@ function loader()
           {
             if (testing == 'yes')
             {
-              window.location.reload();
+              body.animate({ backgroundColor: 'black' }, atime);
+              setTimeout(function() {
+               delreload();
+              }, atime);
             }
             else
             {

@@ -216,3 +216,23 @@ var dynamicload = setInterval (
    $('.sidebarbtns').fadeIn(atimeb);
    $('.jsrq').css('display', 'block');
  });
+
+ var remote = false;
+ function togglemethod() {
+  if (remote)
+  {
+   $('#tm').html('Upload image from your device');
+   $('#image').css('display', 'block'); $('#file').css('display', 'none');
+   remote = false;
+  }
+  else
+  {
+   $('#tm').html('Post remote image');
+   $('#image').css('display', 'none'); $('#file').css('display', 'block');
+   remote = true;
+  }
+ };
+
+ $('#tm').on('click', function() {
+  togglemethod();
+ });

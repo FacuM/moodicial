@@ -61,5 +61,5 @@
   sendLoader();
  }
  require_once("includes/nojs_nav.php");
- require_once('footer.php');
+ require_once("footer.php");
 ?>

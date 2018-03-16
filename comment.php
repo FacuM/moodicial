@@ -36,7 +36,29 @@ else
       {
         $nick = '';
       }
-      $server->query("INSERT INTO `" . $credentials['ctable'] . "` (`nick`, `date`, `pid`, `cont`, `img`) VALUES (" . $nick . ", now(), " . $pid . ", " . $server->quote($content) . ", " . (!@getimagesize($_POST['image']) ? "''" : $server->quote($_POST['image'])) . ")");
+      if (isset($_FILES['file']))
+      {
+        $target = 'uploads/' . $_POST['pid'];
+        $final = $target . rand();
+        if(FALSE === file_exists($final))
+        {
+         move_uploaded_file($_FILES['file']['tmp_name'], $final);
+        }
+        else
+        {
+         $final = $target . rand();
+         while (file_exists($final)) {
+          $final = $target . rand();
+         }
+         move_uploaded_file($_FILES['file']['tmp_name'], $final);
+        }
+        $image = $root . '/' . $final;
+      }
+      else
+      {
+        $image = $_POST['image'];
+      }
+      $server->query("INSERT INTO `" . $credentials['ctable'] . "` (`nick`, `date`, `pid`, `cont`, `img`) VALUES (" . $nick . ", now(), " . $pid . ", " . $server->quote($content) . ", " . (!@getimagesize($image) ? "''" : $server->quote($image)) . ")");
     }
   }
   else

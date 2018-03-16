@@ -1,6 +1,16 @@
 // Dummy variables
 var scrolling = false; var doload = true; var original = $('#langbadge').html();
 
+// Show sidebar and interactive elements ONLY if JS support is present.
+function showall() {
+ $('.sidebarbtns').fadeIn(atimeb);
+ $('.jsrq').css('display', 'block');
+};
+
+$(document).ready(function() {
+ showall();
+});
+
 // Language badge animation + language picker generator
 function langsel(newhtml)
 {
@@ -71,7 +81,14 @@ var dynamicload = setInterval (
         oldpid: $('.posts').first().attr('id')
       },
       success: function(newdata){
-        if(!(newdata === '')) { $('.posts').first().before(newdata); $('.posts').first().css('display', 'none'); $('.posts').first().fadeIn(atimeb); $('#update').clearQueue().css('display', 'block').animate({ 'marginTop' : '3rem' }); };
+        if(!(newdata === ''))
+        {
+         $('.posts').first().before(newdata);
+         $('.posts').first().css('display', 'none');
+         $('.posts').first().fadeIn(atimeb);
+         $('#update').clearQueue().css('display', 'block').animate({ 'marginTop' : '3rem' });
+         showall();
+       };
       }
     });
   }, dynloadint);
@@ -210,12 +227,6 @@ var dynamicload = setInterval (
       }
     });
   };
-
- // Show sidebar ONLY if JS support is present.
- $(document).ready(function() {
-   $('.sidebarbtns').fadeIn(atimeb);
-   $('.jsrq').css('display', 'block');
- });
 
  var remote = false;
  function togglemethod() {

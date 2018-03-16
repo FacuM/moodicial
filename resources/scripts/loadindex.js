@@ -79,6 +79,7 @@ function loader()
             if (testing == 'yes')
             {
               body.animate({ backgroundColor: 'black' }, atime);
+              maintenance_element.fadeOut(atime);
               setTimeout(function() {
                delreload();
               }, atime);

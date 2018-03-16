@@ -32,9 +32,13 @@
   $server->query("INSERT INTO `" . $credentials['mtable'] . "` (`id`, `amount`) VALUES ('0', '0')");
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_metrics_ok'] . "</div>";
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_fol_mk'] . "</div>";
-  if (!file_exists("thirdparty"))
+  if (!file_exists($tpdir))
   {
    mkdir($tpdir, 0777, true);
+  }
+  if (!file_exists('uploads'))
+  {
+   mkdir('uploads', 0777, true);
   }
   echo "<div class='alert alert-success mx-auto'>" . $LANG['installer_fol_ok_a'] . "<b>" . $tpdir . "</b>" . $LANG['installer_fol_ok_b'] . "</div>";
   echo "<div class='alert alert-primary mx-auto'>" . $LANG['installer_dl_extras'] . "</div>";

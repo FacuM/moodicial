@@ -124,6 +124,7 @@ var dynamicload = setInterval (
       else
       {
         $('#gotop').fadeOut(atimeb);
+        hideupd();
       }
     };
   });

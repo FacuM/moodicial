@@ -210,3 +210,9 @@ var dynamicload = setInterval (
       }
     });
   };
+
+ // Show sidebar ONLY if JS support is present.
+ $(document).ready(function() {
+   $('.sidebarbtns').fadeIn(atimeb);
+   $('.jsrq').css('display', 'block');
+ });

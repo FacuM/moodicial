@@ -3,7 +3,7 @@
  // Autor:
 
  $maintainer = 'Facundo Montero <facumo.fm@gmail.com>';
- 
+
  $LANG = array (
   // Home
    // Empty website
@@ -24,6 +24,10 @@
    'is_lastpage_a'            => 'Não há mais conteúdo para mostrar, você gostaria ',
    'is_lastpage_b'            => ' de voltar a subir?',
    'update_running'           => 'Novo conteúdo disponível!',
+   'nojs_nocontent_a'         => 'Não há mais conteúdo para exibir',
+   'nojs_nocontent_b'         => 'Recarregar?',
+   'nojs_ro_alert_a'          => 'Você está vendo uma versão somente leitura de', //nome do site
+   'nojs_ro_alert_b'          => 'porque o seu navegador não suporta Javascript.',
    'ui_nojs'                  => 'Sem Javascript? Clique aqui!',
    'server_lag'               => 'Parece que o servidor demora um pouco, por favor aguarde um momento.',
    'server_err'               => 'Não foi possível processar o pedido, por favor tente novamente mais tarde.',

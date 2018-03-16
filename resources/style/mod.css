@@ -122,7 +122,7 @@ a:hover {
 	margin-bottom: 4rem;
 }
 
-#load,#end,#err,#update,#loader,#ratel,.newcomment {
+#load,#end,#err,#update,#loader,#ratel,.newcomment,.sidebarbtns,.jsrq {
 	display: none;
 }
 
@@ -161,7 +161,7 @@ a:hover {
 	margin: auto;
 	font-family: 'Open Sans';
 	color: white;
-	padding-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 
 .pager-btns-l,.pager-btns-r {

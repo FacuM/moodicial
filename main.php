@@ -10,6 +10,7 @@
  {
   echo "<div class='alert alert-danger mx-auto'>The requested language is outdated as it contains " . $outdated . " strings and " . $minstr . " were expected, falling back to English (US). Please ask it's maintainer (" . $author . ") to update it.</div>";
  }
+ require_once("includes/warn_nojs.php");
  require_once("includes/custreader.php");
  // At first, assume that at least one post will be present.
  $noposts = false;
@@ -59,12 +60,6 @@
   // Call 'sendLoader' for dynamic loading and other non-crucial JS (animations, dynamic loading, etc.).
   sendLoader();
  }
- echo "<noscript>
-  <div class='pager mx-auto text-center'>
-   <a class='btn btn-primary pager-btns-l'><span class='octicon octicon-triangle-left'>Previous</span></a>
-   <a class='btn btn-primary pager-btns-r'><span class='octicon octicon-triangle-right'>Next</span></a>
-  </div>
- </noscript>"
- ;
+ require_once("includes/nojs_nav.php");
  require_once('footer.php');
 ?>

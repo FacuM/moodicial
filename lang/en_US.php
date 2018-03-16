@@ -25,6 +25,10 @@
    'is_lastpage_a'            => 'No more content to display. Would you like to ',
    'is_lastpage_b'            => ' go back to the top?',
    'update_running'           => 'New content available!',
+   'nojs_nocontent_a'         => 'No more content to display.',
+   'nojs_nocontent_b'         => 'Reload?',
+   'nojs_ro_alert_a'          => 'You\'re seeing this read-only version of ', //website name
+   'nojs_ro_alert_b'          => 'because your browser doesn\'t support Javascript.',
   // Metrics
    // Visits
    'visits'                   => 'Visits',

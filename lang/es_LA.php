@@ -24,6 +24,10 @@
    'is_lastpage_a'            => 'No hay más contenido que mostrar, ¿te gustaría ',
    'is_lastpage_b'            => ' volver arriba?',
    'update_running'           => '¡Nuevo contenido disponible!',
+   'nojs_nocontent_a'         => 'No hay más contenido que mostrar.',
+   'nojs_nocontent_b'         => '¿Recargar?',
+   'nojs_ro_alert_a'          => 'Estás viendo una versión de sólo lectura de', //nombre del sitio web
+   'nojs_ro_alert_b'          => 'porque tu navegador no soporta Javscript.',
    'ui_nojs'                  => '¿Sin Javascript? ¡Cliquea aquí!',
    'server_lag'               => 'Parece que el servidor se está tardando un poco, por favor aguarda un momento.',
    'server_err'               => 'No fue posible procesar la solicitud, por favor inténtalo nuevamente más tarde.',

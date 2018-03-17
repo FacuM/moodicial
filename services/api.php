@@ -1,7 +1,11 @@
 <?php
 require_once("../config.php");
+if ($api['enable'] && $maintenance)
+{
+ $api['enable'] = false;
+}
 session_start();
-if (!empty($_GET))
+if (!empty($_GET) && $api['enable'])
 {
   $content = array ('posts', 'comments');
   if (!isset($_GET['key_private']))
@@ -92,7 +96,7 @@ if (!empty($_GET))
         }
         if (isset($_SESSION['single_private_last']) && $time < $api['single_private'] / 1000)
         {
-          die('Rate limit excedded.');
+          die('[-2] Rate limit excedded.');
         }
         else
         {
@@ -114,10 +118,14 @@ if (!empty($_GET))
     {
       if (isset($_GET['key_private']) && $_GET['key_private'] != $api['key_private'])
       {
-        echo 'Wrong API key, please try again. If the problem persists, contact the system administrator.';
+        echo '[-3] Wrong API key, please try again. If the problem persists, contact the system administrator.';
       }
     }
   }
+}
+elseif (isset($_GET['request']) && !$api['enable'])
+{
+ die('[-1] The API isn\'t enabled.');
 }
 else
 {
@@ -147,7 +155,7 @@ else
 
   ====== API Configuration ======<br><br>
 
-  Enabled: ' . ($api['enable'] ? 'yes' : 'no' ) .'<br><br>
+  Enabled: ' . ($api['enable'] ? 'yes' : 'no' ) . ($maintenance ? ' (maintenance)' : '') . '<br><br>
 
   === Intervals (public)<br>
 

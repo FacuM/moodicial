@@ -53,6 +53,7 @@
    'nick_label'               => 'Nick (optional)',
    'image_url_label'          => 'Image URL (optional)',
    'forms_button_submit'      => 'Submit',
+   'forms_button_cancel'      => 'Cancel',
   // Footer
   'footer_credits_a'          => 'Powered by Moodicial, written by Facundo Montero using Bootstrap. Check the ',
   'footer_credits_insource'   => 'source of this file',

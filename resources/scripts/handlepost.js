@@ -42,3 +42,26 @@ function ratel()
     $('.ratel').fadeOut(atime);
   }, atime * 2);
 }
+
+
+ // Handle the modal image upload mode (local/remote).
+ var remote = true;
+ function togglemethod() {
+  if (remote)
+  {
+   $('#tm').html('Upload image from your device');
+   $('#image').css('display', 'block'); $('#file').css('display', 'none');
+   remote = false;
+  }
+  else
+  {
+   $('#tm').html('Post remote image');
+   $('#image').css('display', 'none'); $('#file').css('display', 'block');
+   remote = true;
+  }
+ };
+ togglemethod();
+
+ $('#tm').on('click', function() {
+  togglemethod();
+ });

@@ -1,5 +1,10 @@
 <?php
 require_once("config.php");
+if ($maintenance)
+{
+ header('location: ' . $root);
+ die('');
+}
 session_start();
 if (isset($_SESSION['lastinteraction']))
 {
@@ -27,7 +32,7 @@ else
         $count = $block->rowCount();
       }
     }
-    if (isset($_FILES['file']))
+    if (isset($_FILES['file']) && $allowuploads)
     {
       $target = 'uploads/' . $rndn;
       move_uploaded_file($_FILES['file']['tmp_name'], $target);

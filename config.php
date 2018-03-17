@@ -34,6 +34,8 @@
  $maxrep = 5;
  // Allow empty posts? (without text)
  $allowempty = false;
+ // Allow uploading local sources?
+ $allowuploads = true;
  // Work without internet? (set this to 'true' if you aren't gonna connect your installation to a public network).
  $nointernet = false;
 
@@ -105,6 +107,6 @@
   $stime = microtime(true);
 
  // Minimum amount of strings to consider a language up-to-date.
- $minstr = 65;
+ $minstr = 66;
 
 ?>

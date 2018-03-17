@@ -28,7 +28,7 @@
               </div>
           </div>
           <div class='modal-footer'>
-            <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+            <button type='button' class='btn btn-secondary' data-dismiss='modal'>" . $LANG['forms_button_cancel'] . "</button>
             <button type='button' class='btn btn-primary' id='submitp'>" . $LANG['forms_button_submit'] . "</button>
         </div>
       </div>

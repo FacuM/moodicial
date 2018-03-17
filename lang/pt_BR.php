@@ -52,6 +52,7 @@
    'nick_label'               => 'Nick (opcional)',
    'image_url_label'          => 'URL da imagem (opcional)',
    'forms_button_submit'      => 'Enviar',
+   'forms_button_cancel'      => 'Cancelar',
   // Footer
   'footer_credits_a'          => 'Funciona graças a Moodicial, escrito por Facundo Montero usando Bootstrap. Dê uma olhada no ',
   'footer_credits_insource'   => 'código fonte deste arquivo',

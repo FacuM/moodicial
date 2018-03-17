@@ -28,6 +28,8 @@
     $language[0] = $_SESSION['lang'];
    }
   }
+  if (isset($_GET['yo']))
+  {
   if (isset($_GET['lang']) || isset($language[0]))
   {
    switch ($language[0]) {
@@ -51,6 +53,11 @@
   else
   {
    $language = 'en_US';
+  }
+  }
+  else
+  {
+   $language = 'yo_YO';
   }
  }
 ?>

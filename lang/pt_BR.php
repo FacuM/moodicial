@@ -81,7 +81,7 @@
   'installer_fol_ok_b'        => '.',
   // All
   'no_nick'                   => 'Anônimo',
-  'time_seconds'              => ' segundos'
+  'time_seconds'              => ' segundos',
   // Errors
    // 403
    'err_403_a'                => 'Fique bem onde você está!',

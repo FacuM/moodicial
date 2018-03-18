@@ -13,7 +13,8 @@
   'db'           => 'moodicial',
   'ptable'       => 'moodicial_posts',
   'ctable'       => 'moodicial_comments',
-  'mtable'       => 'moodicial_metrics'
+  'mtable'       => 'moodicial_metrics',
+  'btable'       => 'moodicial_banned'
  );
 
  // Maintenance mode?
@@ -38,6 +39,8 @@
  $allowuploads = true;
  // Work without internet? (set this to 'true' if you aren't gonna connect your installation to a public network).
  $nointernet = false;
+ // Allow administrators to ban users?
+ $allowbans = true;
 
  // Enable metrics?
  $metrics = true;
@@ -109,4 +112,13 @@
  // Minimum amount of strings to consider a language up-to-date.
  $minstr = 66;
 
+ $ban = $server->query('SELECT * FROM ' . $credentials['btable'] . ' WHERE ip = ' . $server->quote($_SERVER['REMOTE_ADDR']))->fetch();
+ if (!empty($ban))
+ {
+  $banned = true;
+ }
+ else
+ {
+  $banned = false;
+ }
 ?>

@@ -22,11 +22,20 @@
    </div>
   </div>
  </div>
- <script src='/resources/scripts/loadindex.js?v=14' onload='$(\"body\").css(\"display\", \"none\")'></script>
+ " . (!$banned ? "<script src='/resources/scripts/loadindex.js?v=14' onload='$(\"body\").css(\"display\", \"none\")'></script>" : "") . "
  <noscript>
   <form action='main.php'>
    <button class='fixed-bottom btn btn-primary' id='nojs'>" . $LANG['ui_nojs'] . "</button>
   </form>
  </noscript>
  ";
+ if ($banned)
+ {
+  die('<div class="alert alert-danger mx-auto">You\'ve been banned from this server.</div>
+  <br>
+  <br>
+  <div class="alert alert-light mx-auto">IP: ' . $ban['ip'] . '
+  <br>Reason: ' . $ban['reason'] . '
+  </div>');
+ }
 ?>

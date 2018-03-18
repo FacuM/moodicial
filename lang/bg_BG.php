@@ -81,7 +81,7 @@
   'installer_fol_ok_b'        => ' папка.',
   // All
   'no_nick'                   => 'Анонимен',
-  'time_seconds'              => ' секунди'
+  'time_seconds'              => ' секунди',
   // Errors
    // 403
    'err_403_a'                => 'Стой на място!',

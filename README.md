@@ -25,10 +25,11 @@ Currently, Moodicial is in a really early alpha stage. Even though it isn't a co
 - Offline mode (host yourself, in your own network)
 - Rate limits (how much interactions can someone do in a user-defined timespan)
 - Web API as a limited service with private key
+- NoJS automatic detection and NoScript mode
 
 #### Upcoming features
 
-- NoJS automatic detection and NoScript mode
+- Nothing to document yet.
 
 ## Known bugs
 
@@ -50,6 +51,11 @@ Here comes the good part. For **download**, **configuration** and **installation
 Take a look at the live demo [here]( http://moodicial.ezyro.com/), feel free to **hack it!**
 
 If you find any security flaw, report it! :wink:
+
+## Credits
+
+- @ProudlyTM for adding Bulgarian language and maintaining it.
+- @killer7Mod for reviewing PRs and reporting bugs on them and for fixing Portuguese.
 
 ## Third party content
 

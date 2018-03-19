@@ -26,7 +26,7 @@
     }
   }
   echo "<br><br>
-    <a class='jsrq' href='#' onclick='delreload()'><h1 id='title'>$info[title]</h1></a>
+    <a " . (isset($hide) && $hide ? "class='jsrq'" : "") . " href='#' onclick='delreload()'><h1 id='title'>$info[title]</h1></a>
     <noscript><a href='" . $root . "'><h1 id='title'>$info[title]</h1></a></noscript>
   <br>
   "

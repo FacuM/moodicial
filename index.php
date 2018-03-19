@@ -1,6 +1,6 @@
 <?php
  require_once("config.php");
- $loading = true;
+ $loading = true; if ($banned) { $hide = false; }
  // Receive AJAX requests for availability checking.
  if (isset($_POST['testav']) && $_POST['testav'] == true)
  {
@@ -31,8 +31,8 @@
  ";
  if ($banned)
  {
-  die('<div class="alert alert-danger mx-auto">You\'ve been banned from this server.</div>
-  <br>
+  die('<br>
+  <div class="alert alert-danger mx-auto">You\'ve been banned from this server.</div>
   <br>
   <div class="alert alert-light mx-auto">IP: ' . $ban['ip'] . '
   <br>Reason: ' . $ban['reason'] . '

@@ -68,6 +68,7 @@
   'installer_db_c_ctable'     => 'Creando la tabla de comentarios...',
   'installer_db_c_ptable'     => 'Creando la tabla de publicaciones...',
   'installer_db_c_mtable'     => 'Creando la tabla de estadísticas...',
+  'installer_db_c_btable'     => 'Creando la tabla de IPs bloqueadas...',
   'installer_db_c_table_ok'   => 'Éxito creando la tabla ',
   'installer_metrics_visits'  => 'Creando la entrada que almacenará las visitas en ',
   'installer_metrics_ok'      => 'Éxito incializando la base de datos de estadísticas.',

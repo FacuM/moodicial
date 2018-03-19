@@ -69,6 +69,7 @@
   'installer_db_c_ctable'     => 'Creating the comments table...',
   'installer_db_c_ptable'     => 'Creating the posts table...',
   'installer_db_c_mtable'     => 'Creating the metrics table...',
+  'installer_db_c_btable'     => 'Creating the banned IPs table...',
   'installer_db_c_table_ok'   => 'Created table ',
   'installer_metrics_visits'  => 'Creating the visits entry on ',
   'installer_metrics_ok'      => 'Successfully initialized the metrics table.',

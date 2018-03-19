@@ -110,7 +110,7 @@
   $stime = microtime(true);
 
  // Minimum amount of strings to consider a language up-to-date.
- $minstr = 67;
+ $minstr = 69;
 
  $ban = $server->query('SELECT * FROM ' . $credentials['btable'] . ' WHERE ip = ' . $server->quote($_SERVER['REMOTE_ADDR']))->fetch();
  if (!empty($ban))

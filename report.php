@@ -1,6 +1,6 @@
 <?php
 require_once("config.php");
-if ($maintenance)
+if ($maintenance || $banned)
 {
  header('location: ' . $root);
  die('');
